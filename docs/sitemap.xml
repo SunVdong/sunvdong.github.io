@@ -2,8 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/posts/first_post/</loc><lastmod>2021-11-01T16:18:03&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2021-11-01T16:18:03&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/</loc><lastmod>2021-11-01T16:18:03&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/categories/</loc></url><url>
-            <loc>http://example.org/tags/</loc></url></urlset>
+            <loc>https://sunvdong.github.io/sunvdong/posts/first_post/</loc><lastmod>2021-11-01T16:18:03&#43;08:00</lastmod></url><url>
+            <loc>https://sunvdong.github.io/sunvdong/posts/</loc><lastmod>2021-11-01T16:18:03&#43;08:00</lastmod></url><url>
+            <loc>https://sunvdong.github.io/sunvdong/</loc><lastmod>2021-11-01T16:18:03&#43;08:00</lastmod></url><url>
+            <loc>https://sunvdong.github.io/sunvdong/categories/</loc></url><url>
+            <loc>https://sunvdong.github.io/sunvdong/tags/</loc></url></urlset>
