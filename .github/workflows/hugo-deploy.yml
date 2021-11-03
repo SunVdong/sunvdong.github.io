@@ -39,5 +39,4 @@ jobs:
           server: ${{ secrets.URL }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PWD }}
-          local-dir: ./public
-          server-dir: /www/wwwroot/vdong.xyz
+          local-dir: ./public/
