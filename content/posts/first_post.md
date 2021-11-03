@@ -7,6 +7,3 @@ author: vdong
 
 hello world!
 
-测试自动部署
-
-测试
