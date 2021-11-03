@@ -27,9 +27,17 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
+      - name: Deploy Github Page
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.URL }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PWD }}
+          local-dir: ./public
+          server-dir: /www/wwwroot/vdong_xyz
