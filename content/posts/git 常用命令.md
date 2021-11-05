@@ -158,6 +158,6 @@ git reset --hard HEAD^ // 会删除目标版本后的版本
 
 [图解git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
-[https://githowto.com/](https://githowto.com/)
+[githowto](https://githowto.com/)
 ​
 [git飞行规则](https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md)​

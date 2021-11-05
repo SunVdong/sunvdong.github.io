@@ -4,7 +4,7 @@ date = 2021-11-04T19:11:06+08:00
 draft = false
 author = 'vdong'
 categories = ['技术'] 
-tags = ['unix', 'vi']
+tags = ['unix', 'linux', 'vi']
 +++
 
 ## 移动光标
