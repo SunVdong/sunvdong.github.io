@@ -1,0 +1,210 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<title class=pjax-title>git 常用命令 - vdong.xyz</title><meta name=Description content><meta property="og:title" content="git 常用命令">
+<meta property="og:description" content="​ 常用命令 clone 特定分支 git clone -b v5.12 git@gitee.com:xxx/xxx.git 日志查看 git log --graph --pretty=oneline --abbrev-commit 添加远程库 git remote add origin git@github.com:michaelliao/learngit.git 第一次推送 git push -u origin master 比较差异 git diff readme.txt 配置别名 git config --global alias.lg &#34;log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit&#34; git">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-04T19:12:06+08:00">
+<meta property="article:modified_time" content="2021-11-04T19:12:06+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="git 常用命令">
+<meta name=twitter:description content="​ 常用命令 clone 特定分支 git clone -b v5.12 git@gitee.com:xxx/xxx.git 日志查看 git log --graph --pretty=oneline --abbrev-commit 添加远程库 git remote add origin git@github.com:michaelliao/learngit.git 第一次推送 git push -u origin master 比较差异 git diff readme.txt 配置别名 git config --global alias.lg &#34;log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit&#34; git">
+<meta name=application-name content="vdong.xyz">
+<meta name=apple-mobile-web-app-title content="vdong.xyz">
+<meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/><link rel=prev href=/posts/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"git 常用命令","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"\/posts\/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/"},"genre":"posts","keywords":"git","wordcount":887,"url":"\/posts\/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/","datePublished":"2021-11-04T19:12:06+08:00","dateModified":"2021-11-04T19:12:06+08:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong"},"description":""}</script></head>
+<body header-desktop header-mobile><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=vdong.xyz>vdong.xyz</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=vdong.xyz>vdong.xyz</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">git 常用命令</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>vdong</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%8A%80%E6%9C%AF/><i class="far fa-folder fa-fw"></i>技术</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 887 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#常用命令>常用命令</a></li>
+<li><a href=#错误记录>错误记录</a></li>
+<li><a href=#撤销>撤销</a></li>
+<li><a href=#学习网站>学习网站</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p>​</p>
+<h3 id=常用命令>常用命令</h3>
+<h4 id=clone-特定分支>clone 特定分支</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git clone -b v5.12 git@gitee.com:xxx/xxx.git
+</code></pre></div><h4 id=日志查看>日志查看</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git log --graph --pretty<span class=o>=</span>oneline --abbrev-commit
+</code></pre></div><h4 id=添加远程库>添加远程库</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git remote add origin git@github.com:michaelliao/learngit.git
+</code></pre></div><h4 id=第一次推送>第一次推送</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git push -u origin master
+</code></pre></div><h4 id=比较差异>比较差异</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git diff readme.txt
+</code></pre></div><h4 id=配置别名>配置别名</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git config --global alias.lg <span class=s2>&#34;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&#34;</span>
+git config --global alias.lg <span class=s2>&#34;log --graph --pretty=oneline --abbrev-commit&#34;</span>
+git config --global alias.st <span class=s2>&#34;status&#34;</span>
+git config --global alias.ck <span class=s2>&#34;checkout&#34;</span>
+git config --global alias.br <span class=s2>&#34;branch&#34;</span>
+</code></pre></div><h4 id=标签>标签</h4>
+<ul>
+<li>命令<code>git tag &lt;tagname></code>用于新建一个标签，默认为<code>HEAD</code>，也可以指定一个commit id；</li>
+<li>命令<code>git tag -a &lt;tagname> -m "blablabla..."</code>可以指定标签信息；</li>
+<li>命令<code>git tag</code>可以查看所有标签。</li>
+<li>命令<code>git push origin &lt;tagname></code>可以推送一个本地标签；</li>
+<li>命令<code>git push origin --tags</code>可以推送全部未推送过的本地标签；</li>
+<li>命令<code>git tag -d &lt;tagname></code>可以删除一个本地标签；</li>
+<li>命令<code>git push origin :refs/tags/&lt;tagname></code>可以删除一个远程标签。</li>
+</ul>
+<h4 id=获取今天的日志>获取今天的日志</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git log --since<span class=o>=</span><span class=s2>&#34;6am&#34;</span>
+</code></pre></div><h3 id=错误记录>错误记录</h3>
+<h4 id=pull-或-merge-时错误>pull 或 merge 时错误</h4>
+<p>fatal: refusing to merge unrelated histories</p>
+<p>解决方案：
+在你操作命令后面加&ndash;allow-unrelated-histories
+eg:
+git merge master &ndash;allow-unrelated-histories
+git pull origin master &ndash;allow-unrelated-histories</p>
+<h4 id=git如何忽略已经提交的文件-gitignore文件无效>git如何忽略已经提交的文件 (.gitignore文件无效)</h4>
+<p>解决方案：</p>
+<ol>
+<li><code>git rm -r --cached 要忽略的文件</code> (如: <code>git rm -r --cached build/*</code>, 如修改列表中的内容全部是不需要的, 那么你可以使用最最简单的命令搞定<code>git rm -r --cached .</code>)</li>
+<li><code>git add .</code></li>
+<li><code>git commit -m " commet for commit ....."</code></li>
+<li><code>git push</code></li>
+</ol>
+<h4 id=文件名大小写问题>文件名大小写问题</h4>
+<p>默认对大小写不敏感
+文件名相同 造成 Changes not staged for commit 错误</p>
+<p>解决方案：</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git config --global core.ignorecase <span class=nb>false</span>
+</code></pre></div><p>​</p>
+<h4 id=换行符问题>换行符问题</h4>
+<p>win上会提示CRLF will be replaced by LF</p>
+<p>解决方案：
+<a href=https://stackmirror.com/questions/5834014 target=_blank rel="noopener noreffer">https://stackmirror.com/questions/5834014</a></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git config --global core.autocrlf input
+</code></pre></div><h4 id=修改最后一次commit的message>修改最后一次commit的message</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git commit --amend
+</code></pre></div><h4 id=文件名中文-xxx-八进制中文乱码>文件名中文 \xxx 八进制中文乱码</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git config core.quotepath <span class=nb>false</span>  --global
+</code></pre></div><h4 id=删除远程分支-后还显示>删除远程分支, 后还显示</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git push origin -d 
+git remote prune origin
+</code></pre></div><h3 id=撤销>撤销</h3>
+<h4 id=场景1-未-add-但是想放弃修改>场景1 ：未 add ，但是想放弃修改</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git checkout fileName
+// or
+git checkout .
+</code></pre></div><h4 id=场景2执行了-add--但是想放弃修改>场景2：执行了 add , 但是想放弃修改</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git reset HEAD &lt;fileName&gt;
+</code></pre></div><h4 id=场景3commit-了想修改且不想产生新的提交>场景3：commit 了，想修改，且不想产生新的提交</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git add fileName 
+git commit -amend -m <span class=s1>&#39;说明&#39;</span>
+</code></pre></div><h4 id=场景4commit-了想撤销到某次-commit>场景4：commit 了，想撤销到某次 commit</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git reset <span class=o>[</span>--hard<span class=p>|</span>soft<span class=p>|</span>mixed<span class=p>|</span>merge<span class=p>|</span>keep<span class=o>]</span> <span class=o>[</span>commit<span class=p>|</span>HEAD<span class=o>]</span>
+</code></pre></div><h4 id=场景5-已经-push-了撤销制定文件到指定版本>场景5： 已经 push 了，撤销制定文件到指定版本</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1># 查看文件版本</span>
+git log &lt;filename&gt;
+git checkout &lt;commitID&gt; &lt;fileName&gt;
+</code></pre></div><h4 id=场景6-撤销最后一次提交>场景6： 撤销最后一次提交</h4>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git revert HEAD // 是反做了目标版本，产生一个新的commits
+
+git reset --hard HEAD^ // 会删除目标版本后的版本
+</code></pre></div><h3 id=学习网站>学习网站</h3>
+<p><a href=https://learngitbranching.js.org/ target=_blank rel="noopener noreffer">learngitbranching</a></p>
+<p><a href=http://marklodato.github.io/visual-git-guide/index-zh-cn.html target=_blank rel="noopener noreffer">图解git</a></p>
+<p><a href=https://githowto.com/ target=_blank rel="noopener noreffer">https://githowto.com/</a>
+​
+<a href=https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md target=_blank rel="noopener noreffer">git飞行规则</a>​</p>
+</div>
+<div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-11-04</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/git/>git</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/ class=prev rel=prev title="PHP webhook 部署码云"><i class="fas fa-angle-left fa-fw"></i>PHP webhook 部署码云</a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.89.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div class=assets><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script></div>
+<div class=pjax-assets><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{}}</script></div>
+</body>
+</html>
