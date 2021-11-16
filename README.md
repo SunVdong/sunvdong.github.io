@@ -15,4 +15,14 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
+
+```shell
+
+git clone git@github.com:SunVdong/sunvdong.github.io.git
+
+git submodule init
+git submodule update
+
+```
+
 -->
