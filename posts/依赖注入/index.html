@@ -4,21 +4,21 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <title class=pjax-title>依赖注入 - vdong.xyz</title><meta name=Description content><meta property="og:title" content="依赖注入">
-<meta property="og:description" content="​ 概述 控制反转**（Inversion of Control, IoC）**，是面向对象编程的一种设计原则，目的是降低代码耦合。常见方式有 依赖注入 （Depende">
+<meta property="og:description" content="概述 控制反转**（Inversion of Control, IoC）**，是面向对象编程的一种设计原则，目的是降低代码耦合。常见方式有 依赖注入 （Dependen">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/posts/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-04T19:11:06+08:00">
 <meta property="article:modified_time" content="2021-11-04T19:11:06+08:00">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="依赖注入">
-<meta name=twitter:description content="​ 概述 控制反转**（Inversion of Control, IoC）**，是面向对象编程的一种设计原则，目的是降低代码耦合。常见方式有 依赖注入 （Depende">
+<meta name=twitter:description content="概述 控制反转**（Inversion of Control, IoC）**，是面向对象编程的一种设计原则，目的是降低代码耦合。常见方式有 依赖注入 （Dependen">
 <meta name=application-name content="vdong.xyz">
 <meta name=apple-mobile-web-app-title content="vdong.xyz">
 <meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=/posts/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/><link rel=prev href=/posts/%E5%AE%B9%E5%99%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/><link rel=next href=/posts/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
 <noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
-<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"依赖注入","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"\/posts\/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5\/"},"genre":"posts","keywords":"设计模式","wordcount":449,"url":"\/posts\/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5\/","datePublished":"2021-11-04T19:11:06+08:00","dateModified":"2021-11-04T19:11:06+08:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"依赖注入","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"\/posts\/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5\/"},"genre":"posts","keywords":"设计模式","wordcount":448,"url":"\/posts\/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5\/","datePublished":"2021-11-04T19:11:06+08:00","dateModified":"2021-11-04T19:11:06+08:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong"},"description":""}</script></head>
 <body header-desktop header-mobile><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
 <div id=back-to-top></div>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
@@ -61,7 +61,7 @@
 <div class=post-meta-line>
 <span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>vdong</a>
 </span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%8A%80%E6%9C%AF/><i class="far fa-folder fa-fw"></i>技术</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 449 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 448 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -76,8 +76,7 @@
 <li><a href=#ioc-容器>Ioc 容器</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><p>​</p>
-<h2 id=概述>概述</h2>
+</div><div class=content id=content><h2 id=概述>概述</h2>
 <p>控制反转**（Inversion of Control, IoC）**，是面向对象编程的一种设计原则，目的是降低代码耦合。常见方式有 <strong>依赖注入 （Dependence Injection, DI）</strong> 和 <strong>依赖查找</strong> （Dependency Lookup）  。</p>
 <h2 id=技术描述>技术描述</h2>
 <p>Class A中用到了Class B的对象b，一般情况下，需要在A的代码中显式的new一个B的对象。</p>
@@ -117,7 +116,7 @@
 </div>
 </article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.89.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.89.3">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span></div>
 </div></footer></div>
 <div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
