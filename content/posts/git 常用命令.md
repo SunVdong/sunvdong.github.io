@@ -5,7 +5,7 @@ draft = false
 author = 'vdong'
 categories = ['技术'] 
 tags = ['git']
-+++​
++++
 
 ### 常用命令
 
@@ -87,7 +87,7 @@ git pull origin master --allow-unrelated-histories
 ```shell
 git config --global core.ignorecase false
 ```
-​
+
 #### 换行符问题
 win上会提示CRLF will be replaced by LF
 
