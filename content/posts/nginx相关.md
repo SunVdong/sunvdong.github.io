@@ -3,7 +3,7 @@ title = "nginx相关"
 date = 2021-11-19T22:38:35+08:00
 draft = false
 author = 'vdong'
-categories = ['技术'] 
+categories = ['技术']
 tags = ['nginx']
 +++
 ### 开启与关闭 nginx

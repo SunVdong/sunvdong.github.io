@@ -3,7 +3,7 @@ title = 'Es 安装'
 date = 2021-11-04T08:11:06+08:00
 draft = false
 author = 'vdong'
-categories = ['技术'] 
+categories = ['技术']
 tags = ['es']
 +++
 

@@ -3,7 +3,7 @@ title = 'Logstash'
 date = 2021-11-04T15:20:06+08:00
 draft = true
 author = 'vdong'
-categories = ['技术'] 
+categories = ['技术']
 tags = ['es']
 +++
 
