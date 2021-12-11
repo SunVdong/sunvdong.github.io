@@ -17,16 +17,20 @@ win10 + 小飞机 + wsl2
 
 1. WSL 中获取宿主机 IP
 
-WSL 每次启动的时候都会有不同的 IP 地址，所以并不能直接用静态的方式来设置代理。WSL2 会把 IP 写在 /etc/resolv.conf 中，因此可以用 cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }' 这条指令获得宿主机 IP 。
+WSL 每次启动的时候都会有不同的 IP 地址，所以并不能直接用静态的方式来设置代理。WSL2 会把 IP 写在 `/etc/resolv.conf` 中，因此可以用 `cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'` 这条指令获得宿主机 IP 。
 
-WSL2 自己的 IP 可以用 hostname -I | awk '{print $1}' 得到。
+WSL2 自己的 IP 可以用 `hostname -I | awk '{print $1}'` 得到。
 
 2. 设置代理
 
 有了宿主机 IP 之后，就可以通过设置环境变量的方式设置代理了。这里端口需要自己填写，而且别忘了代理软件中设置允许来自局域网的连接。
 
+```shell
 export http_proxy='http://<Windows IP>:<Port>'
 export https_proxy='http://<Windows IP>:<Port>'
+```
+
+
 这种设置方式每次重启终端都得重新设置一遍，而且 IP 还得自己手打，还是挺麻烦的，这种时候就得靠脚本了！
 
 3. 脚本实现
