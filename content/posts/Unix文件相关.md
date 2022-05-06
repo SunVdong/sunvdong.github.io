@@ -1,5 +1,5 @@
 +++
-title = 'Unix文件相关'
+title = 'Unix文件,别名等相关'
 date = 2022-05-05T11:32:14+08:00
 draft = false
 author = 'vdong'
@@ -55,7 +55,19 @@ alias ldot='ls -d .??*'
 alias del='fc -s ls=rm'
 ```
 
+## 利用历史记录
 
+```shell
+alias a=alias
+alias info='date; who'
+alias h="fc -l"
+alias r="fc -s"
+
+# 使用
+# h 显示记录
+# r #number
+# r #name old=new
+```
 
 ## 掌握磁盘空间情况
 
