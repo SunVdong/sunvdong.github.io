@@ -117,14 +117,28 @@ git remote prune origin
 
 ### 撤销
 
-#### 场景1 ：未 add ，但是想放弃修改
+#### 场景1 ：本地修改了一些文件，未 add ，但是想放弃修改
 ```shell
 git checkout fileName
 // or
 git checkout .
 ```
 
+#### 场景1.1： 本地新增了一些文件，未add，想放弃新增
+
+```shell
+# 删除文件
+rm filename
+
+# 删除新增的文件，如果文件已经已经 git add 到暂存区，并不会删除！ 
+git clean -xdf
+
+# 同上，但是还会处理文件夹
+git clean -xdff
+```
+
 #### 场景2：执行了 add , 但是想放弃修改
+
 ```shell
 git reset HEAD <fileName>
 ```
