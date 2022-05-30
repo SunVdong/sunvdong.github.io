@@ -22,7 +22,7 @@ theme = "DoIt"
     [params.page.comment]
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
-        enable = false
+        enable = true
         serverURL = "https://blog-waline-1bfao6cs1-sunvdong.vercel.app/"
         pageview = true
         comment = true
