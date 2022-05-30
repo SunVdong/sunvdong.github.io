@@ -51,3 +51,19 @@ theme = "DoIt"
   [markup.highlight]
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+
+# Waline 评论系统设置 (https://waline.js.org)
+[params.page.comment.waline]
+  enable = false
+  serverURL = "https://blog-waline-1bfao6cs1-sunvdong.vercel.app/"
+  pageview = true
+  comment = true
+  # emoji = ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  # meta = ['nick', 'mail', 'link']
+  # requiredMeta = []
+  # login = 'enable'
+  # wordLimit = 0
+  # pageSize = 10
+  # imageUploader = false
+  # highlighter = false
+  # texRenderer = false
