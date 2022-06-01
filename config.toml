@@ -103,3 +103,5 @@ theme = "DoIt"
     noClasses = false
 
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
