@@ -66,6 +66,9 @@ theme = "DoIt"
       useExtendedSearch = false
       ignoreFieldNorm = false
 
+  [params.social]
+    RSS = true
+
 [menu]
   [[menu.main]]
     identifier = "posts"
