@@ -8,6 +8,7 @@ languageCode = "zh-CN"
 hasCJKLanguage = true
 # 是否使用 emoji 代码
 enableEmoji = true
+enableRobotsTXT = true # 允许爬虫抓取到搜索引擎，建议 true
 # 网站标题
 title = "vdong.xyz"
 
