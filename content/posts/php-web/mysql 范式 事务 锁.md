@@ -1,5 +1,5 @@
 +++
-title = "Mysql"
+title = "Mysql 范式 事务 锁"
 date = 2021-11-04T19:11:06+08:00
 draft = false
 author = 'vdong'
