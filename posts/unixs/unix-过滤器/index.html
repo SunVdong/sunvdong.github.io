@@ -1,0 +1,308 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>Unix 过滤器 - vdong.xyz</title><meta name=Description content><meta property="og:title" content="Unix 过滤器"><meta property="og:description" content="过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。 常用过滤器 catcat name.txt mobile.txt > data # 合并文件 # -n 显示行号 split ：拆分文件split [-d] [-a num] [-l lines] [file [prefix]] split data #"><meta property="og:type" content="article"><meta property="og:url" content="https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-11-04T19:11:06+08:00"><meta property="article:modified_time" content="2021-11-04T19:11:06+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Unix 过滤器"><meta name=twitter:description content="过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。 常用过滤器 catcat name.txt mobile.txt > data # 合并文件 # -n 显示行号 split ：拆分文件split [-d] [-a num] [-l lines] [file [prefix]] split data #"><meta name=application-name content="vdong.xyz"><meta name=apple-mobile-web-app-title content="vdong.xyz"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/><link rel=prev href=https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/><link rel=next href=https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Unix 过滤器","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.vdong.xyz\/posts\/unixs\/unix-%E8%BF%87%E6%BB%A4%E5%99%A8\/"},"genre":"posts","keywords":"unix, linux","wordcount":3002,"url":"https:\/\/www.vdong.xyz\/posts\/unixs\/unix-%E8%BF%87%E6%BB%A4%E5%99%A8\/","datePublished":"2021-11-04T19:11:06+08:00","dateModified":"2021-11-04T19:11:06+08:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark")}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"||""==="black"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=vdong.xyz>vdong.xyz</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=vdong.xyz>vdong.xyz</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Unix 过滤器</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>vdong</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%8A%80%E6%9C%AF/><i class="far fa-folder fa-fw"></i>技术</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3002 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/ class=leancloud_visitors data-flag-title="Unix 过滤器">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count waline-pageview-count" data-path=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/></span>&nbsp;次阅读
+</span>&nbsp;<span id=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/ class=comment_count data-flag-title="Unix 过滤器">
+<i class="far fa-comments fa-fw"></i>&nbsp;<span class=waline-comment-count id=waline-comment-count data-path=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/></span>&nbsp;条评论
+</span>&nbsp;</div></div><div class=content id=content><p>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。</p><p>常用过滤器</p><h2 id=cat class=headerLink><a href=#cat class=header-mark></a>cat</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>cat name.txt mobile.txt &gt; data <span class=c1># 合并文件</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -n 显示行号</span>
+</span></span></code></pre></div><h2 id=split-拆分文件 class=headerLink><a href=#split-%e6%8b%86%e5%88%86%e6%96%87%e4%bb%b6 class=header-mark></a>split ：拆分文件</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>split <span class=o>[</span>-d<span class=o>]</span> <span class=o>[</span>-a num<span class=o>]</span> <span class=o>[</span>-l lines<span class=o>]</span> <span class=o>[</span>file <span class=o>[</span>prefix<span class=o>]]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>split data <span class=c1># 默认每个文件1000行 命名 xaa xab ...</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -l 100 : 指定每个文件行数</span>
+</span></span><span class=line><span class=cl><span class=c1># -d ：改命名为 00 01 02</span>
+</span></span><span class=line><span class=cl><span class=c1># -a 2 ： 命名改为 3 位 aaa aab / 001 002</span>
+</span></span></code></pre></div><h2 id=tac反转文本行的顺序 class=headerLink><a href=#tac%e5%8f%8d%e8%bd%ac%e6%96%87%e6%9c%ac%e8%a1%8c%e7%9a%84%e9%a1%ba%e5%ba%8f class=header-mark></a>tac：反转文本行的顺序</h2><p>和 cat 类似， 写入标准输出前将文本行反转，适用于日志文件等。</p><h2 id=rev反转字符 class=headerLink><a href=#rev%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6 class=header-mark></a>rev：反转字符</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>rev data
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># data 内容： </span>
+</span></span><span class=line><span class=cl><span class=c1># 1234</span>
+</span></span><span class=line><span class=cl><span class=c1># abcd</span>
+</span></span><span class=line><span class=cl><span class=c1># 结果如下：</span>
+</span></span><span class=line><span class=cl><span class=c1># dcba</span>
+</span></span><span class=line><span class=cl><span class=c1># 4321</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>rev data <span class=p>|</span> tac <span class=c1># 倒背如流</span>
+</span></span></code></pre></div><h2 id=head--tail-从数据开头和末尾选择数据行 class=headerLink><a href=#head--tail-%e4%bb%8e%e6%95%b0%e6%8d%ae%e5%bc%80%e5%a4%b4%e5%92%8c%e6%9c%ab%e5%b0%be%e9%80%89%e6%8b%a9%e6%95%b0%e6%8d%ae%e8%a1%8c class=header-mark></a>head / tail ：从数据开头和末尾选择数据行</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>head <span class=o>[</span>-n lines<span class=o>]</span>
+</span></span><span class=line><span class=cl>tail <span class=o>[</span>-n lines<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># 默认 10 行数据</span>
+</span></span></code></pre></div><h2 id=列操作 class=headerLink><a href=#%e5%88%97%e6%93%8d%e4%bd%9c class=header-mark></a>列操作</h2><h3 id=colrm-删除数据列 class=headerLink><a href=#colrm-%e5%88%a0%e9%99%a4%e6%95%b0%e6%8d%ae%e5%88%97 class=header-mark></a>colrm ：删除数据列</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>colrm <span class=o>[</span>startcol <span class=o>[</span>endcol<span class=o>]]</span>
+</span></span><span class=line><span class=cl><span class=c1># 列编号 从 1 开始</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 把 students_old 文件删除 14 列到 20 列后 保存到 student_new 文件中  </span>
+</span></span><span class=line><span class=cl>colrm <span class=m>14</span> <span class=m>20</span> &lt; students_old &gt; students_new
+</span></span></code></pre></div><h3 id=cut--抽取数据列-与-colrm-相反 class=headerLink><a href=#cut--%e6%8a%bd%e5%8f%96%e6%95%b0%e6%8d%ae%e5%88%97-%e4%b8%8e-colrm-%e7%9b%b8%e5%8f%8d class=header-mark></a>cut ： 抽取数据列 （与 colrm 相反）</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>cut -c list <span class=o>[</span>file ...<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 抽取data中的 14-30 和 42-49 列</span>
+</span></span><span class=line><span class=cl>cut -c 14-30,42-49 data 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 结合其他命令</span>
+</span></span><span class=line><span class=cl>who <span class=p>|</span> cut -c 1-8 <span class=p>|</span> sort <span class=p>|</span> uniq -c
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 定界符分割，如下形式的数据也可以抽取</span>
+</span></span><span class=line><span class=cl>张三:男:23岁
+</span></span><span class=line><span class=cl>王麻子:女:105岁
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 抽取按照 &#39;:&#39; 分割后的， 第 1 和第 3 列数据</span>
+</span></span><span class=line><span class=cl>cut -f 1,3 -d <span class=s1>&#39;:&#39;</span> data <span class=c1># 可以删除选项的空格 如 cut -f1,3 -d&#39;:&#39; data</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># ps 如果一行没有定界符，默认返回整行，如果想抛弃这样的行，可以使用 -s</span>
+</span></span></code></pre></div><h3 id=paste-组合数据列 class=headerLink><a href=#paste-%e7%bb%84%e5%90%88%e6%95%b0%e6%8d%ae%e5%88%97 class=header-mark></a>paste 组合数据列</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>paste <span class=o>[</span>-d char...<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 合并三个文件</span>
+</span></span><span class=line><span class=cl>paste file1 file2 file3
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 使用定界符 | </span>
+</span></span><span class=line><span class=cl>paste -d <span class=s1>&#39;|&#39;</span> file1 file2
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 定界符轮换使用</span>
+</span></span><span class=line><span class=cl>paste -d <span class=s1>&#39;|&amp;&#39;</span> file1 file2
+</span></span></code></pre></div><h2 id=比较文件 class=headerLink><a href=#%e6%af%94%e8%be%83%e6%96%87%e4%bb%b6 class=header-mark></a>比较文件</h2><h3 id=cmp-逐字节比较 class=headerLink><a href=#cmp-%e9%80%90%e5%ad%97%e8%8a%82%e6%af%94%e8%be%83 class=header-mark></a>cmp ：逐字节比较</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>cmp file1 file2
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 相同的话就 不做任何处理</span>
+</span></span></code></pre></div><h3 id=comm--比较有序文本文件 class=headerLink><a href=#comm--%e6%af%94%e8%be%83%e6%9c%89%e5%ba%8f%e6%96%87%e6%9c%ac%e6%96%87%e4%bb%b6 class=header-mark></a>comm ： 比较有序文本文件</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>comm <span class=o>[</span>-123<span class=o>]</span> file1 file2
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 第一列 仅输出第一个文件有的行</span>
+</span></span><span class=line><span class=cl><span class=c1># 第二列 仅输出第二个文件有的行</span>
+</span></span><span class=line><span class=cl><span class=c1># 第三列 输出两个文件都有的行</span>
+</span></span><span class=line><span class=cl><span class=c1># -1 -2 -3 表示抑制某一列的输入</span>
+</span></span></code></pre></div><h3 id=diff--sdiff-比较无序文件 class=headerLink><a href=#diff--sdiff-%e6%af%94%e8%be%83%e6%97%a0%e5%ba%8f%e6%96%87%e4%bb%b6 class=header-mark></a>diff  / sdiff： 比较无序文件</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>diff file1 file2
+</span></span><span class=line><span class=cl><span class=c1># 默认 有指示符 （c, d,  a）和行号构成</span>
+</span></span><span class=line><span class=cl><span class=c1># c 代表改变 d 代表删除 a 代表增加</span>
+</span></span><span class=line><span class=cl><span class=c1># 中间 ------- 分割</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 文件2 新增两行</span>
+</span></span><span class=line><span class=cl>0a1,2
+</span></span><span class=line><span class=cl>&gt; 沁园春·雪
+</span></span><span class=line><span class=cl>&gt;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 第5 第7行不一致</span>
+</span></span><span class=line><span class=cl>5c7
+</span></span><span class=line><span class=cl>&lt; 须晴日5，看红装素裹，分外妖娆6。
+</span></span><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>&gt; 须晴日，看红装素裹，分外妖娆。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 文件2 删除了一行</span>
+</span></span><span class=line><span class=cl>10d11
+</span></span><span class=line><span class=cl>&lt; 俱往矣，数风流人物，还看今朝。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 选项</span>
+</span></span><span class=line><span class=cl><span class=c1># -c 和 -u 可以显示 2 行上下文信息 </span>
+</span></span><span class=line><span class=cl><span class=c1># -C3 -U3 可以显示 3 行上下文信息</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 并列比较 等价的</span>
+</span></span><span class=line><span class=cl> diff -y file1 file2 
+</span></span><span class=line><span class=cl> sdiff file1 file2
+</span></span><span class=line><span class=cl> 
+</span></span><span class=line><span class=cl> <span class=c1># 选项 </span>
+</span></span><span class=line><span class=cl> -l 相同的行只显示左侧的
+</span></span><span class=line><span class=cl> -s 不显示相同的行
+</span></span><span class=line><span class=cl> -w <span class=m>50</span> 指定列宽度
+</span></span></code></pre></div><h2 id=统计和格式化 class=headerLink><a href=#%e7%bb%9f%e8%ae%a1%e5%92%8c%e6%a0%bc%e5%bc%8f%e5%8c%96 class=header-mark></a>统计和格式化</h2><h3 id=nl-创建行号 class=headerLink><a href=#nl-%e5%88%9b%e5%bb%ba%e8%a1%8c%e5%8f%b7 class=header-mark></a>nl ：创建行号</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>nl <span class=o>[</span>-v start<span class=o>]</span> <span class=o>[</span>-i increment<span class=o>]</span> <span class=o>[</span>-b a<span class=o>]</span> <span class=o>[</span>-n ln<span class=p>|</span>rn<span class=p>|</span>rz<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># start 起始号</span>
+</span></span><span class=line><span class=cl><span class=c1># increment 增量</span>
+</span></span><span class=line><span class=cl><span class=c1># 默认 nl 不对空行编号， -b a （all lines 所有行）</span>
+</span></span><span class=line><span class=cl><span class=c1># ln=左对齐，没有前导 0</span>
+</span></span><span class=line><span class=cl><span class=c1># rn=右对齐，没有前导 0</span>
+</span></span><span class=line><span class=cl><span class=c1># rz=右对齐，有前导 0</span>
+</span></span></code></pre></div><h3 id=wc--单词统计 class=headerLink><a href=#wc--%e5%8d%95%e8%af%8d%e7%bb%9f%e8%ae%a1 class=header-mark></a>wc : 单词统计</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>wc <span class=o>[</span>-clLw<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># wc 默认输出三个数字：行数（line），单词数（word），字符数（char），LWC （look at Women Carefully）</span>
+</span></span><span class=line><span class=cl><span class=c1># -clw 显示指定列 </span>
+</span></span><span class=line><span class=cl><span class=c1># -L 显示最长的行</span>
+</span></span></code></pre></div><h3 id=expand-将制表符转换成空格 class=headerLink><a href=#expand-%e5%b0%86%e5%88%b6%e8%a1%a8%e7%ac%a6%e8%bd%ac%e6%8d%a2%e6%88%90%e7%a9%ba%e6%a0%bc class=header-mark></a>expand: 将制表符转换成空格</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>expand <span class=o>[</span>-i<span class=o>]</span> <span class=o>[</span>-t size <span class=p>|</span> -t list<span class=o>]</span> <span class=o>[</span>file...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># -i 只转换开头的制表符</span>
+</span></span><span class=line><span class=cl><span class=c1># -t size 默认size等于8 ，每8个位置一个制表符</span>
+</span></span><span class=line><span class=cl><span class=c1># -t list 指定制表符位于特定的位置，0指第一个位置，如 expand -t 7,15,21 data</span>
+</span></span></code></pre></div><h3 id=unexpand--将空格转换成制表符 class=headerLink><a href=#unexpand--%e5%b0%86%e7%a9%ba%e6%a0%bc%e8%bd%ac%e6%8d%a2%e6%88%90%e5%88%b6%e8%a1%a8%e7%ac%a6 class=header-mark></a>unexpand : 将空格转换成制表符</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>unexpand <span class=o>[</span>-a<span class=o>]</span> <span class=o>[</span>-t size <span class=p>|</span> -t list<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># 默认只替换开头的空格</span>
+</span></span><span class=line><span class=cl><span class=c1># -a 标识替换所有空格</span>
+</span></span><span class=line><span class=cl><span class=c1># -t 的参数和 expand 一致</span>
+</span></span></code></pre></div><h3 id=fold-长行分成短行 class=headerLink><a href=#fold-%e9%95%bf%e8%a1%8c%e5%88%86%e6%88%90%e7%9f%ad%e8%a1%8c class=header-mark></a>fold: 长行分成短行</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>fold <span class=o>[</span>-s<span class=o>]</span> <span class=o>[</span>-w width<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># 默认 80 字符每行，</span>
+</span></span><span class=line><span class=cl><span class=c1># -w width 可以重新指定宽度</span>
+</span></span><span class=line><span class=cl><span class=c1># -s 不从中间分割单词</span>
+</span></span></code></pre></div><h3 id=fmt将段落中的各行连接起来 class=headerLink><a href=#fmt%e5%b0%86%e6%ae%b5%e8%90%bd%e4%b8%ad%e7%9a%84%e5%90%84%e8%a1%8c%e8%bf%9e%e6%8e%a5%e8%b5%b7%e6%9d%a5 class=header-mark></a>fmt：将段落中的各行连接起来</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>fmt <span class=o>[</span>-su<span class=o>]</span> <span class=o>[</span>-w width<span class=o>]</span> <span class=o>[</span>file...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># -w width 行宽</span>
+</span></span><span class=line><span class=cl><span class=c1># -u 统一间距，单词间有多个空格，减少，只保留一个</span>
+</span></span><span class=line><span class=cl><span class=c1># -s 仅拆分长行，而不连接短行</span>
+</span></span></code></pre></div><h2 id=选取排列组合与变换 class=headerLink><a href=#%e9%80%89%e5%8f%96%e6%8e%92%e5%88%97%e7%bb%84%e5%90%88%e4%b8%8e%e5%8f%98%e6%8d%a2 class=header-mark></a>选取、排列、组合与变换</h2><h3 id=grep选取包含特定模式的行 class=headerLink><a href=#grep%e9%80%89%e5%8f%96%e5%8c%85%e5%90%ab%e7%89%b9%e5%ae%9a%e6%a8%a1%e5%bc%8f%e7%9a%84%e8%a1%8c class=header-mark></a>grep：选取包含特定模式的行</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>grep <span class=o>[</span>-cilLnrsvwx<span class=o>]</span> pattern <span class=o>[</span>file...<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -c 统计数量, ls -F 会在子目录会添加/字符，以下可以统计反斜线的数量 即子目录的数量</span>
+</span></span><span class=line><span class=cl>ls -F /etc <span class=p>|</span> grep -c <span class=s2>&#34;/&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 统计总数</span>
+</span></span><span class=line><span class=cl>ls /etc <span class=p>|</span> wc -l
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -i 忽略大小写</span>
+</span></span><span class=line><span class=cl><span class=c1># -n 显示行号</span>
+</span></span><span class=line><span class=cl>grep -in pizza food-list.md <span class=c1># 忽略大小写查找出含 pizza 的行并显示行号</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -l 不显示包含的行，而显示包含的文件名 查找哪个班有小明同学</span>
+</span></span><span class=line><span class=cl>grep -il xiaoming class1_names class2_names class3_names <span class=c1># output class1_names</span>
+</span></span><span class=line><span class=cl><span class=c1># -L 与 -l相反，显示不包含的文件</span>
+</span></span><span class=line><span class=cl>grep -iL xiaoming class1_names class2_names class3_names <span class=c1># output class2_names class3_names</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -w 单词完整匹配，</span>
+</span></span><span class=line><span class=cl>grep now data <span class=c1># 会匹配 now，也会匹配 know </span>
+</span></span><span class=line><span class=cl>grep -w now <span class=c1># 只匹配 now </span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -v 取反，选取不包含的模式的所有行</span>
+</span></span><span class=line><span class=cl>grep -v <span class=k>done</span> todo_list <span class=c1># 列出所有未完成的项目</span>
+</span></span><span class=line><span class=cl>grep -cv <span class=k>done</span> todo_list <span class=c1># 统计为完成的项目数目</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -x 查找占用整行的</span>
+</span></span><span class=line><span class=cl>grep -x <span class=s2>&#34;hello world&#34;</span> data <span class=c1># 返回 由 &#39;hello world&#39; 构成的行</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -r 递归搜索目录树</span>
+</span></span><span class=line><span class=cl>grep -r initialize admin <span class=c1># 搜索admin目录及子目录文件中是否有单词 “inttialize” </span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -s 抑制错误显示</span>
+</span></span></code></pre></div><h3 id=look查找以特定模式开头的所有单词 class=headerLink><a href=#look%e6%9f%a5%e6%89%be%e4%bb%a5%e7%89%b9%e5%ae%9a%e6%a8%a1%e5%bc%8f%e5%bc%80%e5%a4%b4%e7%9a%84%e6%89%80%e6%9c%89%e5%8d%95%e8%af%8d class=header-mark></a>look：查找以特定模式开头的所有单词</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>look <span class=o>[</span>-df<span class=o>]</span> pattern file
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># look 搜索以字母顺序排列的数据，并以特定的模式开头的行</span>
+</span></span><span class=line><span class=cl><span class=c1># 因为 look 使用二分法，搜索数据，要求同时获取所有数据，故只能再管道的开头使用数据，不能再管道中间使用</span>
+</span></span><span class=line><span class=cl><span class=c1># -d 只考虑字母和数字</span>
+</span></span><span class=line><span class=cl><span class=c1># -f 忽略大小写</span>
+</span></span></code></pre></div><h3 id=sort--排序数据 class=headerLink><a href=#sort--%e6%8e%92%e5%ba%8f%e6%95%b0%e6%8d%ae class=header-mark></a>sort : 排序数据</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>sort <span class=o>[</span>-dfnru<span class=o>]</span> <span class=o>[</span>-o outfile<span class=o>]</span> <span class=o>[</span>infile...<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># 排序数据和查看数据是否排序</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 排序后保存到原文件时，这是错误的 重定向输出时， shell 运行命令前会清空输出的文件，（除非设置了变量 noclobber ）</span>
+</span></span><span class=line><span class=cl>sort names &gt; names <span class=c1># wrong</span>
+</span></span><span class=line><span class=cl>sort -o names names <span class=c1># right</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -d 只查看字母、数字和空白符，如果数据中有妨碍排序的标点时，使用此选项</span>
+</span></span><span class=line><span class=cl><span class=c1># -f 忽略大小写</span>
+</span></span><span class=line><span class=cl><span class=c1># -n 识别开头的数字，按数字大小排序</span>
+</span></span><span class=line><span class=cl><span class=c1># -r 倒序</span>
+</span></span><span class=line><span class=cl><span class=c1># -u 唯一，相同的行，只留下一行</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sort -c<span class=o>[</span>u<span class=o>]</span> <span class=o>[</span>file<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=c1># -c 检查数据是否有序，无序输出，开始无序的行，有序无消息（没有消息就好的消息）</span>
+</span></span><span class=line><span class=cl><span class=c1># -u 配合-c使用，可以确保数据是有序， 唯一</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 排序规则：取决于你系统的字符组织方式</span>
+</span></span><span class=line><span class=cl><span class=c1># 早期使用 ASCII 顺序， （SNUL） 空格 数字 大写字母 小写字母</span>
+</span></span><span class=line><span class=cl><span class=c1># 现在 使用环境变量 LC_COLLATE 指定使用哪一种排序  c 是 ASCII </span>
+</span></span><span class=line><span class=cl>locale <span class=c1># 可以查看所有区域设置的当前值</span>
+</span></span><span class=line><span class=cl>locale -a <span class=c1># 查看自己的系统支持哪些区域设置</span>
+</span></span></code></pre></div><h3 id=uniq-查找重复行 class=headerLink><a href=#uniq-%e6%9f%a5%e6%89%be%e9%87%8d%e5%a4%8d%e8%a1%8c class=header-mark></a>uniq:  查找重复行</h3><p>uniq 可以做四个不同的任务</p><ol><li>消除重复行 <code>uniq</code></li><li>选取重复行 <code>uniq -d</code></li><li>选取唯一行 <code>uniq -u</code></li><li>统计重复行数量 <code>uniq -c</code></li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>uniq <span class=o>[</span>-cdu<span class=o>]</span> <span class=o>[</span>infile<span class=o>]</span> <span class=o>[</span>outfile<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 输入必须是有序的，即重复行是连续的</span>
+</span></span><span class=line><span class=cl><span class=c1># -d 只查看重复行</span>
+</span></span><span class=line><span class=cl><span class=c1># -u 只查看唯一行</span>
+</span></span><span class=line><span class=cl><span class=c1># -c 统计唯一行的数量</span>
+</span></span></code></pre></div><h3 id=jion-基于特定字段的值将两个有序文件组合在一起 class=headerLink><a href=#jion-%e5%9f%ba%e4%ba%8e%e7%89%b9%e5%ae%9a%e5%ad%97%e6%ae%b5%e7%9a%84%e5%80%bc%e5%b0%86%e4%b8%a4%e4%b8%aa%e6%9c%89%e5%ba%8f%e6%96%87%e4%bb%b6%e7%bb%84%e5%90%88%e5%9c%a8%e4%b8%80%e8%b5%b7 class=header-mark></a>jion: 基于特定字段的值将两个有序文件组合在一起</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>join <span class=o>[</span>-i<span class=o>]</span> <span class=o>[</span>-a1<span class=p>|</span>-v1<span class=o>]</span> <span class=o>[</span>-a2<span class=p>|</span>v2<span class=o>]</span> <span class=o>[</span>-1 field1<span class=o>]</span> <span class=o>[</span>-2 field2<span class=o>]</span> file1 file2
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># eg: </span>
+</span></span><span class=line><span class=cl>cat file1
+</span></span><span class=line><span class=cl><span class=m>111</span> 张三
+</span></span><span class=line><span class=cl><span class=m>222</span> 李四
+</span></span><span class=line><span class=cl><span class=m>333</span> 王五
+</span></span><span class=line><span class=cl><span class=m>999</span> 孙悟空 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>cat file2 
+</span></span><span class=line><span class=cl><span class=m>111</span> <span class=m>10086</span>
+</span></span><span class=line><span class=cl><span class=m>222</span> <span class=m>10010</span>
+</span></span><span class=line><span class=cl><span class=m>333</span> <span class=m>110</span>
+</span></span><span class=line><span class=cl><span class=m>444</span> <span class=m>120</span>
+</span></span><span class=line><span class=cl><span class=m>555</span> <span class=m>119</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># join file1 file2</span>
+</span></span><span class=line><span class=cl><span class=m>111</span> 张三 <span class=m>10086</span>
+</span></span><span class=line><span class=cl><span class=m>222</span> 李四 <span class=m>10010</span>
+</span></span><span class=line><span class=cl><span class=m>333</span> 王五 <span class=m>110</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># join -a1 file1 file2</span>
+</span></span><span class=line><span class=cl><span class=m>111</span> 张三 <span class=m>10086</span>
+</span></span><span class=line><span class=cl><span class=m>222</span> 李四 <span class=m>10010</span>
+</span></span><span class=line><span class=cl><span class=m>333</span> 王五 <span class=m>110</span>
+</span></span><span class=line><span class=cl><span class=m>999</span> 孙悟空
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># join -v1 file1 file2</span>
+</span></span><span class=line><span class=cl><span class=m>999</span> 孙悟空
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 如上， join 关联类似于关系数据库的的join，</span>
+</span></span><span class=line><span class=cl><span class=c1># 没-a选项时 内关联 inner join ，只输出关联字段匹配的行 </span>
+</span></span><span class=line><span class=cl><span class=c1># -a1 -a2 时还输出关联字段不匹配的行</span>
+</span></span><span class=line><span class=cl><span class=c1># -v1 -v2 只查看不匹配的行</span>
+</span></span><span class=line><span class=cl><span class=c1># -i 忽略大小写</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># join 默认使用的是 文件的第一个字段 可以使用 -1 -2 指定不同的字段</span>
+</span></span><span class=line><span class=cl><span class=c1># 特别注意： join 使用的有序数据</span>
+</span></span></code></pre></div><h3 id=tsort-以偏序创建全序 class=headerLink><a href=#tsort-%e4%bb%a5%e5%81%8f%e5%ba%8f%e5%88%9b%e5%bb%ba%e5%85%a8%e5%ba%8f class=header-mark></a>tsort: 以偏序创建全序</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>tsort <span class=o>[</span>file<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 偏序：只指定了一部分活动的顺序</span>
+</span></span><span class=line><span class=cl><span class=c1># file 中的每一行必须包含一堆空白符分割的字符串 每个字符串代表一个偏序</span>
+</span></span><span class=line><span class=cl><span class=c1># 最终结果生成一个完整序列</span>
+</span></span></code></pre></div><h3 id=strings-二进制文件中搜索 class=headerLink><a href=#strings-%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%87%e4%bb%b6%e4%b8%ad%e6%90%9c%e7%b4%a2 class=header-mark></a>strings: 二进制文件中搜索</h3><h3 id=tr-转换字符 class=headerLink><a href=#tr-%e8%bd%ac%e6%8d%a2%e5%ad%97%e7%ac%a6 class=header-mark></a>tr: 转换字符</h3><ol><li>转换字符 ：小写转大写，制表符转空格</li><li>挤压字符：连续数字 替换为 &ldquo;X&rdquo; ,多个空格转换为一个</li><li>删除指定字符：删除所有指标符</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>tr <span class=o>[</span>-cds<span class=o>]</span> <span class=o>[</span>set1 <span class=o>[</span>set2<span class=o>]]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 只能从标准输入接收数据，不能从文件读取，如果要从文件读取请重定向</span>
+</span></span><span class=line><span class=cl>tr a A &lt; old &gt; new <span class=c1># old 文件中的 a 替换成 A 了, 并写入 new 文件</span>
+</span></span><span class=line><span class=cl>tr abc ABC &lt; old &gt; new <span class=c1># abc 替换 ABC</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 以下情况，第二组最后一个字符是重复的，等价</span>
+</span></span><span class=line><span class=cl>tr abcd Ax 
+</span></span><span class=line><span class=cl>tr abcd Axxxx 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 特殊字符需要引用或转义 </span>
+</span></span><span class=line><span class=cl>tr <span class=s1>&#39;:;?&#39;</span> <span class=se>\.</span> <span class=c1># :;? 均替换成了 .</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 支持范围</span>
+</span></span><span class=line><span class=cl>tr A-Z a-z 
+</span></span><span class=line><span class=cl>tr 0-9 A-J
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 缩写 (预定义字符)</span>
+</span></span><span class=line><span class=cl>tr <span class=o>[</span>:upper:<span class=o>]</span> <span class=o>[</span>:lower:<span class=o>]</span> <span class=c1># 大写转小写</span>
+</span></span><span class=line><span class=cl>tr <span class=o>[</span>:diggit:<span class=o>]</span> A-J 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 不可显示的字符 (转义 or ASCII码的值)</span>
+</span></span><span class=line><span class=cl>tr <span class=s1>&#39;\r&#39;</span> <span class=s1>&#39;\n&#39;</span> &lt; macfile &gt; unixfile <span class=c1># 回车符转换为换行符</span>
+</span></span><span class=line><span class=cl>tr <span class=s1>&#39;\015&#39;</span> <span class=s1>&#39;\012&#39;</span> &lt; macfile &gt; unixfile
+</span></span><span class=line><span class=cl>tr <span class=s1>&#39;\t&#39;</span> <span class=s1>&#39; &#39;</span> <span class=c1># 制表符转换为空格</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># ********* 挤压 *********</span>
+</span></span><span class=line><span class=cl>tr -s <span class=o>[</span>:digit:<span class=o>]</span> X <span class=c1># 数字转换成 x</span>
+</span></span><span class=line><span class=cl>tr -s <span class=s1>&#39; &#39;</span> <span class=s1>&#39; &#39;</span> <span class=c1># 挤压空格</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># **** 删除 ****</span>
+</span></span><span class=line><span class=cl>tr -d <span class=s1>&#39;()&#39;</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># **** 补集 *****</span>
+</span></span><span class=line><span class=cl>tr -c <span class=s1>&#39; \n&#39;</span> x &lt; olddata &gt; newdata <span class=c1># hello world ==&gt; xxxxx xxxxx</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>eg: 统计两个文件的单词数
+</span></span><span class=line><span class=cl>cat greek roman <span class=p>|</span> tr -cs <span class=o>[</span>:alpha:<span class=o>]</span><span class=se>\&#39;</span> <span class=s2>&#34;\n&#34;</span> <span class=p>|</span> sort -fu <span class=p>|</span> wc -l
+</span></span></code></pre></div><h3 id=sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器 class=headerLink><a href=#sed-%e9%9d%9e%e4%ba%a4%e4%ba%92%e5%bc%8f%e6%96%87%e6%9c%ac%e7%bc%96%e8%be%91%e6%8f%90%e5%89%8d%e8%ae%be%e8%ae%a1%e5%91%bd%e4%bb%a4%e5%91%bd%e4%bb%a4%e5%8f%91%e7%bb%99%e7%a8%8b%e5%ba%8f%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%b5%81%e7%bc%96%e8%be%91%e5%99%a8 class=header-mark></a>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>sed <span class=o>[</span>-i<span class=o>]</span> <span class=nb>command</span> <span class=p>|</span> -e <span class=nb>command</span> ... <span class=o>[</span>f<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-i <span class=c1># 直接修改原文件</span>
+</span></span><span class=line><span class=cl><span class=c1># 命令 </span>
+</span></span><span class=line><span class=cl><span class=c1># a 行后插入， 多行的话 末尾&#34;\&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># i 行前插入， 多行 &#34;\&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># c 替换 </span>
+</span></span><span class=line><span class=cl><span class=c1># d 删除</span>
+</span></span><span class=line><span class=cl><span class=c1># p 打印 </span>
+</span></span><span class=line><span class=cl><span class=c1># s 替换 可用正则表达式</span>
+</span></span><span class=line><span class=cl>   
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看某一行</span>
+</span></span><span class=line><span class=cl>sed -n <span class=s1>&#39;1003,1p&#39;</span> data.txt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 修改某一行</span>
+</span></span><span class=line><span class=cl>sed -i <span class=s1>&#39;1003c new line content&#39;</span> data.txt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 将 11 修改为 12，g 代表一行的所有 </span>
+</span></span><span class=line><span class=cl>sed  -i <span class=s1>&#39;s/11/12/g&#39;</span>  xxx.log
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sed  -i <span class=s1>&#39;s/11/12/g&#39;</span> xxx.log <span class=c1># 修改每行第一个 11</span>
+</span></span></code></pre></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-11-04</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/unix/>unix</a>,&nbsp;<a href=/tags/linux/>linux</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/ class=prev rel=prev title="Vi 命令一览"><i class="fas fa-angle-left fa-fw"></i>Vi 命令一览</a>
+<a href=/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/ class=next rel=next title="PHP 垃圾回收机制">PHP 垃圾回收机制<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=waline class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.102.3">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script></div><div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{waline:{comment:!0,copyright:!0,dark:"body[theme='dark'], body[theme='black']",el:"#waline",emoji:["https://i.whaoot.com/emojis/qq/"],lang:"zh-cn",pageview:!0,serverURL:"https://blog-waline-1bfao6cs1-sunvdong.vercel.app/"}},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1}}</script><script type=text/javascript src=/lib/waline/waline.js defer></script><script type=text/javascript src=/js/waline.min.js defer></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><link rel=stylesheet href=/lib/waline/waline.min.css></div></body></html>
