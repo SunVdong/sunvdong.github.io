@@ -1,3 +1,9 @@
+User-agent: *
+
+Disallow: /images/
+Disallow: /js/
+Disallow: /css/
+
 User-agent: MJ12bot
 Disallow: /
 
@@ -54,8 +60,5 @@ Disallow: /
 
 User-agent: ZoominfoBot
 Disallow: /
-
-User-agent: *
-Allow: /
 
 Sitemap: https://www.vdong.xyz/sitemap.xml
