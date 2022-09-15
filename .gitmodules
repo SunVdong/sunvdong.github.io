@@ -2,3 +2,4 @@
 	path = themes/DoIt
 	url = https://github.com/HEIGE-PCloud/DoIt.git
 	ignore = dirty
+	branch = main
