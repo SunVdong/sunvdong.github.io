@@ -9,17 +9,13 @@ tags = ['unix', 'linux']
 
 Linux 直接发送UDP包
 
-
 如果往本地UDP端口發送數據，那麼可以使用以下命令：
-
 
 ```bash
 echo "hello" > /dev/udp/192.168.1.81/5060
 ```
-​
 
 意思是往本地192.168.1.81的5060端口發送數據包hello。
-
 
 如果往遠程UDP端口發送數據，那麼可以使用以下命令：
 
@@ -27,8 +23,13 @@ echo "hello" > /dev/udp/192.168.1.81/5060
 echo "hello" | socat - udp4-datagram:192.168.1.80:5060
 ```
 
-
 意思是往遠程192.168.1.80的5060端口發送數據包 hello 。
-​
+
+远程可以监听对应端口查看：
+
+```bash
+# -l listen -p source-port -4 ipv4 -u udp
+nc -l -p 5060 -4 -u
+```
 
 ps: 先安装 socat ，centos: `yum install -y socat`​
