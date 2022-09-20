@@ -29,7 +29,7 @@ theme = "DoIt"
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
         enable = true
-        serverURL = "https://blog-waline-1bfao6cs1-sunvdong.vercel.app/"
+        serverURL = "https://comment.vdong.xyz/"
         pageview = true
         comment = true
         emoji = ['https://i.whaoot.com/emojis/qq/']
