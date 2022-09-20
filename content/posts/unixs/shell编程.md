@@ -1,7 +1,7 @@
 +++
 title = "Shell编程"
 date = 2022-09-20T14:37:32+08:00
-draft = true
+draft = false
 author = 'vdong'
 categories = ['技术']
 tags = ['unix','shell']
