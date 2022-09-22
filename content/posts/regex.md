@@ -10,7 +10,9 @@ tags = ['正则']
 
 ## 语法一览图
 
-![regex.jpeg](/imgs/regex/regex.jpeg)
+[维基百科](https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+
+[截图地址](https://cdn.nlark.com/yuque/0/2022/jpeg/215704/1663857012372-126b1a3e-c3c0-420e-b253-ff013e13f76d.jpeg)
 
 ## 补充说明
 ### 分组
