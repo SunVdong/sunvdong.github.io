@@ -444,5 +444,9 @@ sed -i '1003c new line content' data.txt
 # 将 11 修改为 12，g 代表一行的所有 
 sed  -i 's/11/12/g'  xxx.log
 
-sed  -i 's/11/12/g' xxx.log # 修改每行第一个 11
+# 修改每行第2个 匹配的11
+sed  -i 's/11/12/2' xxx.log
+
+# 修改每行弟2个以及以后的 匹配的11 
+sed -i 's/11/12/2g' xxx.log
 ```
