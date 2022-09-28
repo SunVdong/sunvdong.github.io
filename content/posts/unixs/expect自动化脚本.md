@@ -8,7 +8,7 @@ tags = [ 'linux', 'unix','脚本']
 
 +++
 
-##  scp 多个主机并填写密码 
+## scp 多个主机并填写密码
 
 ```shell
 #!/usr/bin/expect
@@ -57,5 +57,6 @@ for {set i 1} {$i < 6} {incr i} {
 ## 参考网站
 
 [expect范例](http://xstarcd.github.io/wiki/shell/expect.html)
+
 [expect安装](https://www.cnblogs.com/hanby/p/15524774.html)
 
