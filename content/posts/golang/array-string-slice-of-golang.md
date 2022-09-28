@@ -78,7 +78,49 @@ go func(){
 
 ## 字符串
 
-字符串是一个不可改变的字节序列。go 源码要求 `UTF8` 编码。所以源码中的字符串字面量通常被解释为 `UTF8`编码的 `unicode` `rune` 序列。
+**字符串是一个不可改变的字节序列**。go 源码要求 `UTF8` 编码。所以源码中的字符串字面量通常被解释为 `UTF8`编码的 `unicode` `rune` 序列。
+
+底层结构:
+
+```go
+type StringHeader struct {
+    Data uintptr
+    Len  int
+}
+```
+
+### 字符串拼接
+
+```go
+s1:="hello"
+s2:="world"
+
+s3 = s1+s2
+```
+
+因为 **字符串是一个不可改变的字节序列**，所以以上代码性能较差，推荐使用 `bytes.Buffer` 或 `strings.Builder`。
+
+```go
+var sb strings.Builder
+sb.Write([]byte("hello world"))
+sb.WriteByte('!')
+sb.WriteRune(rune("~"))
+sb.WriteString("la la la ...")
+
+sb.Strring()  // 获取最终的字符串 ： "hello world!~la la la ..."
+```
+
+`strings.Builder` 内部使用 slice 实现来保存和管理内容。通过一个指针来指向实际保存的内容（见下节切片内部数据结构）。因此，复制时，就复制了 slice 的指针，出现两个指针指向同一个位置，所以 `strings.Builder` 不允许复制。  
+
+```go
+var b1 strings.Builder
+b1.WriteString("ABC")
+b2 := b1
+b2.WriteString("DEF") 
+// illegal use of non-zero Builder copied by value
+```
+
+
 
 ## 切片
 
@@ -109,8 +151,19 @@ var (
     h = make([]int, 2, 3) // 有 2 个元素的切片, len 为 2, cap 为 3
     i = make([]int, 0, 3) // 有 0 个元素的切片, len 为 0, cap 为 3
 )
-
 ```
+
+切片的内部结构
+
+```go
+type SliceHeader struct {
+ Data uintptr  //引用数组指针地址
+ Len  int     // 切片的目前使用长度
+ Cap  int     // 切片的容量
+}
+```
+
+ps ： `nil`  切片和空切片的本质区别在于，`nil` 切片的 data 指向地址为 `0` 地址（即不分配地址空间）； 空切片共享相同的 data pointer，指向同一个大小为 0 内存地址。[stackoverflow](https://stackoverflow.nilmap.com/question?dest_url=https://stackoverflow.com/questions/44305170/nil-slices-vs-non-nil-slices-vs-empty-slices-in-go-language)
 
 ### 添加切片元素
 
@@ -250,4 +303,8 @@ a[len(a)-1] = nil // GC 回收最后一个元素内存
 a = a[:len(a)-1]  // 从切片删除最后一个元素
 ```
 
-> 此为《go 语言高级编程》 读书笔记
+## 参考
+
+[数组，字符串，切片](https://chai2010.cn/advanced-go-programming-book/ch1-basic/ch1-03-array-string-and-slice.html#132-%E5%AD%97%E7%AC%A6%E4%B8%B2)
+
+[strings.Builder 的 7个要点](https://studygolang.com/articles/12796)
