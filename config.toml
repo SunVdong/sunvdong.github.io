@@ -23,6 +23,24 @@ theme = "DoIt"
   [params.home]
     # DoIt 新增 | 0.2.0 RSS 文章数目
     rss = 10
+    # 主页个人信息
+    [params.home.profile]
+      enable = true
+      # 主页显示头像的 URL
+      # 将你的头像文件放置于 static 或者 assets 目录下
+      # 文件路径是相对于 static 或者 assets 目录的
+      avatarURL = "/images/avatar.webp"
+      # DoIt 更改 | 0.2.7 主页显示的网站标题 (支持 HTML 格式)
+      title = ""
+      # 主页显示的网站副标题
+      subtitle = "这是我的个人网站"
+      # 是否为副标题显示打字机动画
+      typeit = true
+      # 是否显示社交账号
+      social = true
+      # DoIt 新增 | 0.2.0 免责声明 (支持 HTML 格式)
+      disclaimer = ""
+
   [params.page]
     # 评论系统设置
     [params.page.comment]
@@ -72,7 +90,11 @@ theme = "DoIt"
       useExtendedSearch = false
       ignoreFieldNorm = false
 
+  # 作者的社交信息设置
   [params.social]
+    GitHub = "SunVdong"
+    # Bilibili = "285732103"
+    Email = "sunvdong@qq.com"
     RSS = true
 
   [params.page.toc]
