@@ -442,11 +442,18 @@ sed -n '1003,1p' data.txt
 sed -i '1003c new line content' data.txt
 
 # 将 11 修改为 12，g 代表一行的所有 
-sed  -i 's/11/12/g'  xxx.log
+sed -i 's/11/12/g'  xxx.log
+
+# 每行 开头/末尾 追加 aa
+sed -i 's/^/aa/g' xxx.log
+sed -i 's/$/aa/g' xxx.log
 
 # 修改每行第2个 匹配的11
 sed  -i 's/11/12/2' xxx.log
 
 # 修改每行弟2个以及以后的 匹配的11 
 sed -i 's/11/12/2g' xxx.log
+
+# & 符号代表的是你前面的匹配的模式 将每行的第一个 hello 替换为 (hello)
+sed 's/hello/(&)/' xxx.log
 ```
