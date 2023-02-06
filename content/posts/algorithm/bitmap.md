@@ -117,7 +117,6 @@ func SumMultiples(limit int, divisors ...int) (sum int) {
 [不深入而浅出 Roaring Bitmaps 的基本原理](https://cloud.tencent.com/developer/article/1136054)
 
 
-
 ## 参考链接
 
 > [go bitmap 实现](https://studygolang.com/articles/18575)
