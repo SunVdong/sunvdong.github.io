@@ -18,7 +18,7 @@ theme = "DoIt"
 
 [params]
   # DoIt 主题版本
-  version = "0.2.X"
+  version = "0.3.X"
     # 主页配置
   [params.home]
     # DoIt 新增 | 0.2.0 RSS 文章数目
