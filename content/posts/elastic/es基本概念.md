@@ -106,9 +106,9 @@ es 索引或搜索的最小数据单元是文档，对应关系数据库的 reco
 
 如：一个 index 有5个 shard 及1个 replica
 
-![img](https://img-blog.csdnimg.cn/20190814211710327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VidW50dVRvdWNo,size_16,color_FFFFFF,t_70)
+![img](/imgs/es基本概念/primary_and_replica_shard.png)
 
 这些 shard 分布于不同的物理机器上
 
-![img](https://img-blog.csdnimg.cn/20200624114427449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VidW50dVRvdWNo,size_16,color_FFFFFF,t_70)
+![img](/imgs/es基本概念/data_across_nodes.png)
 
