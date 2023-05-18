@@ -109,9 +109,35 @@ ls -l temp
 du -h temp
 
 
-# 查看块大小 单位：字节
+# 查看块大小 单位：字节 
 sudo dumpe2fs /dev/vda1 | grep "Block size"
 ```
+
+`dumpe2fs` 命令是用于显示 ext2、ext3 和 ext4 文件系统的详细信息的命令，对于 xfs 文件系统，应该使用 `xfs_info` 命令来查看其详细信息，包括块大小等。可以执行以下命令来查看 `/dev/sda1` 分区上的 xfs 文件系统的块大小。
+
+```shell
+# 查看所有块设备
+lsblk
+
+#查经分区或硬盘文件类型
+blkid /dev/sda1
+
+# /dev/sda1 分区的文件系统信息的输出结果
+sudo xfs_info /dev/sda1
+
+# 结果如下： bsize 每个块的字节数 ；isize=512: 每个inode所占用的字节数 等
+meta-data=/dev/sda1              isize=512    agcount=4, agsize=65536 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0 spinodes=0
+data     =                       bsize=4096   blocks=262144, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+```
+
+
 
 ## 通配符
 
