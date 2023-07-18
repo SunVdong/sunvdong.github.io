@@ -1,10 +1,10 @@
 +++
 title = "OLTP-or-OLAP"
 date = 2023-05-20T16:38:42+08:00
-draft = true
+draft = false
 author = 'vdong'
 categories = ['技术']
-tags = ['数据密集', 'OLTP','OLAP']
+tags = ['数据密集', 'OLTP','OLAP','列式存储']
 
 +++
 
