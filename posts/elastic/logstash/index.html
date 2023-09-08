@@ -1,0 +1,167 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Logstash - vdong.xyz</title><meta name=Description content><meta property="og:title" content="Logstash"><meta property="og:description" content="条件判断语句 相等: ==, !=, <, >, <=, >= 正则: =~(匹配正则), !~(不匹配正则) 包含: in(包含), not in(不包含) 布尔操作： and(与), or(或"><meta property="og:type" content="article"><meta property="og:url" content="https://www.vdong.xyz/posts/elastic/logstash/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-11-04T15:20:06+08:00"><meta property="article:modified_time" content="2023-09-08T11:58:40+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Logstash"><meta name=twitter:description content="条件判断语句 相等: ==, !=, <, >, <=, >= 正则: =~(匹配正则), !~(不匹配正则) 包含: in(包含), not in(不包含) 布尔操作： and(与), or(或"><meta name=application-name content="vdong.xyz"><meta name=apple-mobile-web-app-title content="vdong.xyz"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.vdong.xyz/posts/elastic/logstash/><link rel=prev href=https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/><link rel=next href=https://www.vdong.xyz/posts/php-web/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/><link rel=stylesheet href=/css/main.css><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/color.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Logstash","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.vdong.xyz\/posts\/elastic\/logstash\/"},"genre":"posts","keywords":"es, logstash","wordcount":1131,"url":"https:\/\/www.vdong.xyz\/posts\/elastic\/logstash\/","datePublished":"2021-11-04T15:20:06+08:00","dateModified":"2023-09-08T11:58:40+08:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong"},"description":""}</script><script src=//instant.page/5.2.0 defer type=module integrity=sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z></script></head><body header-desktop header-mobile><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"||""==="black"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=vdong.xyz>vdong.xyz</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=vdong.xyz>vdong.xyz</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#条件判断语句>条件判断语句</a></li><li><a href=#测试管道>测试管道</a></li><li><a href=#一些-filter>一些 filter</a><ul><li><a href=#使用本地geo数据库并添加标签>使用本地Geo数据库，并添加标签</a></li><li><a href=#运行ruby代码>运行ruby代码</a></li></ul></li><li><a href=#配置管道>配置管道</a><ul><li><a href=#两个管道相连>两个管道相连</a></li></ul></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Logstash</h1><div class=post-meta><div class=post-meta-line><span class=post-author><span class="author fas fa-user-circle fa-fw"></span><a href=/ title=Author rel=author class=author>vdong</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%8A%80%E6%9C%AF/><i class="far fa-folder fa-fw"></i>技术</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2023-09-08>2023-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1131 字&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/posts/elastic/logstash/ class=leancloud_visitors data-flag-title=Logstash>
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count waline-pageview-count" data-path=/posts/elastic/logstash/></span>&nbsp;次阅读
+</span>&nbsp;<span id=/posts/elastic/logstash/ class=comment_count data-flag-title=Logstash>
+<i class="far fa-comments fa-fw"></i>&nbsp;<span class=waline-comment-count id=waline-comment-count data-path=/posts/elastic/logstash/></span>&nbsp;条评论
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#条件判断语句>条件判断语句</a></li><li><a href=#测试管道>测试管道</a></li><li><a href=#一些-filter>一些 filter</a><ul><li><a href=#使用本地geo数据库并添加标签>使用本地Geo数据库，并添加标签</a></li><li><a href=#运行ruby代码>运行ruby代码</a></li></ul></li><li><a href=#配置管道>配置管道</a><ul><li><a href=#两个管道相连>两个管道相连</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=条件判断语句 class=headerLink><a href=#%e6%9d%a1%e4%bb%b6%e5%88%a4%e6%96%ad%e8%af%ad%e5%8f%a5 class=header-mark></a>条件判断语句</h2><ul><li><p>相等: ==, !=, &lt;, >, &lt;=, >=</p></li><li><p>正则: =~(匹配正则), !~(不匹配正则)</p></li><li><p>包含: in(包含), not in(不包含)</p></li><li><p>布尔操作： and(与), or(或), nand(非与), xor(非或)</p></li><li><p>一元运算符： !(取反)</p></li><li><p>复合表达式： ()(复合表达式), !()(对复合表达式结果取反)</p></li></ul><h2 id=测试管道 class=headerLink><a href=#%e6%b5%8b%e8%af%95%e7%ae%a1%e9%81%93 class=header-mark></a>测试管道</h2><p>以下 generator 会触发一个生成事件，即产生一条记录。</p><pre tabindex=0><code>input {
+    generator { 
+        lines =&gt; [&#34;Generated line&#34;] 
+        count =&gt; 1 
+    } 
+}
+</code></pre><h2 id=一些-filter class=headerLink><a href=#%e4%b8%80%e4%ba%9b-filter class=header-mark></a>一些 filter</h2><h3 id=使用本地geo数据库并添加标签 class=headerLink><a href=#%e4%bd%bf%e7%94%a8%e6%9c%ac%e5%9c%b0geo%e6%95%b0%e6%8d%ae%e5%ba%93%e5%b9%b6%e6%b7%bb%e5%8a%a0%e6%a0%87%e7%ad%be class=header-mark></a>使用本地Geo数据库，并添加标签</h3><pre tabindex=0><code>geoip {
+        source =&gt; &#34;source_ip&#34;
+        target =&gt; &#34;source_geoip&#34;
+        database =&gt; &#34;/usr/share/logstash/data/geolite/GeoLite2-City.mmdb&#34;
+        add_tag =&gt; [&#34;%{[source_geoip][country_name]}&#34;,&#34;%{[source_geoip][city_name]}&#34;]
+        tag_on_failure =&gt; &#34;_geoip_source_fail&#34;
+    }
+</code></pre><h3 id=运行ruby代码 class=headerLink><a href=#%e8%bf%90%e8%a1%8cruby%e4%bb%a3%e7%a0%81 class=header-mark></a>运行ruby代码</h3><ul><li>行内运行</li></ul><pre tabindex=0><code># 原数据 [{&#34;interface_name&#34;:&#34;xxx&#34; ...},{...}] 修改 interface_name key名 为 IfName 等
+ruby {
+    code =&gt; &#39;
+        interface_msg = event.get(&#34;interface_msg&#34;)
+        if interface_msg
+            interface_msg.each_with_index do |interface, index|
+                interface[&#34;IfName&#34;] = interface[&#34;interface_name&#34;]
+                interface.delete(&#34;interface_name&#34;)
+
+                interface[&#34;IfMAC&#34;] = interface[&#34;interface_mac&#34;]
+                interface.delete(&#34;interface_mac&#34;)
+
+                if interface[&#34;interface_status&#34;]==1
+                    interface[&#34;IfStatus&#34;] = &#34;up&#34;
+                else
+                    interface[&#34;IfStatus&#34;] = &#34;down&#34;
+                end
+                interface.delete(&#34;interface_status&#34;)
+                event.set(&#34;interface_msg&#34;, interface_msg)
+            end
+        end
+    &#39;
+}
+</code></pre><ul><li>单独文件</li></ul><pre tabindex=0><code>ruby  {
+    path =&gt; &#34;/usr/share/logstash/script/rt_device_interface_data.rb&#34;
+}
+</code></pre><p>rt_device_interface_data.rb 文件内容如下：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=k>def</span> <span class=nf>register</span><span class=p>(</span><span class=n>params</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 将 interface_state 转为 json 字符串</span>
+</span></span><span class=line><span class=cl><span class=c1># {RxDropped=0, IfMtu=1500},{RxDropped=0, IfMtu=1500}</span>
+</span></span><span class=line><span class=cl><span class=c1># [{&#34;RxDropped&#34;:&#34;0&#34;,&#34;IfMtu&#34;:&#34;1500&#34;},{&#34;RxDropped&#34;:&#34;0&#34;,&#34;IfMtu&#34;:&#34;1500&#34;}]</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>filter</span><span class=p>(</span><span class=n>event</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>str</span> <span class=o>=</span> <span class=n>event</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;interface_state&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>log_dict_list</span> <span class=o>=</span> <span class=n>str</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s2>&#34;},{&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>map</span> <span class=k>do</span> <span class=o>|</span><span class=n>log</span><span class=o>|</span>
+</span></span><span class=line><span class=cl>      <span class=n>log</span><span class=o>.</span><span class=n>gsub</span><span class=p>(</span><span class=sr>/[{}]/</span><span class=p>,</span> <span class=s1>&#39;&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s2>&#34;, &#34;</span><span class=p>)</span><span class=o>.</span><span class=n>map</span> <span class=k>do</span> <span class=o>|</span><span class=n>kv</span><span class=o>|</span>
+</span></span><span class=line><span class=cl>        <span class=n>k</span><span class=p>,</span> <span class=n>v</span> <span class=o>=</span> <span class=n>kv</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s2>&#34;=&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=o>[</span><span class=n>k</span><span class=o>.</span><span class=n>to_sym</span><span class=p>,</span> <span class=n>v</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>      <span class=k>end</span><span class=o>.</span><span class=n>to_h</span>
+</span></span><span class=line><span class=cl>    <span class=k>end</span>
+</span></span><span class=line><span class=cl>    <span class=c1># 将字典列表转换为JSON字符串</span>
+</span></span><span class=line><span class=cl>    <span class=c1>#log_json_string = JSON.generate(log_dict_list)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>event</span><span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s1>&#39;interface_state&#39;</span><span class=p>,</span> <span class=n>log_dict_list</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=o>[</span><span class=n>event</span><span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>end</span>
+</span></span></code></pre></div><h2 id=配置管道 class=headerLink><a href=#%e9%85%8d%e7%bd%ae%e7%ae%a1%e9%81%93 class=header-mark></a>配置管道</h2><p>在 logstash 配置文件 <code>pipelines.yml</code> 中新增管道和配置路径:</p><pre tabindex=0><code>- pipeline.id: main
+  path.config: &#34;/usr/share/logstash/pipeline&#34;
+- pipeline.id: dp 
+  path.config: &#34;/usr/share/logstash/dp_pipeline&#34;
+</code></pre><p>管道 main 是默认的管道，我们新增了dp管道。</p><p>在配置路径下新增配置文件，配置管道处理数据的逻辑即可：</p><pre tabindex=0><code>input {
+    udp {
+        port =&gt; 10523
+        type =&gt; &#34;gateway&#34;
+    }
+}
+filter {
+    # code more ...
+}
+output {
+    # code more ...
+}
+</code></pre><h3 id=两个管道相连 class=headerLink><a href=#%e4%b8%a4%e4%b8%aa%e7%ae%a1%e9%81%93%e7%9b%b8%e8%bf%9e class=header-mark></a>两个管道相连</h3><p>我们希望数据先经过 main 管道，再经过 dp 管道，可以做如下操作：</p><ol><li>在 main 管道 配置文件的 output 中将数据发送至一个管道虚拟地址，下例为 <code>dp_router</code></li></ol><pre tabindex=0><code>output {
+    pipeline { send_to =&gt; dp_router }
+}
+</code></pre><ol start=2><li>在 dp 管道 配置文件的 input 中从虚拟地址接收数据, 然后即可处理数据：</li></ol><pre tabindex=0><code>input {
+    pipeline {
+        address =&gt; dp_router
+    }
+}
+</code></pre><h4 id=pipeline-to-pipeline-的常用模式 class=headerLink><a href=#pipeline-to-pipeline-%e7%9a%84%e5%b8%b8%e7%94%a8%e6%a8%a1%e5%bc%8f class=header-mark></a>pipeline to pipeline 的常用模式</h4><ol><li>分发 (一对多)</li></ol><p>有多种类型的数据通过单个输入传入，且每种数据都有自己复杂的处理规则集的情况下，您可以使用分发器模式。</p><pre tabindex=0><code>input { beats { port =&gt; 5044 } }
+output {
+    if [type] == apache {
+      pipeline { send_to =&gt; weblogs }
+    } else if [type] == system {
+      pipeline { send_to =&gt; syslog }
+    } else {
+      pipeline { send_to =&gt; fallback }
+    }
+}
+</code></pre><ol start=2><li>隔离</li></ol><p>如果配置了多个输出，任意一个输出服务down了，将阻塞其他输出，使用输出隔离器模式和持久队列，即使一个输出出现故障，我们也可以继续发送到 Elasticsearch。</p><pre tabindex=0><code># config/pipelines.yml
+- pipeline.id: intake
+  config.string: |
+    input { beats { port =&gt; 5044 } }
+    output { pipeline { send_to =&gt; [es, http] } }
+- pipeline.id: buffered-es
+  queue.type: persisted
+  config.string: |
+    input { pipeline { address =&gt; es } }
+    output { elasticsearch { } }
+- pipeline.id: buffered-http
+  queue.type: persisted
+  config.string: |
+    input { pipeline { address =&gt; http } }
+    output { http { } }
+</code></pre><ol start=3><li>fork</li></ol><p>我们在自己的系统中收集完整的索引信息，但同时我们也需要将数据发送给合作伙伴，这是我们需要对索引进行额外处理（例如：删除敏感信息等）</p><pre tabindex=0><code># config/pipelines.yml
+- pipeline.id: intake
+  queue.type: persisted
+  config.string: |
+    input { beats { port =&gt; 5044 } }
+    output { pipeline { send_to =&gt; [&#34;internal-es&#34;, &#34;partner-s3&#34;] } }
+- pipeline.id: buffered-es
+  queue.type: persisted
+  config.string: |
+    input { pipeline { address =&gt; &#34;internal-es&#34; } }
+    # Index the full event
+    output { elasticsearch { } }
+- pipeline.id: partner
+  queue.type: persisted
+  config.string: |
+    input { pipeline { address =&gt; &#34;partner-s3&#34; } }
+    filter {
+      # Remove the sensitive data
+      mutate { remove_field =&gt; &#39;sensitive-data&#39; }
+    }
+    output { s3 { } } # Output to partner&#39;s bucket
+</code></pre><ol start=4><li>收集 (多对一)</li></ol><p>许多管道流入单个管道，在其中共享输出和处理。</p><pre tabindex=0><code># config/pipelines.yml
+- pipeline.id: beats
+  config.string: |
+    input { beats { port =&gt; 5044 } }
+    output { pipeline { send_to =&gt; [commonOut] } }
+- pipeline.id: kafka
+  config.string: |
+    input { kafka { ... } }
+    output { pipeline { send_to =&gt; [commonOut] } }
+- pipeline.id: partner
+  # This common pipeline enforces the same logic whether data comes from Kafka or Beats
+  config.string: |
+    input { pipeline { address =&gt; commonOut } }
+    filter {
+      # Always remove sensitive data from all input sources
+      mutate { remove_field =&gt; &#39;sensitive-data&#39; }
+    }
+    output { elasticsearch { } }
+</code></pre></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2023-09-08</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/es/>es</a>,&nbsp;<a href=/tags/logstash/>logstash</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/ class=prev rel=prev title="Es 索引相关"><i class="fas fa-angle-left fa-fw"></i>Es 索引相关</a>
+<a href=/posts/php-web/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/ class=next rel=next title=依赖注入>依赖注入<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=waline class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.118.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><link rel=stylesheet href=/lib/waline/waline.min.css><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{waline:{comment:!0,copyright:!0,dark:"body[theme='dark'], body[theme='black']",el:"#waline",emoji:["https://i.whaoot.com/emojis/qq/"],lang:"zh-cn",pageview:!0,serverURL:"https://comment.vdong.xyz/"}},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1}}</script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script><script type=text/javascript src=/lib/waline/waline.js defer></script><script type=text/javascript src=/js/waline.min.js defer></script></div></body></html>
