@@ -94,7 +94,7 @@ eval $(parse_yaml "$elastic_set_file" "config_")
 # 会生成如下变量
 config_elasticsearch_1="setup/elastic/ilm-policies/my-ilm-policy.request"
 config_elasticsearch_2="setup/elastic/index-templates/switch.request"
-config_host="127.0.0.1"
+config_mysql_host="127.0.0.1"
 ```
 
 ## bash 动态变量名（间接变量引用）
