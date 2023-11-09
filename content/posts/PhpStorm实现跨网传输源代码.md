@@ -12,7 +12,7 @@ tags = ['SSH隧道']
 
 本地开发代码，需要同步到 `10.21.30.81` 上， 但是本地只能通过 ssh 连接到 `10.21.30.80` 上，不能 ssh  连接到 `10.21.30.81` 上，因此需要将代码通过SFTP传到 80 上，再在 80 上 scp 到 81上，太麻烦了，网络如下：
 
-![image-20231109112816186](D:\laragon\www\hugo\static\imgs\内网穿透\image-20231109112816186.png)
+![image-20231109112816186](/imgs/内网穿透/image-20231109112816186.png)
 
 ## SSH 隧道
 
@@ -26,7 +26,7 @@ tags = ['SSH隧道']
 
 在编辑器 Phpstrom 中配置 `Tools->Deployment->Configuration`,  添加 SFTP， 使用 `SSH` 连接 `127.0.0.1:2222`，即可实现代码自动上传。 
 
-![image-20231109164954571](D:\laragon\www\hugo\static\imgs\内网穿透\image-20231109164954571.png)
+![image-20231109164954571](/imgs/内网穿透/image-20231109164954571.png)
 
 与之类似的，执行
 
