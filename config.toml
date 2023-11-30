@@ -11,7 +11,7 @@ enableEmoji = true
 enableRobotsTXT = true # 允许爬虫抓取到搜索引擎，建议 true
 enableGitInfo = true # 获取每个文件的git修改信息
 # 网站标题
-title = "vdong.xyz"
+title = "我的灵感记录"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = "DoIt"
