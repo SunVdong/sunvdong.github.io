@@ -1,7 +1,7 @@
 +++
 title = "Powershell新增别名"
 date = 2024-01-11T13:50:37+08:00
-draft = true
+draft = false
 author = 'vdong'
 categories = ['技术']
 tags = ['powershell']
