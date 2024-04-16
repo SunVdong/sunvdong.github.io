@@ -44,7 +44,7 @@ theme = "DoIt"
   [params.page]
     # 评论系统设置
     [params.page.comment]
-      enable = false
+      enable = true
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
         enable = true
