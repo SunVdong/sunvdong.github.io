@@ -1,5 +1,5 @@
 ---
-title: "分布式数据-复制"
+title: "使用文件的inode号码删除无法打出名字的文件"
 date: "2024-07-05T18:00:06+08:00"
 draft: false
 author: "vdong"
