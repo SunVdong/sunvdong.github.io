@@ -17,6 +17,24 @@ tags = ['正则']
 ## 补充说明
 ### 分组
 
+非捕获组
+
+```sh
+`What is -?\d+(?: (?:plus|minus|divided by|multiplied by) -?\d+)*\?`
+```
+
+上面的正则表达式可以匹配
+
+"What is 5?"
+
+"What is -10?"
+
+"What is 4 plus 5?"
+
+"What is 3 minus 2 divided by 1?"
+
+"What is -2 multiplied by -4 divided by 2 plus 6?"
+
 ## 测试网站
 [https://regex101.com/](https://regex101.com/)
 
