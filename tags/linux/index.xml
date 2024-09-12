@@ -1,1 +1,99 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Linux - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/linux/</link><description>Linux - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 15 Sep 2022 15:11:06 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/linux/" rel="self" type="application/rss+xml"/><item><title> rsyslog 发送和接收远程日志</title><link>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</link><pubDate>Thu, 15 Sep 2022 15:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</guid><description>配置本机可以接收远端的syslog日志根据需要启用udp或tcp模块，并设置端口，使其能够接收消息。 shell # vim /etc/rsyslog.conf $ModLoad imudp $UDPServerRun 514 重启 rsyslog 服务 bash systemctl restart rsyslog 防火墙</description></item><item><title>expect-自动交互脚本</title><link>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 01 Jun 2022 09:15:46 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid><description><![CDATA[scp 多个主机并填写密码 shell #!/usr/bin/expect set filename [lindex $argv 0] set dir_path [lindex $argv 1] set IP_NOS_1 &#34;192.168.122.11&#34; set IP_NOS_2 &#34;192.168.122.12&#34; set IP_NOS_3 &#34;192.168.122.13&#34; set IP_NOS_4 &#34;192.168.122.14&#34; set IP_NOS_5 &#34;192.168.122.15&#34; set username &#34;root&#34; set passwd &#34;root&#34; set timeout 200 if { $argc!=2 } { puts &#34;WARNING ! srcipt needs two parameter !&#34; puts &#34; Usage: (parameter 1: filename) filename you want to transfer&#34;]]></description></item><item><title>进程和作业控制</title><link>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</link><pubDate>Sat, 07 May 2022 09:15:46 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</guid><description>Unix中，每个对象或者由文件表示，或者由进程表示。简单来讲，文件就是一个输出源或者输出目标。进程是一个正在运行的程序。文件提供对数据的访问</description></item><item><title>Unix文件,别名等相关</title><link>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 05 May 2022 11:32:14 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</guid><description>排序、区域设置unix 的默认排序方式取决于你使用的区域设置，如：现在有A、a、B、b、C、c 几个文件，执行 ls 列举文件： 如果使用 C 区域设置，你</description></item><item><title>linux发udp包</title><link>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</guid><description>Linux 直接发送UDP包 如果往本地UDP端口發送數據，那麼可以使用以下命令： bash echo &amp;#34;hello&amp;#34; &amp;gt; /dev/udp/192.168.1.81/5060 意思是往本地192.168.1.81的5060端口發送數據包</description></item><item><title>Unix 过滤器</title><link>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</guid><description>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。 常用过滤器 cat shell cat name.txt mobile.txt &amp;gt; data # 合并文件 # -n 显示行号 split ：拆分文件 shell split [-d] [-a num] [-l lines] [file [prefix]] split data # 默</description></item><item><title>Vi 命令一览</title><link>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</guid><description>移动光标 - 光标移动到上一行开头 + 或 &amp;lt;return&amp;gt; 光标移动到下一行开头 0 当前行开头 $ 当前行末尾 ^ 当前行第一个非空字符 w 下一个单词的词首 W 忽略标点 e 下一个单</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Linux - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/linux/</link><description>Linux - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 15 Sep 2022 15:11:06 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/linux/" rel="self" type="application/rss+xml"/><item><title> rsyslog 发送和接收远程日志</title><link>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</link><pubDate>Thu, 15 Sep 2022 15:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</guid><description><![CDATA[<h2 id="配置本机可以接收远端的syslog日志" class="headerLink">
+    <a href="#%e9%85%8d%e7%bd%ae%e6%9c%ac%e6%9c%ba%e5%8f%af%e4%bb%a5%e6%8e%a5%e6%94%b6%e8%bf%9c%e7%ab%af%e7%9a%84syslog%e6%97%a5%e5%bf%97" class="header-mark" aria-label="Header mark for '配置本机可以接收远端的syslog日志'"></a>配置本机可以接收远端的syslog日志</h2><p>根据需要启用udp或tcp模块，并设置端口，使其能够接收消息。</p>]]></description></item><item><title>expect-自动交互脚本</title><link>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 01 Jun 2022 09:15:46 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid><description><![CDATA[<h2 id="scp-多个主机并填写密码" class="headerLink">
+    <a href="#scp-%e5%a4%9a%e4%b8%aa%e4%b8%bb%e6%9c%ba%e5%b9%b6%e5%a1%ab%e5%86%99%e5%af%86%e7%a0%81" class="header-mark" aria-label="Header mark for 'scp 多个主机并填写密码'"></a>scp 多个主机并填写密码</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item><item><title>进程和作业控制</title><link>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</link><pubDate>Sat, 07 May 2022 09:15:46 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</guid><description>&lt;p>Unix中，每个对象或者由文件表示，或者由进程表示。简单来讲，文件就是一个输出源或者输出目标。进程是一个正在运行的程序。文件提供对数据的访问，而进程使事件发生。&lt;/p></description></item><item><title>Unix文件,别名等相关</title><link>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 05 May 2022 11:32:14 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</guid><description><![CDATA[<h2 id="排序区域设置" class="headerLink">
+    <a href="#%e6%8e%92%e5%ba%8f%e5%8c%ba%e5%9f%9f%e8%ae%be%e7%bd%ae" class="header-mark" aria-label="Header mark for '排序、区域设置'"></a>排序、区域设置</h2><p>unix 的默认排序方式取决于你使用的区域设置，如：现在有A、a、B、b、C、c 几个文件，执行 <code>ls</code> 列举文件：</p>]]></description></item><item><title>linux发udp包</title><link>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</guid><description><![CDATA[<p>Linux 直接发送UDP包</p>
+<p>如果往本地UDP端口發送數據，那麼可以使用以下命令：</p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">bash</p>]]></description></item><item><title>Unix 过滤器</title><link>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</guid><description><![CDATA[<p>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。</p>
+<p>常用过滤器</p>
+<h2 id="cat" class="headerLink">
+    <a href="#cat" class="header-mark" aria-label="Header mark for 'cat'"></a>cat</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item><item><title>Vi 命令一览</title><link>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</guid><description><![CDATA[<h2 id="移动光标" class="headerLink">
+    <a href="#%e7%a7%bb%e5%8a%a8%e5%85%89%e6%a0%87" class="header-mark" aria-label="Header mark for '移动光标'"></a>移动光标</h2><ul>
+<li><code>-</code> 光标移动到上一行开头</li>
+<li><code>+</code> 或 <code>&lt;return&gt;</code> 光标移动到下一行开头</li>
+<li><code>0</code> 当前行开头</li>
+<li><code>$</code> 当前行末尾</li>
+<li><code>^</code> 当前行第一个非空字符</li>
+<li><code>w</code> 下一个单词的词首 W 忽略标点</li>
+<li><code>e</code> 下一个单词的词尾 E &hellip;</li>
+<li><code>b</code> 上一个单词的词首 B &hellip;</li>
+<li><code>(</code> 移动到上一个句子</li>
+<li><code>)</code> 下一个句子</li>
+<li><code>{</code> 上一个段落</li>
+<li><code>}</code> 下一个段落</li>
+<li><code>H</code> 移动到屏幕顶部</li>
+<li><code>M</code> 屏幕中间</li>
+<li><code>L</code> 最后一行</li>
+</ul>
+<p>数字组合</p>]]></description></item></channel></rss>
