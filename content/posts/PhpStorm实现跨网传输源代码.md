@@ -39,3 +39,4 @@ ssh -L 33060:10.21.30.81:3306 root@10.21.30.80
 ## 参考连接
 
 [SSH隧道简明教程](https://www.lixueduan.com/posts/linux/07-ssh-tunnel/)
+[SSH 端口转发](https://wangdoc.com/ssh/port-forwarding)
