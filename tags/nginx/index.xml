@@ -1,10 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Nginx - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/nginx/</link><description>Nginx - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 19 Nov 2021 22:38:35 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/nginx/" rel="self" type="application/rss+xml"/><item><title>nginx相关</title><link>https://www.vdong.xyz/posts/php-web/nginx%E7%9B%B8%E5%85%B3/</link><pubDate>Fri, 19 Nov 2021 22:38:35 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/php-web/nginx%E7%9B%B8%E5%85%B3/</guid><description><![CDATA[<h3 id="开启与关闭-nginx" class="headerLink">
-    <a href="#%e5%bc%80%e5%90%af%e4%b8%8e%e5%85%b3%e9%97%ad-nginx" class="header-mark" aria-label="Header mark for '开启与关闭 nginx'"></a>开启与关闭 nginx</h3><p>关闭 nginx
+    <a href="#%e5%bc%80%e5%90%af%e4%b8%8e%e5%85%b3%e9%97%ad-nginx" class="header-mark"></a>开启与关闭 nginx</h3><p>关闭 nginx
 nginx -s stop</p>
 <p>重新加载
 nginx -s relaod</p>
 <h3 id="配置文件" class="headerLink">
-    <a href="#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="header-mark" aria-label="Header mark for '配置文件'"></a>配置文件</h3><ol>
+    <a href="#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="header-mark"></a>配置文件</h3><ol>
 <li>
 <p>全局配置</p>
-<p>影响 nginx 服务器整体运行的配置指令</p>]]></description></item></channel></rss>
+<p>影响 nginx 服务器整体运行的配置指令</p>
+<p>eg：worker_processes 1;  // 越大 并发越大</p>
+</li>
+<li>
+<p>event 块</p>
+<p>nginx 服务器与用户的网络连接</p>]]></description></item></channel></rss>

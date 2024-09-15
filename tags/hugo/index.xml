@@ -1,7 +1,13 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Hugo - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/hugo/</link><description>Hugo - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 Nov 2021 15:46:20 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/hugo/" rel="self" type="application/rss+xml"/><item><title>博客搭建记录</title><link>https://www.vdong.xyz/posts/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</link><pubDate>Wed, 03 Nov 2021 15:46:20 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</guid><description><![CDATA[<p>这是一个静态 bolg 网站。</p>
 <p>记录搭建过程。</p>
 <h2 id="技术栈" class="headerLink">
-    <a href="#%e6%8a%80%e6%9c%af%e6%a0%88" class="header-mark" aria-label="Header mark for '技术栈：'"></a>技术栈：</h2><p>hugo , git , github 。</p>
+    <a href="#%e6%8a%80%e6%9c%af%e6%a0%88" class="header-mark"></a>技术栈：</h2><p>hugo , git , github 。</p>
 <ul>
 <li>
-<p>hugo：是一个开源的 web 框架，使用 go 语言开发，可以将 markdown 文件快速的建构成静态网站。</p>]]></description></item></channel></rss>
+<p>hugo：是一个开源的 web 框架，使用 go 语言开发，可以将 markdown 文件快速的建构成静态网站。</p>
+</li>
+<li>
+<p>git: 作为版本管理工具。</p>
+</li>
+<li>
+<p>github: 作为代码仓库，使用 github 的 actions 做自动的建构和部署，分别部署在 github pages 和 阿里云上。</p>]]></description></item></channel></rss>
