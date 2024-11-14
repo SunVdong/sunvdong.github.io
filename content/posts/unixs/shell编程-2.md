@@ -176,3 +176,6 @@ curl "${args[@]}"
 curl http://example.com -H "User-Agent: MyUserAgent" --data "param1=value1" --header "Content-Type: application/json"
 ```
 
+## 拓展链接
+
+[优雅的shell](https://nochlin.com/blog/6-techniques-i-use-to-create-a-great-user-experience-for-shell-scripts)
