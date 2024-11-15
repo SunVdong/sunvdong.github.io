@@ -98,7 +98,7 @@ docker logs -f nginx-server 1>/dev/null
 172.17.0.1 - - [06/Aug/2024:16:37:59 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" "-"
 ```
 
-![Nginx access logs combined format explained](/../../static/imgs/Nginx/image-20241113143459334.png)
+![Nginx access logs combined format explained](/imgs/Nginx/image-20241113143459334.png)
 
 - `172.17.0.1` ：提出请求的客户端的IP地址。
 - `-`：如果使用身份验证，则这是经过身份验证的用户名；否则，它是连字符 (-)。
@@ -362,7 +362,7 @@ error_log /var/log/nginx/error.log <severity_level>;
 
 ### Nginx 错误日志格式
 
-![Nginx error log format](/../../static/imgs/Nginx/image-20241113164234124.png)
+![Nginx error log format](/imgs/Nginx/image-20241113164234124.png)
 
 Nginx 错误日志遵循为人类可读性和易于工具解析而设计的格式。一般格式为：
 
