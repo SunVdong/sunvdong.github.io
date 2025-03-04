@@ -45,7 +45,7 @@ theme = "DoIt"
   [params.page]
     # 评论系统设置
     [params.page.comment]
-      enable = true
+      enable = false
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
         enable = true
@@ -137,6 +137,14 @@ theme = "DoIt"
     url = "/categories/"
     title = ""
     weight = 3
+  [[menu.main]]
+    identifier = "links"
+    pre = ""
+    post = ""
+    name = "友链"
+    url = "/links"
+    title = ""
+    weight = 4
 
 # Hugo 解析文档的配置
 [markup]
