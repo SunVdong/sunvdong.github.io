@@ -18,7 +18,7 @@ typora-root-url: '..\..\..\static'
 ## 友情链接列表
 
 {{< friend name="帅东" url="http://www.sangluoyi.com/" avatar="https://www.vdong.xyz/imgs/avatar-sang.jpg" bio="一个PHP大牛~💤" >}}
-<!-- {{< friend name="帅强" url="https://wangshuaiqiang.chat/" avatar="https://wangshuaiqiang.chat/medias/avatar.jpg" bio="嘴硬的人~" >}} -->
+{{< friend name="帅强" url="https://wsq-q.github.io/" avatar="https://wsq-q.github.io/medias/logo.png" bio="嘴强牙硬王者🤣" >}}
 
 
 ---
