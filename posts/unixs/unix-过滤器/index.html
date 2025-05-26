@@ -1,8 +1,8 @@
 <!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Unix 过滤器 - 我的灵感记录</title><meta name=Description content><meta property="og:url" content="https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/"><meta property="og:site_name" content="我的灵感记录"><meta property="og:title" content="Unix 过滤器"><meta property="og:description" content="过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。
 常用过滤器
-cat shell"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-11-04T19:11:06+08:00"><meta property="article:modified_time" content="2025-05-26T13:12:59+00:00"><meta property="article:tag" content="Unix"><meta property="article:tag" content="Linux"><meta name=twitter:card content="summary"><meta name=twitter:title content="Unix 过滤器"><meta name=twitter:description content="过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。
+cat shell"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-11-04T19:11:06+08:00"><meta property="article:modified_time" content="2025-05-26T13:22:28+00:00"><meta property="article:tag" content="Unix"><meta property="article:tag" content="Linux"><meta name=twitter:card content="summary"><meta name=twitter:title content="Unix 过滤器"><meta name=twitter:description content="过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。
 常用过滤器
-cat shell"><meta name=application-name content="我的灵感记录"><meta name=apple-mobile-web-app-title content="我的灵感记录"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/><link rel=prev href=https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/><link rel=next href=https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/><link rel=stylesheet href=/css/main.min.css><link rel=stylesheet href=/css/style.min.css><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Unix 过滤器","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/"},"genre":"posts","keywords":["unix","linux"],"wordcount":3040,"url":"https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/","datePublished":"2021-11-04T19:11:06+08:00","dateModified":"2025-05-26T13:12:59+00:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong","url":"/"},"description":""}</script></head><body data-instant-intensity=viewport><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.className=e,document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),e==="light"?document.documentElement.classList.remove("tw-dark"):document.documentElement.classList.add("tw-dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#161b22"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><header class="desktop print:!tw-hidden" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=我的灵感记录>我的灵感记录</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/links>友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+cat shell"><meta name=application-name content="我的灵感记录"><meta name=apple-mobile-web-app-title content="我的灵感记录"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/><link rel=prev href=https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/><link rel=next href=https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/><link rel=stylesheet href=/css/main.min.css><link rel=stylesheet href=/css/style.min.css><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Unix 过滤器","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/"},"genre":"posts","keywords":["unix","linux"],"wordcount":3040,"url":"https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/","datePublished":"2021-11-04T19:11:06+08:00","dateModified":"2025-05-26T13:22:28+00:00","publisher":{"@type":"Organization","name":"vdong"},"author":{"@type":"Person","name":"vdong","url":"/"},"description":""}</script></head><body data-instant-intensity=viewport class="tw-flex tw-min-h-screen tw-flex-col"><script>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.className=e,document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),e==="light"?document.documentElement.classList.remove("tw-dark"):document.documentElement.classList.add("tw-dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#161b22"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><header class="desktop print:!tw-hidden" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=我的灵感记录>我的灵感记录</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/links>友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
 <button class="search-button search-toggle" id=search-toggle-desktop title=搜索>
 <svg class="icon" viewBox="0 0 512 512"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
@@ -21,26 +21,22 @@ cat shell"><meta name=application-name content="我的灵感记录"><meta name=a
 </button>
 <span class="search-button search-loading tw-animate-spin" id=search-loading-mobile><svg class="icon" viewBox="0 0 512 512"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49.0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156.0c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg></span></div><button class=search-cancel id=search-cancel-mobile>
 取消</button></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/links title>友链</a><button class="menu-item theme-switch tw-w-full" aria-label=切换主题>
-<svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=tw-mx-4><div class="toc print:!tw-hidden" id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#cat>cat</a></li><li><a href=#split-拆分文件>split ：拆分文件</a></li><li><a href=#tac反转文本行的顺序>tac：反转文本行的顺序</a></li><li><a href=#rev反转字符>rev：反转字符</a></li><li><a href=#head--tail-从数据开头和末尾选择数据行>head / tail ：从数据开头和末尾选择数据行</a></li><li><a href=#列操作>列操作</a><ul><li><a href=#colrm-删除数据列>colrm ：删除数据列</a></li><li><a href=#cut--抽取数据列-与-colrm-相反>cut ： 抽取数据列 （与 colrm 相反）</a></li><li><a href=#paste-组合数据列>paste 组合数据列</a></li></ul></li><li><a href=#比较文件>比较文件</a><ul><li><a href=#cmp-逐字节比较>cmp ：逐字节比较</a></li><li><a href=#comm--比较有序文本文件>comm ： 比较有序文本文件</a></li><li><a href=#diff--sdiff-比较无序文件>diff  / sdiff： 比较无序文件</a></li></ul></li><li><a href=#统计和格式化>统计和格式化</a><ul><li><a href=#nl-创建行号>nl ：创建行号</a></li><li><a href=#wc--单词统计>wc : 单词统计</a></li><li><a href=#expand-将制表符转换成空格>expand: 将制表符转换成空格</a></li><li><a href=#unexpand--将空格转换成制表符>unexpand : 将空格转换成制表符</a></li><li><a href=#fold-长行分成短行>fold: 长行分成短行</a></li><li><a href=#fmt将段落中的各行连接起来>fmt：将段落中的各行连接起来</a></li></ul></li><li><a href=#选取排列组合与变换>选取、排列、组合与变换</a><ul><li><a href=#grep选取包含特定模式的行>grep：选取包含特定模式的行</a></li><li><a href=#look查找以特定模式开头的所有单词>look：查找以特定模式开头的所有单词</a></li><li><a href=#sort--排序数据>sort : 排序数据</a></li><li><a href=#uniq-查找重复行>uniq:  查找重复行</a></li><li><a href=#jion-基于特定字段的值将两个有序文件组合在一起>jion: 基于特定字段的值将两个有序文件组合在一起</a></li><li><a href=#tsort-以偏序创建全序>tsort: 以偏序创建全序</a></li><li><a href=#strings-二进制文件中搜索>strings: 二进制文件中搜索</a></li><li><a href=#tr-转换字符>tr: 转换字符</a></li><li><a href=#sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</a></li></ul></li></ul></nav></div></div><dialog id=toc-dialog class="tw-max-w-full tw-w-full tw-max-h-full tw-h-full tw-ml-16"><div class="toc tw-mx-4 tw-max-w-full"><h2 class="tw-mx-0 tw-my-6 tw-uppercase tw-text-2xl">目录</h2><div class=toc-content><nav id=TableOfContents><ul><li><a href=#cat>cat</a></li><li><a href=#split-拆分文件>split ：拆分文件</a></li><li><a href=#tac反转文本行的顺序>tac：反转文本行的顺序</a></li><li><a href=#rev反转字符>rev：反转字符</a></li><li><a href=#head--tail-从数据开头和末尾选择数据行>head / tail ：从数据开头和末尾选择数据行</a></li><li><a href=#列操作>列操作</a><ul><li><a href=#colrm-删除数据列>colrm ：删除数据列</a></li><li><a href=#cut--抽取数据列-与-colrm-相反>cut ： 抽取数据列 （与 colrm 相反）</a></li><li><a href=#paste-组合数据列>paste 组合数据列</a></li></ul></li><li><a href=#比较文件>比较文件</a><ul><li><a href=#cmp-逐字节比较>cmp ：逐字节比较</a></li><li><a href=#comm--比较有序文本文件>comm ： 比较有序文本文件</a></li><li><a href=#diff--sdiff-比较无序文件>diff  / sdiff： 比较无序文件</a></li></ul></li><li><a href=#统计和格式化>统计和格式化</a><ul><li><a href=#nl-创建行号>nl ：创建行号</a></li><li><a href=#wc--单词统计>wc : 单词统计</a></li><li><a href=#expand-将制表符转换成空格>expand: 将制表符转换成空格</a></li><li><a href=#unexpand--将空格转换成制表符>unexpand : 将空格转换成制表符</a></li><li><a href=#fold-长行分成短行>fold: 长行分成短行</a></li><li><a href=#fmt将段落中的各行连接起来>fmt：将段落中的各行连接起来</a></li></ul></li><li><a href=#选取排列组合与变换>选取、排列、组合与变换</a><ul><li><a href=#grep选取包含特定模式的行>grep：选取包含特定模式的行</a></li><li><a href=#look查找以特定模式开头的所有单词>look：查找以特定模式开头的所有单词</a></li><li><a href=#sort--排序数据>sort : 排序数据</a></li><li><a href=#uniq-查找重复行>uniq:  查找重复行</a></li><li><a href=#jion-基于特定字段的值将两个有序文件组合在一起>jion: 基于特定字段的值将两个有序文件组合在一起</a></li><li><a href=#tsort-以偏序创建全序>tsort: 以偏序创建全序</a></li><li><a href=#strings-二进制文件中搜索>strings: 二进制文件中搜索</a></li><li><a href=#tr-转换字符>tr: 转换字符</a></li><li><a href=#sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</a></li></ul></li></ul></nav></div></div></dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class=single-title data-pagefind-meta=date:2021-11-04 data-pagefind-body>Unix 过滤器</h1><div class=post-meta><div class=post-meta-line><span class=post-author><svg class="icon" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6.0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7.0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4.0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9s28-2.7 40.9-6.9c2.3-.7 4.7-1.1 7.1-1.1 42.9.0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><a href=/ title=Author rel=author class=author>vdong</a>
+<svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class="tw-mx-4 tw-flex-1"><div class="toc print:!tw-hidden" id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#cat>cat</a></li><li><a href=#split-拆分文件>split ：拆分文件</a></li><li><a href=#tac反转文本行的顺序>tac：反转文本行的顺序</a></li><li><a href=#rev反转字符>rev：反转字符</a></li><li><a href=#head--tail-从数据开头和末尾选择数据行>head / tail ：从数据开头和末尾选择数据行</a></li><li><a href=#列操作>列操作</a><ul><li><a href=#colrm-删除数据列>colrm ：删除数据列</a></li><li><a href=#cut--抽取数据列-与-colrm-相反>cut ： 抽取数据列 （与 colrm 相反）</a></li><li><a href=#paste-组合数据列>paste 组合数据列</a></li></ul></li><li><a href=#比较文件>比较文件</a><ul><li><a href=#cmp-逐字节比较>cmp ：逐字节比较</a></li><li><a href=#comm--比较有序文本文件>comm ： 比较有序文本文件</a></li><li><a href=#diff--sdiff-比较无序文件>diff  / sdiff： 比较无序文件</a></li></ul></li><li><a href=#统计和格式化>统计和格式化</a><ul><li><a href=#nl-创建行号>nl ：创建行号</a></li><li><a href=#wc--单词统计>wc : 单词统计</a></li><li><a href=#expand-将制表符转换成空格>expand: 将制表符转换成空格</a></li><li><a href=#unexpand--将空格转换成制表符>unexpand : 将空格转换成制表符</a></li><li><a href=#fold-长行分成短行>fold: 长行分成短行</a></li><li><a href=#fmt将段落中的各行连接起来>fmt：将段落中的各行连接起来</a></li></ul></li><li><a href=#选取排列组合与变换>选取、排列、组合与变换</a><ul><li><a href=#grep选取包含特定模式的行>grep：选取包含特定模式的行</a></li><li><a href=#look查找以特定模式开头的所有单词>look：查找以特定模式开头的所有单词</a></li><li><a href=#sort--排序数据>sort : 排序数据</a></li><li><a href=#uniq-查找重复行>uniq:  查找重复行</a></li><li><a href=#jion-基于特定字段的值将两个有序文件组合在一起>jion: 基于特定字段的值将两个有序文件组合在一起</a></li><li><a href=#tsort-以偏序创建全序>tsort: 以偏序创建全序</a></li><li><a href=#strings-二进制文件中搜索>strings: 二进制文件中搜索</a></li><li><a href=#tr-转换字符>tr: 转换字符</a></li><li><a href=#sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</a></li></ul></li></ul></nav></div></div><dialog id=toc-dialog class="tw-max-w-full tw-w-full tw-max-h-full tw-h-full tw-ml-16"><div class="toc tw-mx-4 tw-max-w-full"><h2 class="tw-mx-0 tw-my-6 tw-uppercase tw-text-2xl">目录</h2><div class=toc-content><nav id=TableOfContents><ul><li><a href=#cat>cat</a></li><li><a href=#split-拆分文件>split ：拆分文件</a></li><li><a href=#tac反转文本行的顺序>tac：反转文本行的顺序</a></li><li><a href=#rev反转字符>rev：反转字符</a></li><li><a href=#head--tail-从数据开头和末尾选择数据行>head / tail ：从数据开头和末尾选择数据行</a></li><li><a href=#列操作>列操作</a><ul><li><a href=#colrm-删除数据列>colrm ：删除数据列</a></li><li><a href=#cut--抽取数据列-与-colrm-相反>cut ： 抽取数据列 （与 colrm 相反）</a></li><li><a href=#paste-组合数据列>paste 组合数据列</a></li></ul></li><li><a href=#比较文件>比较文件</a><ul><li><a href=#cmp-逐字节比较>cmp ：逐字节比较</a></li><li><a href=#comm--比较有序文本文件>comm ： 比较有序文本文件</a></li><li><a href=#diff--sdiff-比较无序文件>diff  / sdiff： 比较无序文件</a></li></ul></li><li><a href=#统计和格式化>统计和格式化</a><ul><li><a href=#nl-创建行号>nl ：创建行号</a></li><li><a href=#wc--单词统计>wc : 单词统计</a></li><li><a href=#expand-将制表符转换成空格>expand: 将制表符转换成空格</a></li><li><a href=#unexpand--将空格转换成制表符>unexpand : 将空格转换成制表符</a></li><li><a href=#fold-长行分成短行>fold: 长行分成短行</a></li><li><a href=#fmt将段落中的各行连接起来>fmt：将段落中的各行连接起来</a></li></ul></li><li><a href=#选取排列组合与变换>选取、排列、组合与变换</a><ul><li><a href=#grep选取包含特定模式的行>grep：选取包含特定模式的行</a></li><li><a href=#look查找以特定模式开头的所有单词>look：查找以特定模式开头的所有单词</a></li><li><a href=#sort--排序数据>sort : 排序数据</a></li><li><a href=#uniq-查找重复行>uniq:  查找重复行</a></li><li><a href=#jion-基于特定字段的值将两个有序文件组合在一起>jion: 基于特定字段的值将两个有序文件组合在一起</a></li><li><a href=#tsort-以偏序创建全序>tsort: 以偏序创建全序</a></li><li><a href=#strings-二进制文件中搜索>strings: 二进制文件中搜索</a></li><li><a href=#tr-转换字符>tr: 转换字符</a></li><li><a href=#sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</a></li></ul></li></ul></nav></div></div></dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class=single-title data-pagefind-meta=date:2021-11-04 data-pagefind-body>Unix 过滤器</h1><div class=post-meta><div class=post-meta-line><span class=post-author><svg class="icon" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6.0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7.0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4.0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9s28-2.7 40.9-6.9c2.3-.7 4.7-1.1 7.1-1.1 42.9.0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><a href=/ title=Author rel=author class=author>vdong</a>
 </span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%8A%80%E6%9C%AF/><svg class="icon" viewBox="0 0 512 512"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>技术</a></span></div><div class=post-meta-line><svg class="icon" viewBox="0 0 448 512"><path d="M148 288h-40c-6.6.0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h48c26.5.0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3.0 6-2.7 6-6z"/></svg>&nbsp;<time datetime=2021-11-04>2021-11-04</time>&nbsp;<svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime=2025-05-26>2025-05-26</time>&nbsp;<svg class="icon" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3.0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9.0l60.1 60.1c18.8 18.7 18.8 49.1.0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3.0-17l-111-111c-4.8-4.7-12.4-4.7-17.1.0zM124.1 339.9c-5.5-5.5-5.5-14.3.0-19.8l154-154c5.5-5.5 14.3-5.5 19.8.0s5.5 14.3.0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8.0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;约 3040 字&nbsp;
 <svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5.0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6.0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;预计阅读 14 分钟&nbsp;<span id=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/ class=leancloud_visitors data-flag-title="Unix 过滤器">
 <svg class="icon" viewBox="0 0 576 512"><path d="M288 144a110.94 110.94.0 00-31.24 5 55.4 55.4.0 017.24 27 56 56 0 01-56 56 55.4 55.4.0 01-27-7.24A111.71 111.71.0 10288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35.0 000 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35.0 000-29.19zM288 4e2c-98.65.0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 4e2 288 4e2z"/></svg>&nbsp;<span class="leancloud-visitors-count waline-pageview-count" data-path=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/></span>&nbsp;次阅读
 </span>&nbsp;<span id=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/ class=comment_count data-flag-title="Unix 过滤器">
 <svg class="icon" viewBox="0 0 576 512"><path d="M532 386.2c27.5-27.1 44-61.1 44-98.2.0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6.0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5.0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8.0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2.0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5.0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z"/></svg>&nbsp;<span class=waline-comment-count id=waline-comment-count data-path=/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/></span>&nbsp;条评论
 </span>&nbsp;</div></div><div class="details toc print:!tw-block" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span class=details-icon><svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#cat>cat</a></li><li><a href=#split-拆分文件>split ：拆分文件</a></li><li><a href=#tac反转文本行的顺序>tac：反转文本行的顺序</a></li><li><a href=#rev反转字符>rev：反转字符</a></li><li><a href=#head--tail-从数据开头和末尾选择数据行>head / tail ：从数据开头和末尾选择数据行</a></li><li><a href=#列操作>列操作</a><ul><li><a href=#colrm-删除数据列>colrm ：删除数据列</a></li><li><a href=#cut--抽取数据列-与-colrm-相反>cut ： 抽取数据列 （与 colrm 相反）</a></li><li><a href=#paste-组合数据列>paste 组合数据列</a></li></ul></li><li><a href=#比较文件>比较文件</a><ul><li><a href=#cmp-逐字节比较>cmp ：逐字节比较</a></li><li><a href=#comm--比较有序文本文件>comm ： 比较有序文本文件</a></li><li><a href=#diff--sdiff-比较无序文件>diff  / sdiff： 比较无序文件</a></li></ul></li><li><a href=#统计和格式化>统计和格式化</a><ul><li><a href=#nl-创建行号>nl ：创建行号</a></li><li><a href=#wc--单词统计>wc : 单词统计</a></li><li><a href=#expand-将制表符转换成空格>expand: 将制表符转换成空格</a></li><li><a href=#unexpand--将空格转换成制表符>unexpand : 将空格转换成制表符</a></li><li><a href=#fold-长行分成短行>fold: 长行分成短行</a></li><li><a href=#fmt将段落中的各行连接起来>fmt：将段落中的各行连接起来</a></li></ul></li><li><a href=#选取排列组合与变换>选取、排列、组合与变换</a><ul><li><a href=#grep选取包含特定模式的行>grep：选取包含特定模式的行</a></li><li><a href=#look查找以特定模式开头的所有单词>look：查找以特定模式开头的所有单词</a></li><li><a href=#sort--排序数据>sort : 排序数据</a></li><li><a href=#uniq-查找重复行>uniq:  查找重复行</a></li><li><a href=#jion-基于特定字段的值将两个有序文件组合在一起>jion: 基于特定字段的值将两个有序文件组合在一起</a></li><li><a href=#tsort-以偏序创建全序>tsort: 以偏序创建全序</a></li><li><a href=#strings-二进制文件中搜索>strings: 二进制文件中搜索</a></li><li><a href=#tr-转换字符>tr: 转换字符</a></li><li><a href=#sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</a></li></ul></li></ul></nav></div></div><div class=content id=content data-pagefind-body><p>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。</p><p>常用过滤器</p><h2 id=cat class=headerLink><a href=#cat class=header-mark></a>cat</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+<span class=details-icon><svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#cat>cat</a></li><li><a href=#split-拆分文件>split ：拆分文件</a></li><li><a href=#tac反转文本行的顺序>tac：反转文本行的顺序</a></li><li><a href=#rev反转字符>rev：反转字符</a></li><li><a href=#head--tail-从数据开头和末尾选择数据行>head / tail ：从数据开头和末尾选择数据行</a></li><li><a href=#列操作>列操作</a><ul><li><a href=#colrm-删除数据列>colrm ：删除数据列</a></li><li><a href=#cut--抽取数据列-与-colrm-相反>cut ： 抽取数据列 （与 colrm 相反）</a></li><li><a href=#paste-组合数据列>paste 组合数据列</a></li></ul></li><li><a href=#比较文件>比较文件</a><ul><li><a href=#cmp-逐字节比较>cmp ：逐字节比较</a></li><li><a href=#comm--比较有序文本文件>comm ： 比较有序文本文件</a></li><li><a href=#diff--sdiff-比较无序文件>diff  / sdiff： 比较无序文件</a></li></ul></li><li><a href=#统计和格式化>统计和格式化</a><ul><li><a href=#nl-创建行号>nl ：创建行号</a></li><li><a href=#wc--单词统计>wc : 单词统计</a></li><li><a href=#expand-将制表符转换成空格>expand: 将制表符转换成空格</a></li><li><a href=#unexpand--将空格转换成制表符>unexpand : 将空格转换成制表符</a></li><li><a href=#fold-长行分成短行>fold: 长行分成短行</a></li><li><a href=#fmt将段落中的各行连接起来>fmt：将段落中的各行连接起来</a></li></ul></li><li><a href=#选取排列组合与变换>选取、排列、组合与变换</a><ul><li><a href=#grep选取包含特定模式的行>grep：选取包含特定模式的行</a></li><li><a href=#look查找以特定模式开头的所有单词>look：查找以特定模式开头的所有单词</a></li><li><a href=#sort--排序数据>sort : 排序数据</a></li><li><a href=#uniq-查找重复行>uniq:  查找重复行</a></li><li><a href=#jion-基于特定字段的值将两个有序文件组合在一起>jion: 基于特定字段的值将两个有序文件组合在一起</a></li><li><a href=#tsort-以偏序创建全序>tsort: 以偏序创建全序</a></li><li><a href=#strings-二进制文件中搜索>strings: 二进制文件中搜索</a></li><li><a href=#tr-转换字符>tr: 转换字符</a></li><li><a href=#sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</a></li></ul></li></ul></nav></div></div><div class=content id=content data-pagefind-body><p>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。</p><p>常用过滤器</p><h2 id=cat class=headerLink><a href=#cat class=header-mark></a>cat</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -80,19 +76,15 @@ tw-overflow-y-hidden
 tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>cat name.txt mobile.txt &gt; data <span class=c1># 合并文件</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># -n 显示行号</span></span></span></code></pre></div><h2 id=split-拆分文件 class=headerLink><a href=#split-%e6%8b%86%e5%88%86%e6%96%87%e4%bb%b6 class=header-mark></a>split ：拆分文件</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -n 显示行号</span></span></span></code></pre></div><h2 id=split-拆分文件 class=headerLink><a href=#split-%e6%8b%86%e5%88%86%e6%96%87%e4%bb%b6 class=header-mark></a>split ：拆分文件</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -136,19 +128,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>split <span class=o>[</span>-
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># -l 100 : 指定每个文件行数</span>
 </span></span><span class=line><span class=cl><span class=c1># -d ：改命名为 00 01 02</span>
-</span></span><span class=line><span class=cl><span class=c1># -a 2 ： 命名改为 3 位 aaa aab / 001 002</span></span></span></code></pre></div><h2 id=tac反转文本行的顺序 class=headerLink><a href=#tac%e5%8f%8d%e8%bd%ac%e6%96%87%e6%9c%ac%e8%a1%8c%e7%9a%84%e9%a1%ba%e5%ba%8f class=header-mark></a>tac：反转文本行的顺序</h2><p>和 cat 类似， 写入标准输出前将文本行反转，适用于日志文件等。</p><h2 id=rev反转字符 class=headerLink><a href=#rev%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6 class=header-mark></a>rev：反转字符</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -a 2 ： 命名改为 3 位 aaa aab / 001 002</span></span></span></code></pre></div><h2 id=tac反转文本行的顺序 class=headerLink><a href=#tac%e5%8f%8d%e8%bd%ac%e6%96%87%e6%9c%ac%e8%a1%8c%e7%9a%84%e9%a1%ba%e5%ba%8f class=header-mark></a>tac：反转文本行的顺序</h2><p>和 cat 类似， 写入标准输出前将文本行反转，适用于日志文件等。</p><h2 id=rev反转字符 class=headerLink><a href=#rev%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6 class=header-mark></a>rev：反转字符</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -195,19 +183,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>rev data
 </span></span><span class=line><span class=cl><span class=c1># dcba</span>
 </span></span><span class=line><span class=cl><span class=c1># 4321</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>rev data <span class=p>|</span> tac <span class=c1># 倒背如流</span></span></span></code></pre></div><h2 id=head--tail-从数据开头和末尾选择数据行 class=headerLink><a href=#head--tail-%e4%bb%8e%e6%95%b0%e6%8d%ae%e5%bc%80%e5%a4%b4%e5%92%8c%e6%9c%ab%e5%b0%be%e9%80%89%e6%8b%a9%e6%95%b0%e6%8d%ae%e8%a1%8c class=header-mark></a>head / tail ：从数据开头和末尾选择数据行</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl>rev data <span class=p>|</span> tac <span class=c1># 倒背如流</span></span></span></code></pre></div><h2 id=head--tail-从数据开头和末尾选择数据行 class=headerLink><a href=#head--tail-%e4%bb%8e%e6%95%b0%e6%8d%ae%e5%bc%80%e5%a4%b4%e5%92%8c%e6%9c%ab%e5%b0%be%e9%80%89%e6%8b%a9%e6%95%b0%e6%8d%ae%e8%a1%8c class=header-mark></a>head / tail ：从数据开头和末尾选择数据行</h2><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -247,19 +231,15 @@ tw-overflow-y-hidden
 tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>head <span class=o>[</span>-n lines<span class=o>]</span>
 </span></span><span class=line><span class=cl>tail <span class=o>[</span>-n lines<span class=o>]</span>
-</span></span><span class=line><span class=cl><span class=c1># 默认 10 行数据</span></span></span></code></pre></div><h2 id=列操作 class=headerLink><a href=#%e5%88%97%e6%93%8d%e4%bd%9c class=header-mark></a>列操作</h2><h3 id=colrm-删除数据列 class=headerLink><a href=#colrm-%e5%88%a0%e9%99%a4%e6%95%b0%e6%8d%ae%e5%88%97 class=header-mark></a>colrm ：删除数据列</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># 默认 10 行数据</span></span></span></code></pre></div><h2 id=列操作 class=headerLink><a href=#%e5%88%97%e6%93%8d%e4%bd%9c class=header-mark></a>列操作</h2><h3 id=colrm-删除数据列 class=headerLink><a href=#colrm-%e5%88%a0%e9%99%a4%e6%95%b0%e6%8d%ae%e5%88%97 class=header-mark></a>colrm ：删除数据列</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -301,19 +281,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>colrm <span class=o>[</span>s
 </span></span><span class=line><span class=cl><span class=c1># 列编号 从 1 开始</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># 把 students_old 文件删除 14 列到 20 列后 保存到 student_new 文件中  </span>
-</span></span><span class=line><span class=cl>colrm <span class=m>14</span> <span class=m>20</span> &lt; students_old &gt; students_new</span></span></code></pre></div><h3 id=cut--抽取数据列-与-colrm-相反 class=headerLink><a href=#cut--%e6%8a%bd%e5%8f%96%e6%95%b0%e6%8d%ae%e5%88%97-%e4%b8%8e-colrm-%e7%9b%b8%e5%8f%8d class=header-mark></a>cut ： 抽取数据列 （与 colrm 相反）</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl>colrm <span class=m>14</span> <span class=m>20</span> &lt; students_old &gt; students_new</span></span></code></pre></div><h3 id=cut--抽取数据列-与-colrm-相反 class=headerLink><a href=#cut--%e6%8a%bd%e5%8f%96%e6%95%b0%e6%8d%ae%e5%88%97-%e4%b8%8e-colrm-%e7%9b%b8%e5%8f%8d class=header-mark></a>cut ： 抽取数据列 （与 colrm 相反）</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -366,19 +342,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>cut -c list <span class=o>[</
 </span></span><span class=line><span class=cl><span class=c1># 抽取按照 &#39;:&#39; 分割后的， 第 1 和第 3 列数据</span>
 </span></span><span class=line><span class=cl>cut -f 1,3 -d <span class=s1>&#39;:&#39;</span> data <span class=c1># 可以删除选项的空格 如 cut -f1,3 -d&#39;:&#39; data</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># ps 如果一行没有定界符，默认返回整行，如果想抛弃这样的行，可以使用 -s</span></span></span></code></pre></div><h3 id=paste-组合数据列 class=headerLink><a href=#paste-%e7%bb%84%e5%90%88%e6%95%b0%e6%8d%ae%e5%88%97 class=header-mark></a>paste 组合数据列</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># ps 如果一行没有定界符，默认返回整行，如果想抛弃这样的行，可以使用 -s</span></span></span></code></pre></div><h3 id=paste-组合数据列 class=headerLink><a href=#paste-%e7%bb%84%e5%90%88%e6%95%b0%e6%8d%ae%e5%88%97 class=header-mark></a>paste 组合数据列</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -425,19 +397,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>paste <span class=o>[</span>-
 </span></span><span class=line><span class=cl>paste -d <span class=s1>&#39;|&#39;</span> file1 file2
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># 定界符轮换使用</span>
-</span></span><span class=line><span class=cl>paste -d <span class=s1>&#39;|&amp;&#39;</span> file1 file2</span></span></code></pre></div><h2 id=比较文件 class=headerLink><a href=#%e6%af%94%e8%be%83%e6%96%87%e4%bb%b6 class=header-mark></a>比较文件</h2><h3 id=cmp-逐字节比较 class=headerLink><a href=#cmp-%e9%80%90%e5%ad%97%e8%8a%82%e6%af%94%e8%be%83 class=header-mark></a>cmp ：逐字节比较</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl>paste -d <span class=s1>&#39;|&amp;&#39;</span> file1 file2</span></span></code></pre></div><h2 id=比较文件 class=headerLink><a href=#%e6%af%94%e8%be%83%e6%96%87%e4%bb%b6 class=header-mark></a>比较文件</h2><h3 id=cmp-逐字节比较 class=headerLink><a href=#cmp-%e9%80%90%e5%ad%97%e8%8a%82%e6%af%94%e8%be%83 class=header-mark></a>cmp ：逐字节比较</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -477,19 +445,15 @@ tw-overflow-y-hidden
 tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>cmp file1 file2
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 相同的话就 不做任何处理</span></span></span></code></pre></div><h3 id=comm--比较有序文本文件 class=headerLink><a href=#comm--%e6%af%94%e8%be%83%e6%9c%89%e5%ba%8f%e6%96%87%e6%9c%ac%e6%96%87%e4%bb%b6 class=header-mark></a>comm ： 比较有序文本文件</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># 相同的话就 不做任何处理</span></span></span></code></pre></div><h3 id=comm--比较有序文本文件 class=headerLink><a href=#comm--%e6%af%94%e8%be%83%e6%9c%89%e5%ba%8f%e6%96%87%e6%9c%ac%e6%96%87%e4%bb%b6 class=header-mark></a>comm ： 比较有序文本文件</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -532,19 +496,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>comm <span class=o>[</span>-1
 </span></span><span class=line><span class=cl><span class=c1># 第一列 仅输出第一个文件有的行</span>
 </span></span><span class=line><span class=cl><span class=c1># 第二列 仅输出第二个文件有的行</span>
 </span></span><span class=line><span class=cl><span class=c1># 第三列 输出两个文件都有的行</span>
-</span></span><span class=line><span class=cl><span class=c1># -1 -2 -3 表示抑制某一列的输入</span></span></span></code></pre></div><h3 id=diff--sdiff-比较无序文件 class=headerLink><a href=#diff--sdiff-%e6%af%94%e8%be%83%e6%97%a0%e5%ba%8f%e6%96%87%e4%bb%b6 class=header-mark></a>diff  / sdiff： 比较无序文件</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -1 -2 -3 表示抑制某一列的输入</span></span></span></code></pre></div><h3 id=diff--sdiff-比较无序文件 class=headerLink><a href=#diff--sdiff-%e6%af%94%e8%be%83%e6%97%a0%e5%ba%8f%e6%96%87%e4%bb%b6 class=header-mark></a>diff  / sdiff： 比较无序文件</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -613,19 +573,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>diff file1 file2
 </span></span><span class=line><span class=cl> <span class=c1># 选项 </span>
 </span></span><span class=line><span class=cl> -l 相同的行只显示左侧的
 </span></span><span class=line><span class=cl> -s 不显示相同的行
-</span></span><span class=line><span class=cl> -w <span class=m>50</span> 指定列宽度</span></span></code></pre></div><h2 id=统计和格式化 class=headerLink><a href=#%e7%bb%9f%e8%ae%a1%e5%92%8c%e6%a0%bc%e5%bc%8f%e5%8c%96 class=header-mark></a>统计和格式化</h2><h3 id=nl-创建行号 class=headerLink><a href=#nl-%e5%88%9b%e5%bb%ba%e8%a1%8c%e5%8f%b7 class=header-mark></a>nl ：创建行号</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl> -w <span class=m>50</span> 指定列宽度</span></span></code></pre></div><h2 id=统计和格式化 class=headerLink><a href=#%e7%bb%9f%e8%ae%a1%e5%92%8c%e6%a0%bc%e5%bc%8f%e5%8c%96 class=header-mark></a>统计和格式化</h2><h3 id=nl-创建行号 class=headerLink><a href=#nl-%e5%88%9b%e5%bb%ba%e8%a1%8c%e5%8f%b7 class=header-mark></a>nl ：创建行号</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -669,19 +625,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>nl <span class=o>[</span>-v s
 </span></span><span class=line><span class=cl><span class=c1># 默认 nl 不对空行编号， -b a （all lines 所有行）</span>
 </span></span><span class=line><span class=cl><span class=c1># ln=左对齐，没有前导 0</span>
 </span></span><span class=line><span class=cl><span class=c1># rn=右对齐，没有前导 0</span>
-</span></span><span class=line><span class=cl><span class=c1># rz=右对齐，有前导 0</span></span></span></code></pre></div><h3 id=wc--单词统计 class=headerLink><a href=#wc--%e5%8d%95%e8%af%8d%e7%bb%9f%e8%ae%a1 class=header-mark></a>wc : 单词统计</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># rz=右对齐，有前导 0</span></span></span></code></pre></div><h3 id=wc--单词统计 class=headerLink><a href=#wc--%e5%8d%95%e8%af%8d%e7%bb%9f%e8%ae%a1 class=header-mark></a>wc : 单词统计</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -722,19 +674,15 @@ tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>wc <span class=o>[</span>-clLw<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
 </span></span><span class=line><span class=cl><span class=c1># wc 默认输出三个数字：行数（line），单词数（word），字符数（char），LWC （look at Women Carefully）</span>
 </span></span><span class=line><span class=cl><span class=c1># -clw 显示指定列 </span>
-</span></span><span class=line><span class=cl><span class=c1># -L 显示最长的行</span></span></span></code></pre></div><h3 id=expand-将制表符转换成空格 class=headerLink><a href=#expand-%e5%b0%86%e5%88%b6%e8%a1%a8%e7%ac%a6%e8%bd%ac%e6%8d%a2%e6%88%90%e7%a9%ba%e6%a0%bc class=header-mark></a>expand: 将制表符转换成空格</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -L 显示最长的行</span></span></span></code></pre></div><h3 id=expand-将制表符转换成空格 class=headerLink><a href=#expand-%e5%b0%86%e5%88%b6%e8%a1%a8%e7%ac%a6%e8%bd%ac%e6%8d%a2%e6%88%90%e7%a9%ba%e6%a0%bc class=header-mark></a>expand: 将制表符转换成空格</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -775,19 +723,15 @@ tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>expand <span class=o>[</span>-i<span class=o>]</span> <span class=o>[</span>-t size <span class=p>|</span> -t list<span class=o>]</span> <span class=o>[</span>file...<span class=o>]</span>
 </span></span><span class=line><span class=cl><span class=c1># -i 只转换开头的制表符</span>
 </span></span><span class=line><span class=cl><span class=c1># -t size 默认size等于8 ，每8个位置一个制表符</span>
-</span></span><span class=line><span class=cl><span class=c1># -t list 指定制表符位于特定的位置，0指第一个位置，如 expand -t 7,15,21 data</span></span></span></code></pre></div><h3 id=unexpand--将空格转换成制表符 class=headerLink><a href=#unexpand--%e5%b0%86%e7%a9%ba%e6%a0%bc%e8%bd%ac%e6%8d%a2%e6%88%90%e5%88%b6%e8%a1%a8%e7%ac%a6 class=header-mark></a>unexpand : 将空格转换成制表符</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -t list 指定制表符位于特定的位置，0指第一个位置，如 expand -t 7,15,21 data</span></span></span></code></pre></div><h3 id=unexpand--将空格转换成制表符 class=headerLink><a href=#unexpand--%e5%b0%86%e7%a9%ba%e6%a0%bc%e8%bd%ac%e6%8d%a2%e6%88%90%e5%88%b6%e8%a1%a8%e7%ac%a6 class=header-mark></a>unexpand : 将空格转换成制表符</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -828,19 +772,15 @@ tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>unexpand <span class=o>[</span>-a<span class=o>]</span> <span class=o>[</span>-t size <span class=p>|</span> -t list<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
 </span></span><span class=line><span class=cl><span class=c1># 默认只替换开头的空格</span>
 </span></span><span class=line><span class=cl><span class=c1># -a 标识替换所有空格</span>
-</span></span><span class=line><span class=cl><span class=c1># -t 的参数和 expand 一致</span></span></span></code></pre></div><h3 id=fold-长行分成短行 class=headerLink><a href=#fold-%e9%95%bf%e8%a1%8c%e5%88%86%e6%88%90%e7%9f%ad%e8%a1%8c class=header-mark></a>fold: 长行分成短行</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -t 的参数和 expand 一致</span></span></span></code></pre></div><h3 id=fold-长行分成短行 class=headerLink><a href=#fold-%e9%95%bf%e8%a1%8c%e5%88%86%e6%88%90%e7%9f%ad%e8%a1%8c class=header-mark></a>fold: 长行分成短行</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -881,19 +821,15 @@ tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>fold <span class=o>[</span>-s<span class=o>]</span> <span class=o>[</span>-w width<span class=o>]</span> <span class=o>[</span>file ...<span class=o>]</span>
 </span></span><span class=line><span class=cl><span class=c1># 默认 80 字符每行，</span>
 </span></span><span class=line><span class=cl><span class=c1># -w width 可以重新指定宽度</span>
-</span></span><span class=line><span class=cl><span class=c1># -s 不从中间分割单词</span></span></span></code></pre></div><h3 id=fmt将段落中的各行连接起来 class=headerLink><a href=#fmt%e5%b0%86%e6%ae%b5%e8%90%bd%e4%b8%ad%e7%9a%84%e5%90%84%e8%a1%8c%e8%bf%9e%e6%8e%a5%e8%b5%b7%e6%9d%a5 class=header-mark></a>fmt：将段落中的各行连接起来</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -s 不从中间分割单词</span></span></span></code></pre></div><h3 id=fmt将段落中的各行连接起来 class=headerLink><a href=#fmt%e5%b0%86%e6%ae%b5%e8%90%bd%e4%b8%ad%e7%9a%84%e5%90%84%e8%a1%8c%e8%bf%9e%e6%8e%a5%e8%b5%b7%e6%9d%a5 class=header-mark></a>fmt：将段落中的各行连接起来</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -934,19 +870,15 @@ tw-overflow-x-auto
 tw-scrollbar-thin"><span class=line><span class=cl>fmt <span class=o>[</span>-su<span class=o>]</span> <span class=o>[</span>-w width<span class=o>]</span> <span class=o>[</span>file...<span class=o>]</span>
 </span></span><span class=line><span class=cl><span class=c1># -w width 行宽</span>
 </span></span><span class=line><span class=cl><span class=c1># -u 统一间距，单词间有多个空格，减少，只保留一个</span>
-</span></span><span class=line><span class=cl><span class=c1># -s 仅拆分长行，而不连接短行</span></span></span></code></pre></div><h2 id=选取排列组合与变换 class=headerLink><a href=#%e9%80%89%e5%8f%96%e6%8e%92%e5%88%97%e7%bb%84%e5%90%88%e4%b8%8e%e5%8f%98%e6%8d%a2 class=header-mark></a>选取、排列、组合与变换</h2><h3 id=grep选取包含特定模式的行 class=headerLink><a href=#grep%e9%80%89%e5%8f%96%e5%8c%85%e5%90%ab%e7%89%b9%e5%ae%9a%e6%a8%a1%e5%bc%8f%e7%9a%84%e8%a1%8c class=header-mark></a>grep：选取包含特定模式的行</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -s 仅拆分长行，而不连接短行</span></span></span></code></pre></div><h2 id=选取排列组合与变换 class=headerLink><a href=#%e9%80%89%e5%8f%96%e6%8e%92%e5%88%97%e7%bb%84%e5%90%88%e4%b8%8e%e5%8f%98%e6%8d%a2 class=header-mark></a>选取、排列、组合与变换</h2><h3 id=grep选取包含特定模式的行 class=headerLink><a href=#grep%e9%80%89%e5%8f%96%e5%8c%85%e5%90%ab%e7%89%b9%e5%ae%9a%e6%a8%a1%e5%bc%8f%e7%9a%84%e8%a1%8c class=header-mark></a>grep：选取包含特定模式的行</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1014,19 +946,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>grep <span class=o>[</span>-c
 </span></span><span class=line><span class=cl><span class=c1># -r 递归搜索目录树</span>
 </span></span><span class=line><span class=cl>grep -r initialize admin <span class=c1># 搜索admin目录及子目录文件中是否有单词 “inttialize” </span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># -s 抑制错误显示</span></span></span></code></pre></div><h3 id=look查找以特定模式开头的所有单词 class=headerLink><a href=#look%e6%9f%a5%e6%89%be%e4%bb%a5%e7%89%b9%e5%ae%9a%e6%a8%a1%e5%bc%8f%e5%bc%80%e5%a4%b4%e7%9a%84%e6%89%80%e6%9c%89%e5%8d%95%e8%af%8d class=header-mark></a>look：查找以特定模式开头的所有单词</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -s 抑制错误显示</span></span></span></code></pre></div><h3 id=look查找以特定模式开头的所有单词 class=headerLink><a href=#look%e6%9f%a5%e6%89%be%e4%bb%a5%e7%89%b9%e5%ae%9a%e6%a8%a1%e5%bc%8f%e5%bc%80%e5%a4%b4%e7%9a%84%e6%89%80%e6%9c%89%e5%8d%95%e8%af%8d class=header-mark></a>look：查找以特定模式开头的所有单词</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1069,19 +997,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>look <span class=o>[</span>-d
 </span></span><span class=line><span class=cl><span class=c1># look 搜索以字母顺序排列的数据，并以特定的模式开头的行</span>
 </span></span><span class=line><span class=cl><span class=c1># 因为 look 使用二分法，搜索数据，要求同时获取所有数据，故只能再管道的开头使用数据，不能再管道中间使用</span>
 </span></span><span class=line><span class=cl><span class=c1># -d 只考虑字母和数字</span>
-</span></span><span class=line><span class=cl><span class=c1># -f 忽略大小写</span></span></span></code></pre></div><h3 id=sort--排序数据 class=headerLink><a href=#sort--%e6%8e%92%e5%ba%8f%e6%95%b0%e6%8d%ae class=header-mark></a>sort : 排序数据</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -f 忽略大小写</span></span></span></code></pre></div><h3 id=sort--排序数据 class=headerLink><a href=#sort--%e6%8e%92%e5%ba%8f%e6%95%b0%e6%8d%ae class=header-mark></a>sort : 排序数据</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1140,19 +1064,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>sort <span class=o>[</span>-d
 </span></span><span class=line><span class=cl><span class=c1># 早期使用 ASCII 顺序， （SNUL） 空格 数字 大写字母 小写字母</span>
 </span></span><span class=line><span class=cl><span class=c1># 现在 使用环境变量 LC_COLLATE 指定使用哪一种排序  c 是 ASCII </span>
 </span></span><span class=line><span class=cl>locale <span class=c1># 可以查看所有区域设置的当前值</span>
-</span></span><span class=line><span class=cl>locale -a <span class=c1># 查看自己的系统支持哪些区域设置</span></span></span></code></pre></div><h3 id=uniq-查找重复行 class=headerLink><a href=#uniq-%e6%9f%a5%e6%89%be%e9%87%8d%e5%a4%8d%e8%a1%8c class=header-mark></a>uniq:  查找重复行</h3><p>uniq 可以做四个不同的任务</p><ol><li>消除重复行 <code>uniq</code></li><li>选取重复行 <code>uniq -d</code></li><li>选取唯一行 <code>uniq -u</code></li><li>统计重复行数量 <code>uniq -c</code></li></ol><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl>locale -a <span class=c1># 查看自己的系统支持哪些区域设置</span></span></span></code></pre></div><h3 id=uniq-查找重复行 class=headerLink><a href=#uniq-%e6%9f%a5%e6%89%be%e9%87%8d%e5%a4%8d%e8%a1%8c class=header-mark></a>uniq:  查找重复行</h3><p>uniq 可以做四个不同的任务</p><ol><li>消除重复行 <code>uniq</code></li><li>选取重复行 <code>uniq -d</code></li><li>选取唯一行 <code>uniq -u</code></li><li>统计重复行数量 <code>uniq -c</code></li></ol><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1195,19 +1115,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>uniq <span class=o>[</span>-c
 </span></span><span class=line><span class=cl><span class=c1># 输入必须是有序的，即重复行是连续的</span>
 </span></span><span class=line><span class=cl><span class=c1># -d 只查看重复行</span>
 </span></span><span class=line><span class=cl><span class=c1># -u 只查看唯一行</span>
-</span></span><span class=line><span class=cl><span class=c1># -c 统计唯一行的数量</span></span></span></code></pre></div><h3 id=jion-基于特定字段的值将两个有序文件组合在一起 class=headerLink><a href=#jion-%e5%9f%ba%e4%ba%8e%e7%89%b9%e5%ae%9a%e5%ad%97%e6%ae%b5%e7%9a%84%e5%80%bc%e5%b0%86%e4%b8%a4%e4%b8%aa%e6%9c%89%e5%ba%8f%e6%96%87%e4%bb%b6%e7%bb%84%e5%90%88%e5%9c%a8%e4%b8%80%e8%b5%b7 class=header-mark></a>jion: 基于特定字段的值将两个有序文件组合在一起</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># -c 统计唯一行的数量</span></span></span></code></pre></div><h3 id=jion-基于特定字段的值将两个有序文件组合在一起 class=headerLink><a href=#jion-%e5%9f%ba%e4%ba%8e%e7%89%b9%e5%ae%9a%e5%ad%97%e6%ae%b5%e7%9a%84%e5%80%bc%e5%b0%86%e4%b8%a4%e4%b8%aa%e6%9c%89%e5%ba%8f%e6%96%87%e4%bb%b6%e7%bb%84%e5%90%88%e5%9c%a8%e4%b8%80%e8%b5%b7 class=header-mark></a>jion: 基于特定字段的值将两个有序文件组合在一起</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1282,19 +1198,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>join <span class=o>[</span>-i
 </span></span><span class=line><span class=cl><span class=c1># -i 忽略大小写</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># join 默认使用的是 文件的第一个字段 可以使用 -1 -2 指定不同的字段</span>
-</span></span><span class=line><span class=cl><span class=c1># 特别注意： join 使用的有序数据</span></span></span></code></pre></div><h3 id=tsort-以偏序创建全序 class=headerLink><a href=#tsort-%e4%bb%a5%e5%81%8f%e5%ba%8f%e5%88%9b%e5%bb%ba%e5%85%a8%e5%ba%8f class=header-mark></a>tsort: 以偏序创建全序</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># 特别注意： join 使用的有序数据</span></span></span></code></pre></div><h3 id=tsort-以偏序创建全序 class=headerLink><a href=#tsort-%e4%bb%a5%e5%81%8f%e5%ba%8f%e5%88%9b%e5%bb%ba%e5%85%a8%e5%ba%8f class=header-mark></a>tsort: 以偏序创建全序</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1336,19 +1248,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>tsort <span class=o>[</span>f
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># 偏序：只指定了一部分活动的顺序</span>
 </span></span><span class=line><span class=cl><span class=c1># file 中的每一行必须包含一堆空白符分割的字符串 每个字符串代表一个偏序</span>
-</span></span><span class=line><span class=cl><span class=c1># 最终结果生成一个完整序列</span></span></span></code></pre></div><h3 id=strings-二进制文件中搜索 class=headerLink><a href=#strings-%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%87%e4%bb%b6%e4%b8%ad%e6%90%9c%e7%b4%a2 class=header-mark></a>strings: 二进制文件中搜索</h3><h3 id=tr-转换字符 class=headerLink><a href=#tr-%e8%bd%ac%e6%8d%a2%e5%ad%97%e7%ac%a6 class=header-mark></a>tr: 转换字符</h3><ol><li>转换字符 ：小写转大写，制表符转空格</li><li>挤压字符：连续数字 替换为 &ldquo;X&rdquo; ,多个空格转换为一个</li><li>删除指定字符：删除所有指标符</li></ol><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl><span class=c1># 最终结果生成一个完整序列</span></span></span></code></pre></div><h3 id=strings-二进制文件中搜索 class=headerLink><a href=#strings-%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%87%e4%bb%b6%e4%b8%ad%e6%90%9c%e7%b4%a2 class=header-mark></a>strings: 二进制文件中搜索</h3><h3 id=tr-转换字符 class=headerLink><a href=#tr-%e8%bd%ac%e6%8d%a2%e5%ad%97%e7%ac%a6 class=header-mark></a>tr: 转换字符</h3><ol><li>转换字符 ：小写转大写，制表符转空格</li><li>挤压字符：连续数字 替换为 &ldquo;X&rdquo; ,多个空格转换为一个</li><li>删除指定字符：删除所有指标符</li></ol><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1423,19 +1331,15 @@ tw-scrollbar-thin"><span class=line><span class=cl>tr <span class=o>[</span>-cds
 </span></span><span class=line><span class=cl>tr -c <span class=s1>&#39; \n&#39;</span> x &lt; olddata &gt; newdata <span class=c1># hello world ==&gt; xxxxx xxxxx</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>eg: 统计两个文件的单词数
-</span></span><span class=line><span class=cl>cat greek roman <span class=p>|</span> tr -cs <span class=o>[</span>:alpha:<span class=o>]</span><span class=se>\&#39;</span> <span class=s2>&#34;\n&#34;</span> <span class=p>|</span> sort -fu <span class=p>|</span> wc -l</span></span></code></pre></div><h3 id=sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器 class=headerLink><a href=#sed-%e9%9d%9e%e4%ba%a4%e4%ba%92%e5%bc%8f%e6%96%87%e6%9c%ac%e7%bc%96%e8%be%91%e6%8f%90%e5%89%8d%e8%ae%be%e8%ae%a1%e5%91%bd%e4%bb%a4%e5%91%bd%e4%bb%a4%e5%8f%91%e7%bb%99%e7%a8%8b%e5%ba%8f%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%b5%81%e7%bc%96%e8%be%91%e5%99%a8 class=header-mark></a>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+</span></span><span class=line><span class=cl>cat greek roman <span class=p>|</span> tr -cs <span class=o>[</span>:alpha:<span class=o>]</span><span class=se>\&#39;</span> <span class=s2>&#34;\n&#34;</span> <span class=p>|</span> sort -fu <span class=p>|</span> wc -l</span></span></code></pre></div><h3 id=sed-非交互式文本编辑提前设计命令命令发给程序自动执行流编辑器 class=headerLink><a href=#sed-%e9%9d%9e%e4%ba%a4%e4%ba%92%e5%bc%8f%e6%96%87%e6%9c%ac%e7%bc%96%e8%be%91%e6%8f%90%e5%89%8d%e8%ae%be%e8%ae%a1%e5%91%bd%e4%bb%a4%e5%91%bd%e4%bb%a4%e5%8f%91%e7%bb%99%e7%a8%8b%e5%ba%8f%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%b5%81%e7%bc%96%e8%be%91%e5%99%a8 class=header-mark></a>sed: 非交互式文本编辑(提前设计命令，命令发给程序，自动执行)(流编辑器)</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="tw-flex
+tw-flex-row
+tw-flex-1
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="code-block-button
+tw-mx-2
 tw-flex
 tw-flex-row
-tw-justify-between
-tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
-tw-mx-2
-tw-block
-group-[.is-open]:tw-rotate-90
-tw-transition-[transform]
-tw-duration-500
-tw-ease-in-out
-print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">shell</p></div><div class=tw-flex><button class="line-number-button
-tw-select-none
+tw-flex-1" aria-hidden=true><div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div><p class="tw-select-none !tw-my-1">shell</p></button><div class=tw-flex><button class="line-number-button
 tw-mx-2
 tw-hidden
 group-[.is-open]:tw-block
@@ -1506,7 +1410,7 @@ tw-scrollbar-thin"><span class=line><span class=cl>sed <span class=o>[</span>-i<
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># &amp; 符号代表的是你前面的匹配的模式 将每行的第一个 hello 替换为 (hello)</span>
 </span></span><span class=line><span class=cl>sed <span class=s1>&#39;s/hello/(&amp;)/&#39;</span> xxx.log</span></span></code></pre></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2025-05-26</span></div><div class=post-info-license></div></div><div class="post-info-line print:!tw-hidden"><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><section class=post-tags><svg class="icon" viewBox="0 0 640 512"><path d="M497.941 225.941 286.059 14.059A48 48 0 00252.118.0H48C21.49.0.0 21.49.0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882.0l204.118-204.118c18.745-18.745 18.745-49.137.0-67.882zM112 160c-26.51.0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882.0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397.0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882z"/></svg>&nbsp;<a href=/tags/unix/>Unix</a>,&nbsp;<a href=/tags/linux/>Linux</a></section><section class=print:!tw-hidden><span><button class="tw-text-fgColor-link-muted hover:tw-text-fgColor-link-muted-hover" onclick=window.history.back()>返回</button></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class="post-nav print:tw-hidden"><a href=/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/ class=prev rel=prev title="Vi 命令一览"><svg class="icon" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9.0l22.6 22.6c9.4 9.4 9.4 24.6.0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6.0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9.0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>Vi 命令一览</a>
-<a href=/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/ class=next rel=next title="PHP 垃圾回收机制">PHP 垃圾回收机制<svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div></div><div id=comments class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id=waline class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.</noscript></div></article></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.147.5">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href=https://github.com/SunVdong/sunvdong.github.io target=_blank rel="noopener noreferrer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg> DoIt</a></div><div class=footer-line><svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532.0-2e2-89.451-2e2-2e2.0-110.531 89.451-2e2 2e2-2e2 110.532.0 2e2 89.451 2e2 2e2.0 110.532-89.451 2e2-2e2 2e2zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43.0-140.484-61.425-140.484-141.567.0-79.152 60.275-139.401 139.762-139.401 55.531.0 88.738 26.62 97.593 34.779a11.965 11.965.0 011.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303.0-77.916 35.33-77.916 80.082.0 41.589 26.888 83.692 78.277 83.692 32.657.0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947.0 01-1.152 15.518z"/></svg>2025<span class=author>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br><span class=icp><a href=https://beian.miit.gov.cn/ target=_blank>豫ICP备18016268号-2</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer><div class="print:!tw-hidden tw-flex tw-flex-col tw-fixed tw-right-4 tw-bottom-4 tw-gap-2"><a href=#back-to-top id=back-to-top-button class="tw-transition-opacity tw-opacity-0 tw-block tw-bg-bgColor-secondary tw-rounded-full" style=padding:.6rem;line-height:1.3rem;font-size:1rem title=回到顶部><svg class="icon" viewBox="0 0 448 512"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
+<a href=/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/ class=next rel=next title="PHP 垃圾回收机制">PHP 垃圾回收机制<svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div></div><div id=comments class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id=waline class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.</noscript></div></article></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.147.5">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href=https://github.com/SunVdong/sunvdong.github.io target=_blank rel="noopener noreferrer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.2"><svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg> DoIt</a></div><div class=footer-line><svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532.0-2e2-89.451-2e2-2e2.0-110.531 89.451-2e2 2e2-2e2 110.532.0 2e2 89.451 2e2 2e2.0 110.532-89.451 2e2-2e2 2e2zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43.0-140.484-61.425-140.484-141.567.0-79.152 60.275-139.401 139.762-139.401 55.531.0 88.738 26.62 97.593 34.779a11.965 11.965.0 011.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303.0-77.916 35.33-77.916 80.082.0 41.589 26.888 83.692 78.277 83.692 32.657.0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947.0 01-1.152 15.518z"/></svg>2025<span class=author>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br><span class=icp><a href=https://beian.miit.gov.cn/ target=_blank>豫ICP备18016268号-2</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer><div class="print:!tw-hidden tw-flex tw-flex-col tw-fixed tw-right-4 tw-bottom-4 tw-gap-2"><a href=#back-to-top id=back-to-top-button class="tw-transition-opacity tw-opacity-0 tw-block tw-bg-bgColor-secondary tw-rounded-full" style=padding:.6rem;line-height:1.3rem;font-size:1rem title=回到顶部><svg class="icon" viewBox="0 0 448 512"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
 </a><button id=toc-drawer-button class="tw-block tw-bg-bgColor-secondary tw-rounded-full md:tw-hidden" style=padding:.6rem;line-height:1.3rem;font-size:1rem>
 <svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
 </button><a href=#comments id=view-comments class="tw-block tw-bg-bgColor-secondary tw-rounded-full" style=padding:.6rem;line-height:1.3rem;font-size:1rem title=查看评论>

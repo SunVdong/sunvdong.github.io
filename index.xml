@@ -9,103 +9,28 @@
 <p>扩展负载</p>]]></description></item><item><title>Powershell新增别名</title><link>https://www.vdong.xyz/posts/powershell%E6%96%B0%E5%A2%9E%E5%88%AB%E5%90%8D/</link><pubDate>Thu, 11 Jan 2024 13:50:37 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/powershell%E6%96%B0%E5%A2%9E%E5%88%AB%E5%90%8D/</guid><description><![CDATA[<h2 id="查看别名" class="headerLink">
     <a href="#%e6%9f%a5%e7%9c%8b%e5%88%ab%e5%90%8d" class="header-mark"></a>查看别名</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
-    code-block-title 
     
     tw-flex 
-    tw-flex-row 
+    tw-flex-row
+    tw-flex-1 
     tw-justify-between 
     tw-w-full tw-bg-bgColor-secondary
     ">      
     <button 
       class="
-        tw-select-none 
+        code-block-button
         tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
-
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">Powershell</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
-
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="nb">Get-Alias</span></span></span></code></pre>
-</div>
-<h2 id="创建永久别名" class="headerLink">
-    <a href="#%e5%88%9b%e5%bb%ba%e6%b0%b8%e4%b9%85%e5%88%ab%e5%90%8d" class="header-mark"></a>创建永久别名</h2><p>在 Powershell 中使用 Set-Alias 和 New-Alias 定义的别名，在此session关闭后即会失效，防止此现象，可以将定义别名的命令写入 Windows Powershell profile 文件中。查看此文件位置:</p>]]></description></item><item><title>Fail2Ban防护SSH爆破</title><link>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</link><pubDate>Mon, 27 Nov 2023 11:10:25 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</guid><description>&lt;p>今天发现早上登录服务器，查看日志有大量ssh登录的爆破，所以先限制root用户不允许远程登录，再使用Fail2Ban自动封锁ip限制一下。&lt;/p>
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">Powershell</p>]]></description></item><item><title>Fail2Ban防护SSH爆破</title><link>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</link><pubDate>Mon, 27 Nov 2023 11:10:25 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</guid><description>&lt;p>今天发现早上登录服务器，查看日志有大量ssh登录的爆破，所以先限制root用户不允许远程登录，再使用Fail2Ban自动封锁ip限制一下。&lt;/p>
 &lt;p>记录如下：&lt;/p></description></item><item><title>离线安装包及依赖处理</title><link>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2023 10:19:58 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</guid><description>&lt;p>很多内网环境需要离线安装软件，就需要我们在可以上网的服务器上将需要安装的软件的相应&lt;strong>安装包及其依赖&lt;/strong>下载下来，传输到离线机器，再安装。其中下载和处理依赖关系可能比较麻烦，所以本文特做记录。&lt;/p></description></item><item><title>Chrome的一种截图方法</title><link>https://www.vdong.xyz/posts/chrome%E7%9A%84%E4%B8%80%E7%A7%8D%E6%88%AA%E5%9B%BE%E6%96%B9%E6%B3%95/</link><pubDate>Thu, 09 Nov 2023 14:54:29 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/chrome%E7%9A%84%E4%B8%80%E7%A7%8D%E6%88%AA%E5%9B%BE%E6%96%B9%E6%B3%95/</guid><description><![CDATA[<p><code>F12</code> 打开开发者模式，选择需要截图的节点，<code>ctrl+shift+p</code> 打开运行栏，搜索 <code>shot</code>，选择  <code>Capture node screenshot</code>，如下图：</p>
-<p><img class="tw-inline" loading="lazy" src=https://www.vdong.xyz/imgs/chrome的一种截图方法/image-20231109145633467.png   alt="image-20231109145633467"  ></p>]]></description></item><item><title>PhpStorm实现跨网传输源代码</title><link>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</link><pubDate>Thu, 09 Nov 2023 11:15:56 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</guid><description><![CDATA[<h2 id="场景" class="headerLink">
+<p><img class="tw-inline" loading="lazy" src='/imgs/chrome的一种截图方法/image-20231109145633467.png'   alt="image-20231109145633467"  ></p>
+<p>如果截取手机或平板模式的图，先点击左上角的 <code>Toggle device toolbar</code> （ <code>Ctrl + Shift + M</code> ）选择合适的设备，再进行上面步骤。</p>]]></description></item><item><title>PhpStorm实现跨网传输源代码</title><link>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</link><pubDate>Thu, 09 Nov 2023 11:15:56 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</guid><description><![CDATA[<h2 id="场景" class="headerLink">
     <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>本地开发代码，需要同步到 <code>10.21.30.81</code> 上， 但是本地只能通过 ssh 连接到 <code>10.21.30.80</code> 上，不能 ssh  连接到 <code>10.21.30.81</code> 上，因此需要将代码通过SFTP传到 80 上，再在 80 上 scp 到 81上，太麻烦了，网络如下：</p>
-<p><img class="tw-inline" loading="lazy" src=https://www.vdong.xyz/imgs/内网穿透/image-20231109112816186.png   alt="image-20231109112816186"  ></p>]]></description></item></channel></rss>
+<p><img class="tw-inline" loading="lazy" src='/imgs/内网穿透/image-20231109112816186.png'   alt="image-20231109112816186"  ></p>
+<h2 id="ssh-隧道" class="headerLink">
+    <a href="#ssh-%e9%9a%a7%e9%81%93" class="header-mark"></a>SSH 隧道</h2><p>在本机上执行</p>]]></description></item></channel></rss>
