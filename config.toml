@@ -175,3 +175,7 @@ theme = "DoIt"
 [services]
   [services.googleAnalytics]
     id = 'G-PSTPB5Y974'
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
