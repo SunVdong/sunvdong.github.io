@@ -63,6 +63,15 @@ theme = "DoIt"
         # highlighter = false
         # texRenderer = false
 
+  # DoIt 新增 | 0.2.0 List (目录或标签) 页面配置
+  [params.list]
+    # list 页面每页显示文章数量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = "01-02"
+    # RSS 文章数目
+    rss = 10
+
   [params.search]
     enable = true
     # 搜索引擎的类型 ("lunr", "algolia", "fuse")
@@ -106,6 +115,10 @@ theme = "DoIt"
     # 是否使侧边目录自动折叠展开
     auto = true
   [params.footer]
+    enable = true
+    hugo = true
+    hostedOn = '<a title="Github Pages" href="https://github.com/SunVdong/sunvdong.github.io" target="_blank" rel="noopener noreferrer">GitHub Pages</a>'
+    copyright = true
     icp = '<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备18016268号-2</a>'
     license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
