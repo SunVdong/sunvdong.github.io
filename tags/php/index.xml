@@ -1,60 +1,60 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Php - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/php/</link><description>Php - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 04 Nov 2021 19:12:06 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/php/" rel="self" type="application/rss+xml"/><item><title>PHP webhook 部署码云</title><link>https://www.vdong.xyz/posts/php-web/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/</link><pubDate>Thu, 04 Nov 2021 19:12:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/php-web/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/</guid><description><![CDATA[<h3 id="版本管理" class="headerLink">
-    <a href="#%e7%89%88%e6%9c%ac%e7%ae%a1%e7%90%86" class="header-mark"></a>版本管理</h3><p>有一个仓库（可以自建，也可以用线上的），将开发者本地的代码每次修改管理起来，可以查看修改记录，回滚等，常用的管理工具有svn 、git等，主流 git。</p>
-<p>简要流程：</p>
-<ol>
-<li>修改代码</li>
-<li>提交修改到仓库</li>
-</ol>
-<p>当然反过来也可以： 从仓库下载代码到本地  svn： 叫检出（ svn checkout path）； git 叫 拉取（git pull）</p>
-<h3 id="服务器同步" class="headerLink">
-    <a href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%90%8c%e6%ad%a5" class="header-mark"></a>服务器同步</h3><p>本地修改的代码要上传服务器，才能生效</p>]]></description></item><item><title>PHP 和 Nginx 通信</title><link>https://www.vdong.xyz/posts/php-web/php%E5%92%8Cnginx%E9%80%9A%E4%BF%A1/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/php-web/php%E5%92%8Cnginx%E9%80%9A%E4%BF%A1/</guid><description><![CDATA[<h2 id="一个请求的生命周期" class="headerLink">
-    <a href="#%e4%b8%80%e4%b8%aa%e8%af%b7%e6%b1%82%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f" class="header-mark"></a>一个请求的生命周期</h2><h3 id="0-启动服务-准备工作" class="headerLink">
-    <a href="#0-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1-%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="header-mark"></a>0. 启动服务 准备工作</h3><p>启动 php-fpm，通信模式， TCP socket， Unix scoket。</p>
-<p>PHP-FPM 启动两种进程， master：监控端口、分配任务，管理 worker 进程， worker： 就是 php 的cgi 程序，解释和编译执行 php 脚本。</p>]]></description></item><item><title>PHP 基础</title><link>https://www.vdong.xyz/posts/php-web/php%E5%9F%BA%E7%A1%80/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/php-web/php%E5%9F%BA%E7%A1%80/</guid><description><![CDATA[<h2 id="php-假值-与-empty-和-is_null" class="headerLink">
-    <a href="#php-%e5%81%87%e5%80%bc-%e4%b8%8e-empty-%e5%92%8c-is_null" class="header-mark"></a>php 假值 与 empty 和 is_null</h2><ol>
-<li>当 $a 是以下 值时候 <code>(boolean) $a</code>  为假 false：</li>
-</ol>
-<ul>
-<li>未设置的变量</li>
-<li>var $a;  未初始化 $a 的值</li>
-<li>$a = null;</li>
-<li>false</li>
-<li>0</li>
-<li>''</li>
-<li>&lsquo;0&rsquo;</li>
-<li>[]</li>
-</ul>
-<ol start="2">
-<li>以上值 empty() 是均为 true 。</li>
-<li>isset() 检测 一个变量设置了，且不为 null ，所以仅仅前 3 条 为 false 。</li>
-<li>is_null() 正好与 isset() 相反， 仅仅 前 3 条 为 true 。</li>
-<li>gettype() 前3条 ，均返回 null，即 类型 未知。</li>
-</ol>
-<h2 id="php-array_map-和-array_walk-的区别" class="headerLink">
-    <a href="#php-array_map-%e5%92%8c-array_walk-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark"></a>php array_map 和 array_walk 的区别</h2><p>相同点 都是利用回调函数对数组中每个元素进行操作。</p>]]></description></item><item><title>PHP 垃圾回收机制</title><link>https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</guid><description><![CDATA[<h2 id="变量的存储结构" class="headerLink">
-    <a href="#%e5%8f%98%e9%87%8f%e7%9a%84%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84" class="header-mark"></a>变量的存储结构</h2><p>众所周知，php 是用 c 语言写的，所以其变量存储也依赖于 c 语言。php 的变量的内部是使用一种 zval 的数据结构来保存的。</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Php on 我的灵感记录</title><link>https://www.vdong.xyz/tags/php/</link><description>Recent content in Php on 我的灵感记录</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 26 May 2025 11:10:56 +0000</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/php/index.xml" rel="self" type="application/rss+xml"/><item><title>PHP webhook 部署码云</title><link>https://www.vdong.xyz/posts/php-web/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/</link><pubDate>Thu, 04 Nov 2021 19:12:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/</guid><description>&lt;h3 id="版本管理" class="headerLink">
+ &lt;a href="#%e7%89%88%e6%9c%ac%e7%ae%a1%e7%90%86" class="header-mark">&lt;/a>版本管理&lt;/h3>&lt;p>有一个仓库（可以自建，也可以用线上的），将开发者本地的代码每次修改管理起来，可以查看修改记录，回滚等，常用的管理工具有svn 、git等，主流 git。&lt;/p>
+&lt;p>简要流程：&lt;/p>
+&lt;ol>
+&lt;li>修改代码&lt;/li>
+&lt;li>提交修改到仓库&lt;/li>
+&lt;/ol>
+&lt;p>当然反过来也可以： 从仓库下载代码到本地  svn： 叫检出（ svn checkout path）； git 叫 拉取（git pull）&lt;/p>
+&lt;h3 id="服务器同步" class="headerLink">
+ &lt;a href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%90%8c%e6%ad%a5" class="header-mark">&lt;/a>服务器同步&lt;/h3>&lt;p>本地修改的代码要上传服务器，才能生效&lt;/p></description></item><item><title>PHP 和 Nginx 通信</title><link>https://www.vdong.xyz/posts/php-web/php%E5%92%8Cnginx%E9%80%9A%E4%BF%A1/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php%E5%92%8Cnginx%E9%80%9A%E4%BF%A1/</guid><description>&lt;h2 id="一个请求的生命周期" class="headerLink">
+ &lt;a href="#%e4%b8%80%e4%b8%aa%e8%af%b7%e6%b1%82%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f" class="header-mark">&lt;/a>一个请求的生命周期&lt;/h2>&lt;h3 id="0-启动服务-准备工作" class="headerLink">
+ &lt;a href="#0-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1-%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="header-mark">&lt;/a>0. 启动服务 准备工作&lt;/h3>&lt;p>启动 php-fpm，通信模式， TCP socket， Unix scoket。&lt;/p>
+&lt;p>PHP-FPM 启动两种进程， master：监控端口、分配任务，管理 worker 进程， worker： 就是 php 的cgi 程序，解释和编译执行 php 脚本。&lt;/p></description></item><item><title>PHP 基础</title><link>https://www.vdong.xyz/posts/php-web/php%E5%9F%BA%E7%A1%80/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php%E5%9F%BA%E7%A1%80/</guid><description>&lt;h2 id="php-假值-与-empty-和-is_null" class="headerLink">
+ &lt;a href="#php-%e5%81%87%e5%80%bc-%e4%b8%8e-empty-%e5%92%8c-is_null" class="header-mark">&lt;/a>php 假值 与 empty 和 is_null&lt;/h2>&lt;ol>
+&lt;li>当 $a 是以下 值时候 &lt;code>(boolean) $a&lt;/code>  为假 false：&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>未设置的变量&lt;/li>
+&lt;li>var $a;  未初始化 $a 的值&lt;/li>
+&lt;li>$a = null;&lt;/li>
+&lt;li>false&lt;/li>
+&lt;li>0&lt;/li>
+&lt;li>''&lt;/li>
+&lt;li>&amp;lsquo;0&amp;rsquo;&lt;/li>
+&lt;li>[]&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>以上值 empty() 是均为 true 。&lt;/li>
+&lt;li>isset() 检测 一个变量设置了，且不为 null ，所以仅仅前 3 条 为 false 。&lt;/li>
+&lt;li>is_null() 正好与 isset() 相反， 仅仅 前 3 条 为 true 。&lt;/li>
+&lt;li>gettype() 前3条 ，均返回 null，即 类型 未知。&lt;/li>
+&lt;/ol>
+&lt;h2 id="php-array_map-和-array_walk-的区别" class="headerLink">
+ &lt;a href="#php-array_map-%e5%92%8c-array_walk-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark">&lt;/a>php array_map 和 array_walk 的区别&lt;/h2>&lt;p>相同点 都是利用回调函数对数组中每个元素进行操作。&lt;/p></description></item><item><title>PHP 垃圾回收机制</title><link>https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</guid><description>&lt;h2 id="变量的存储结构" class="headerLink">
+ &lt;a href="#%e5%8f%98%e9%87%8f%e7%9a%84%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84" class="header-mark">&lt;/a>变量的存储结构&lt;/h2>&lt;p>众所周知，php 是用 c 语言写的，所以其变量存储也依赖于 c 语言。php 的变量的内部是使用一种 zval 的数据结构来保存的。&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">c</p>]]></description></item></channel></rss>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">c&lt;/p></description></item></channel></rss>

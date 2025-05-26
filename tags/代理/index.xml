@@ -1,9 +1,9 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>代理 - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/%E4%BB%A3%E7%90%86/</link><description>代理 - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Dec 2021 12:21:18 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/%E4%BB%A3%E7%90%86/" rel="self" type="application/rss+xml"/><item><title>Wsl设置代理</title><link>https://www.vdong.xyz/posts/wsl%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 11 Dec 2021 12:21:18 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/wsl%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid><description><![CDATA[<h2 id="目标" class="headerLink">
-    <a href="#%e7%9b%ae%e6%a0%87" class="header-mark"></a>目标</h2><p>wsl 可以使用 win10 的代理。</p>
-<h2 id="环境说明" class="headerLink">
-    <a href="#%e7%8e%af%e5%a2%83%e8%af%b4%e6%98%8e" class="header-mark"></a>环境说明</h2><p>win10 + 小飞机 + wsl2</p>
-<h2 id="步骤" class="headerLink">
-    <a href="#%e6%ad%a5%e9%aa%a4" class="header-mark"></a>步骤</h2><ol>
-<li>WSL 中获取宿主机 IP</li>
-</ol>
-<p>WSL 每次启动的时候都会有不同的 IP 地址，所以并不能直接用静态的方式来设置代理。WSL2 会把 IP 写在 <code>/etc/resolv.conf</code> 中，因此可以用 <code>cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'</code> 这条指令获得宿主机 IP 。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>代理 on 我的灵感记录</title><link>https://www.vdong.xyz/tags/%E4%BB%A3%E7%90%86/</link><description>Recent content in 代理 on 我的灵感记录</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 26 May 2025 11:10:56 +0000</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>Wsl设置代理</title><link>https://www.vdong.xyz/posts/wsl%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 11 Dec 2021 12:21:18 +0800</pubDate><guid>https://www.vdong.xyz/posts/wsl%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid><description>&lt;h2 id="目标" class="headerLink">
+ &lt;a href="#%e7%9b%ae%e6%a0%87" class="header-mark">&lt;/a>目标&lt;/h2>&lt;p>wsl 可以使用 win10 的代理。&lt;/p>
+&lt;h2 id="环境说明" class="headerLink">
+ &lt;a href="#%e7%8e%af%e5%a2%83%e8%af%b4%e6%98%8e" class="header-mark">&lt;/a>环境说明&lt;/h2>&lt;p>win10 + 小飞机 + wsl2&lt;/p>
+&lt;h2 id="步骤" class="headerLink">
+ &lt;a href="#%e6%ad%a5%e9%aa%a4" class="header-mark">&lt;/a>步骤&lt;/h2>&lt;ol>
+&lt;li>WSL 中获取宿主机 IP&lt;/li>
+&lt;/ol>
+&lt;p>WSL 每次启动的时候都会有不同的 IP 地址，所以并不能直接用静态的方式来设置代理。WSL2 会把 IP 写在 &lt;code>/etc/resolv.conf&lt;/code> 中，因此可以用 &lt;code>cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'&lt;/code> 这条指令获得宿主机 IP 。&lt;/p></description></item></channel></rss>

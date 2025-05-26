@@ -1,111 +1,1242 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>技术 - 分类 - 我的灵感记录</title><link>https://www.vdong.xyz/categories/%E6%8A%80%E6%9C%AF/</link><description>技术 - 分类 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 12 Nov 2024 10:24:09 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/categories/%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml"/><item><title>Nginx日志指南</title><link>https://www.vdong.xyz/posts/nginx%E6%97%A5%E5%BF%97%E6%8C%87%E5%8D%97/</link><pubDate>Tue, 12 Nov 2024 10:24:09 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/nginx%E6%97%A5%E5%BF%97%E6%8C%87%E5%8D%97/</guid><description>&lt;p>nginx 与大多数应用程序一样，记录了大量与客户端交互、系统事件和潜在错误相关的数据。然而，只有通过正确的配置、管理和分析才能充分发挥这些数据的潜力。&lt;/p></description></item><item><title>保留提交记录和tag的git仓库迁移</title><link>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Tue, 16 Jul 2024 14:33:25 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description><![CDATA[<h2 id="问题场景1" class="headerLink">
-    <a href="#%e9%97%ae%e9%a2%98%e5%9c%ba%e6%99%af1" class="header-mark"></a>问题场景1</h2><p>将 Git 仓库从一个服务器迁移到另一个服务器，并保留所有的分支和提交记录。例如：我有一个git仓库（1.1.1.5:8888/a.git），有多个分支且做了多次提交了，现在需要通过u盘迁移至另一个仓库(2.2.2..5:8888/b.git)，我应该怎么操作呢。</p>]]></description></item><item><title>使用文件的inode号码删除无法打出名字的文件</title><link>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</link><pubDate>Fri, 05 Jul 2024 18:00:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</guid><description>&lt;p>在操作 UNIX和Linux系统时，偶尔由于误操作等会出现一些无法打出文件名（例如文件名包含非法字符）的文件，由于无法打出名字，所以不容易使用 &lt;code>rm&lt;/code> 命令将其删除。&lt;/p></description></item><item><title>Docker容器内部抓包</title><link>https://www.vdong.xyz/posts/docker%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E6%8A%93%E5%8C%85/</link><pubDate>Tue, 02 Jul 2024 15:16:56 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/docker%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E6%8A%93%E5%8C%85/</guid><description>&lt;p>很多docker容器为了轻量化，都不包含一些基础命令，如ip ，address，tcpdump 等，这给调试容器的网络带来了麻烦。&lt;/p>
-&lt;p>其实我们可以通过 命令进入容器的网络命名空间，使用宿主机的命令调试容器网络。&lt;/p></description></item><item><title>分布式数据-概述</title><link>https://www.vdong.xyz/posts/ddia/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE-%E6%A6%82%E8%BF%B0/</link><pubDate>Mon, 15 Apr 2024 17:25:04 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/ddia/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE-%E6%A6%82%E8%BF%B0/</guid><description><![CDATA[<p>数据库分布在多台设备上的好处：</p>
-<ol>
-<li>可拓展性： 数据量、读取负载、写入负载超出了单台机器处理能力。</li>
-<li>容错、高可用：单台机器（或多台、网络、整个数据中心）出现故障仍然能继续工作。</li>
-<li>延迟：全球范围内部署多个服务器，用户从最近的数据中心获取服务。</li>
-</ol>
-<p>扩展负载</p>]]></description></item><item><title>Powershell新增别名</title><link>https://www.vdong.xyz/posts/powershell%E6%96%B0%E5%A2%9E%E5%88%AB%E5%90%8D/</link><pubDate>Thu, 11 Jan 2024 13:50:37 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/powershell%E6%96%B0%E5%A2%9E%E5%88%AB%E5%90%8D/</guid><description><![CDATA[<h2 id="查看别名" class="headerLink">
-    <a href="#%e6%9f%a5%e7%9c%8b%e5%88%ab%e5%90%8d" class="header-mark"></a>查看别名</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 on 我的灵感记录</title><link>https://www.vdong.xyz/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 我的灵感记录</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 26 May 2025 11:10:56 +0000</lastBuildDate><atom:link href="https://www.vdong.xyz/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx日志指南</title><link>https://www.vdong.xyz/posts/nginx%E6%97%A5%E5%BF%97%E6%8C%87%E5%8D%97/</link><pubDate>Tue, 12 Nov 2024 10:24:09 +0800</pubDate><guid>https://www.vdong.xyz/posts/nginx%E6%97%A5%E5%BF%97%E6%8C%87%E5%8D%97/</guid><description>&lt;p>nginx 与大多数应用程序一样，记录了大量与客户端交互、系统事件和潜在错误相关的数据。然而，只有通过正确的配置、管理和分析才能充分发挥这些数据的潜力。&lt;/p></description></item><item><title>保留提交记录和tag的git仓库迁移</title><link>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Tue, 16 Jul 2024 14:33:25 +0800</pubDate><guid>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="问题场景1" class="headerLink">
+ &lt;a href="#%e9%97%ae%e9%a2%98%e5%9c%ba%e6%99%af1" class="header-mark">&lt;/a>问题场景1&lt;/h2>&lt;p>将 Git 仓库从一个服务器迁移到另一个服务器，并保留所有的分支和提交记录。例如：我有一个git仓库（1.1.1.5:8888/a.git），有多个分支且做了多次提交了，现在需要通过u盘迁移至另一个仓库(2.2.2..5:8888/b.git)，我应该怎么操作呢。&lt;/p></description></item><item><title>使用文件的inode号码删除无法打出名字的文件</title><link>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</link><pubDate>Fri, 05 Jul 2024 18:00:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</guid><description>&lt;p>在操作 UNIX和Linux系统时，偶尔由于误操作等会出现一些无法打出文件名（例如文件名包含非法字符）的文件，由于无法打出名字，所以不容易使用 &lt;code>rm&lt;/code> 命令将其删除。&lt;/p></description></item><item><title>Docker容器内部抓包</title><link>https://www.vdong.xyz/posts/docker%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E6%8A%93%E5%8C%85/</link><pubDate>Tue, 02 Jul 2024 15:16:56 +0800</pubDate><guid>https://www.vdong.xyz/posts/docker%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E6%8A%93%E5%8C%85/</guid><description>&lt;p>很多docker容器为了轻量化，都不包含一些基础命令，如ip ，address，tcpdump 等，这给调试容器的网络带来了麻烦。&lt;/p>
+&lt;p>其实我们可以通过 命令进入容器的网络命名空间，使用宿主机的命令调试容器网络。&lt;/p></description></item><item><title>分布式数据-概述</title><link>https://www.vdong.xyz/posts/ddia/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE-%E6%A6%82%E8%BF%B0/</link><pubDate>Mon, 15 Apr 2024 17:25:04 +0800</pubDate><guid>https://www.vdong.xyz/posts/ddia/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE-%E6%A6%82%E8%BF%B0/</guid><description>&lt;p>数据库分布在多台设备上的好处：&lt;/p>
+&lt;ol>
+&lt;li>可拓展性： 数据量、读取负载、写入负载超出了单台机器处理能力。&lt;/li>
+&lt;li>容错、高可用：单台机器（或多台、网络、整个数据中心）出现故障仍然能继续工作。&lt;/li>
+&lt;li>延迟：全球范围内部署多个服务器，用户从最近的数据中心获取服务。&lt;/li>
+&lt;/ol>
+&lt;p>扩展负载&lt;/p></description></item><item><title>Powershell新增别名</title><link>https://www.vdong.xyz/posts/powershell%E6%96%B0%E5%A2%9E%E5%88%AB%E5%90%8D/</link><pubDate>Thu, 11 Jan 2024 13:50:37 +0800</pubDate><guid>https://www.vdong.xyz/posts/powershell%E6%96%B0%E5%A2%9E%E5%88%AB%E5%90%8D/</guid><description>&lt;h2 id="查看别名" class="headerLink">
+ &lt;a href="#%e6%9f%a5%e7%9c%8b%e5%88%ab%e5%90%8d" class="header-mark">&lt;/a>查看别名&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">Powershell</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">Powershell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
 
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="nb">Get-Alias</span></span></span></code></pre>
-</div>
-<h2 id="创建永久别名" class="headerLink">
-    <a href="#%e5%88%9b%e5%bb%ba%e6%b0%b8%e4%b9%85%e5%88%ab%e5%90%8d" class="header-mark"></a>创建永久别名</h2><p>在 Powershell 中使用 Set-Alias 和 New-Alias 定义的别名，在此session关闭后即会失效，防止此现象，可以将定义别名的命令写入 Windows Powershell profile 文件中。查看此文件位置:</p>]]></description></item><item><title>Fail2Ban防护SSH爆破</title><link>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</link><pubDate>Mon, 27 Nov 2023 11:10:25 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</guid><description>&lt;p>今天发现早上登录服务器，查看日志有大量ssh登录的爆破，所以先限制root用户不允许远程登录，再使用Fail2Ban自动封锁ip限制一下。&lt;/p>
-&lt;p>记录如下：&lt;/p></description></item><item><title>离线安装包及依赖处理</title><link>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2023 10:19:58 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</guid><description>&lt;p>很多内网环境需要离线安装软件，就需要我们在可以上网的服务器上将需要安装的软件的相应&lt;strong>安装包及其依赖&lt;/strong>下载下来，传输到离线机器，再安装。其中下载和处理依赖关系可能比较麻烦，所以本文特做记录。&lt;/p></description></item><item><title>Chrome的一种截图方法</title><link>https://www.vdong.xyz/posts/chrome%E7%9A%84%E4%B8%80%E7%A7%8D%E6%88%AA%E5%9B%BE%E6%96%B9%E6%B3%95/</link><pubDate>Thu, 09 Nov 2023 14:54:29 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/chrome%E7%9A%84%E4%B8%80%E7%A7%8D%E6%88%AA%E5%9B%BE%E6%96%B9%E6%B3%95/</guid><description><![CDATA[<p><code>F12</code> 打开开发者模式，选择需要截图的节点，<code>ctrl+shift+p</code> 打开运行栏，搜索 <code>shot</code>，选择  <code>Capture node screenshot</code>，如下图：</p>
-<p><img class="tw-inline" loading="lazy" src=https://www.vdong.xyz/imgs/chrome的一种截图方法/image-20231109145633467.png   alt="image-20231109145633467"  ></p>]]></description></item><item><title>PhpStorm实现跨网传输源代码</title><link>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</link><pubDate>Thu, 09 Nov 2023 11:15:56 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</guid><description><![CDATA[<h2 id="场景" class="headerLink">
-    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>本地开发代码，需要同步到 <code>10.21.30.81</code> 上， 但是本地只能通过 ssh 连接到 <code>10.21.30.80</code> 上，不能 ssh  连接到 <code>10.21.30.81</code> 上，因此需要将代码通过SFTP传到 80 上，再在 80 上 scp 到 81上，太麻烦了，网络如下：</p>
-<p><img class="tw-inline" loading="lazy" src=https://www.vdong.xyz/imgs/内网穿透/image-20231109112816186.png   alt="image-20231109112816186"  ></p>]]></description></item></channel></rss>
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Get-Alias&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;h2 id="创建永久别名" class="headerLink">
+ &lt;a href="#%e5%88%9b%e5%bb%ba%e6%b0%b8%e4%b9%85%e5%88%ab%e5%90%8d" class="header-mark">&lt;/a>创建永久别名&lt;/h2>&lt;p>在 Powershell 中使用 Set-Alias 和 New-Alias 定义的别名，在此session关闭后即会失效，防止此现象，可以将定义别名的命令写入 Windows Powershell profile 文件中。查看此文件位置:&lt;/p></description></item><item><title>Fail2Ban防护SSH爆破</title><link>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</link><pubDate>Mon, 27 Nov 2023 11:10:25 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</guid><description>&lt;p>今天发现早上登录服务器，查看日志有大量ssh登录的爆破，所以先限制root用户不允许远程登录，再使用Fail2Ban自动封锁ip限制一下。&lt;/p>
+&lt;p>记录如下：&lt;/p></description></item><item><title>离线安装包及依赖处理</title><link>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2023 10:19:58 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</guid><description>&lt;p>很多内网环境需要离线安装软件，就需要我们在可以上网的服务器上将需要安装的软件的相应&lt;strong>安装包及其依赖&lt;/strong>下载下来，传输到离线机器，再安装。其中下载和处理依赖关系可能比较麻烦，所以本文特做记录。&lt;/p></description></item><item><title>Chrome的一种截图方法</title><link>https://www.vdong.xyz/posts/chrome%E7%9A%84%E4%B8%80%E7%A7%8D%E6%88%AA%E5%9B%BE%E6%96%B9%E6%B3%95/</link><pubDate>Thu, 09 Nov 2023 14:54:29 +0800</pubDate><guid>https://www.vdong.xyz/posts/chrome%E7%9A%84%E4%B8%80%E7%A7%8D%E6%88%AA%E5%9B%BE%E6%96%B9%E6%B3%95/</guid><description>&lt;p>&lt;code>F12&lt;/code> 打开开发者模式，选择需要截图的节点，&lt;code>ctrl+shift+p&lt;/code> 打开运行栏，搜索 &lt;code>shot&lt;/code>，选择 &lt;code>Capture node screenshot&lt;/code>，如下图：&lt;/p>
+&lt;p>&lt;img class="tw-inline" loading="lazy" src=https://www.vdong.xyz/imgs/chrome的一种截图方法/image-20231109145633467.png alt="image-20231109145633467" >&lt;/p></description></item><item><title>PhpStorm实现跨网传输源代码</title><link>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</link><pubDate>Thu, 09 Nov 2023 11:15:56 +0800</pubDate><guid>https://www.vdong.xyz/posts/phpstorm%E5%AE%9E%E7%8E%B0%E8%B7%A8%E7%BD%91%E4%BC%A0%E8%BE%93%E6%BA%90%E4%BB%A3%E7%A0%81/</guid><description>&lt;h2 id="场景" class="headerLink">
+ &lt;a href="#%e5%9c%ba%e6%99%af" class="header-mark">&lt;/a>场景&lt;/h2>&lt;p>本地开发代码，需要同步到 &lt;code>10.21.30.81&lt;/code> 上， 但是本地只能通过 ssh 连接到 &lt;code>10.21.30.80&lt;/code> 上，不能 ssh 连接到 &lt;code>10.21.30.81&lt;/code> 上，因此需要将代码通过SFTP传到 80 上，再在 80 上 scp 到 81上，太麻烦了，网络如下：&lt;/p>
+&lt;p>&lt;img class="tw-inline" loading="lazy" src=https://www.vdong.xyz/imgs/内网穿透/image-20231109112816186.png alt="image-20231109112816186" >&lt;/p></description></item><item><title>Shell编程-2</title><link>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-2/</link><pubDate>Mon, 25 Sep 2023 10:23:40 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-2/</guid><description>&lt;h2 id="shell解析yml" class="headerLink">
+ &lt;a href="#shell%e8%a7%a3%e6%9e%90yml" class="header-mark">&lt;/a>Shell解析yml&lt;/h2>&lt;p>代码实现如下：&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
+
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 解析 yml , 数组自动添加序号&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 例如：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### yml 如下：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### input:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - &amp;#34;main.c&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - &amp;#34;main.h&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### flags: [ &amp;#34;-O3&amp;#34;, &amp;#34;-fpic&amp;#34; ]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### sample_input:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - { property1: value, property2: &amp;#34;value2&amp;#34; }&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - { property1: &amp;#34;value3&amp;#34;, property2: &amp;#39;value 4&amp;#39; }&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 执行： eval $(parse_yaml &amp;#34;config.yml&amp;#34;）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">###&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 解析结果如下，相当于生成了如下代码:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_input_1=&amp;#34;main.c&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_input_2=&amp;#34;main.h&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_flags_1=&amp;#34;-O3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_flags_2=&amp;#34;-fpic&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_1_property1=&amp;#34;value&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_1_property2=&amp;#34;value2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_2_property1=&amp;#34;value3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_2_property2=&amp;#34;value 4&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 最后可以使用间接变量引用，访问变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">###&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> parse_yaml &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">local&lt;/span> &lt;span class="nv">prefix&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">local&lt;/span> &lt;span class="nv">s&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;[[:space:]]*&amp;#39;&lt;/span> &lt;span class="nv">w&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;[a-zA-Z0-9_]*&amp;#39;&lt;/span> &lt;span class="nv">fs&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> -e &lt;span class="s1">&amp;#39;\034&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sed -ne &lt;span class="s2">&amp;#34;s|,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\]&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|]|&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;:1;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\[&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\]|\1\2: [\3]\n\1 - \4|;t1&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\[&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\]|\1\2:\n\1 - \3|;p&amp;#34;&lt;/span> &lt;span class="nv">$1&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> sed -ne &lt;span class="s2">&amp;#34;s|,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">}&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|}|&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;:1;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">{&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">}|\1- {\2}\n\1 \3: \4|;t1&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">{&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">}|\1-\n\1 \2|;p&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> sed -ne &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\):|\1|&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">[\&amp;#34;&amp;#39;]\(.*\)[\&amp;#34;&amp;#39;]&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs$fs&lt;/span>&lt;span class="s2">\2|p&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs$fs&lt;/span>&lt;span class="s2">\2|p&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">[\&amp;#34;&amp;#39;]\(.*\)[\&amp;#34;&amp;#39;]&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\2&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\3|p&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\2&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\3|p&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> awk -F&lt;span class="nv">$fs&lt;/span> &lt;span class="s1">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> indent = length($1)/2;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> vname[indent] = $2;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> for (i in vname) {if (i &amp;gt; indent) {delete vname[i]; idx[i]=0}}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> if(length($2)== 0){ vname[indent]= ++idx[indent] };
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> if (length($3) &amp;gt; 0) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> vn=&amp;#34;&amp;#34;; for (i=0; i&amp;lt;indent; i++) { vn=(vn)(vname[i])(&amp;#34;_&amp;#34;)}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">		 gsub(/\s*#.*$/, &amp;#34;&amp;#34;, $3);
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> printf(&amp;#34;%s%s%s=\&amp;#34;%s\&amp;#34;\n&amp;#34;, &amp;#34;&amp;#39;&lt;/span>&lt;span class="nv">$prefix&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;,vn, vname[indent], $3);
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> }&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>用法：&lt;/p></description></item><item><title>数据流的类型</title><link>https://www.vdong.xyz/posts/ddia/%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E7%B1%BB%E5%9E%8B/</link><pubDate>Thu, 07 Sep 2023 10:59:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/ddia/%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E7%B1%BB%E5%9E%8B/</guid><description>&lt;p>数据在不共享内存的进程传递，就需要编码为字节序列。有多种方式。&lt;/p>
+&lt;p>&lt;strong>兼容性&lt;/strong> 实际描述了 &lt;strong>编码数据的进程&lt;/strong> 和 &lt;strong>解码数据的进程&lt;/strong> 之间的关系。它对 &lt;strong>可演化性&lt;/strong>（允许你升级系统的部分，而不必全部升级） 非常重要。&lt;/p></description></item><item><title>编码数据的格式</title><link>https://www.vdong.xyz/posts/ddia/%E7%BC%96%E7%A0%81%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A0%BC%E5%BC%8F/</link><pubDate>Fri, 16 Jun 2023 16:25:57 +0800</pubDate><guid>https://www.vdong.xyz/posts/ddia/%E7%BC%96%E7%A0%81%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A0%BC%E5%BC%8F/</guid><description>&lt;p>程序通常（至少）使用两种形式的数据：&lt;/p>
+&lt;ol>
+&lt;li>内存中，数据存储在对象、结构体、列表、数组、散列表、树等中。这些数据结构针对CPU的高效访问和操作做了优化（通常使用指针）。&lt;/li>
+&lt;li>如果要将数据写入文件，或者通过网络发送，则必须将其 &lt;strong>编码（encode）&lt;/strong> 为某种自包含的字节序列（如：json文档）。由于每个进程都有自己的独立的地址空间，一个进程中的指针对任何其他进程都没有意义，所以这个字节序列表示 与 通常在内存中使用的数据结构完全不同 &lt;em>（除了一些特殊情况外，如某些内存映射文件或直接压缩数据上的操作）&lt;/em>。&lt;/li>
+&lt;/ol>
+&lt;p>所以，两者表示之间，需要进行某种类型的翻译。&lt;/p></description></item><item><title>模式与兼容</title><link>https://www.vdong.xyz/posts/ddia/%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%85%BC%E5%AE%B9/</link><pubDate>Thu, 01 Jun 2023 11:00:42 +0800</pubDate><guid>https://www.vdong.xyz/posts/ddia/%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%85%BC%E5%AE%B9/</guid><description>&lt;p>修改应用程序的功能也也意味着修改其存储的数据：使用新的字段或记录类型，或者以新的方式展示现有的数据。&lt;/p>
+&lt;p>不同的数据模型有不同的方法应对这种变化：&lt;/p>
+&lt;ul>
+&lt;li>关系型数据库假定数据库中的所有数据都遵循一个模式：尽管可以更改这个模式（通过模式迁移，即 &lt;code>ALTER&lt;/code> 语句），但是在任何时间点都有且仅有一个正确的模式。&lt;/li>
+&lt;li>&lt;strong>读时模式&lt;/strong>（schema-on-read，或 &lt;strong>无模式&lt;/strong>，即 schemaless）数据库不会强制一个模式，因此数据库可以包含在不同时间写入的新老数据格式的混合。&lt;/li>
+&lt;/ul>
+&lt;p>当数据 &lt;strong>格式（format）&lt;/strong> 或 &lt;strong>模式（schema）&lt;/strong> 发生变化时，通常需要对应用程序代码进行相应的更改（例如，为记录添加新字段，然后修改程序开始读写该字段）。但在大型应用程序中，代码变更通常不会立即完成：&lt;/p></description></item><item><title>OLTP-or-OLAP</title><link>https://www.vdong.xyz/posts/ddia/oltp-or-olap/</link><pubDate>Sat, 20 May 2023 16:38:42 +0800</pubDate><guid>https://www.vdong.xyz/posts/ddia/oltp-or-olap/</guid><description>&lt;h2 id="在线事务处理oltpvs-在线分析处理olap" class="headerLink">
+ &lt;a href="#%e5%9c%a8%e7%ba%bf%e4%ba%8b%e5%8a%a1%e5%a4%84%e7%90%86oltpvs-%e5%9c%a8%e7%ba%bf%e5%88%86%e6%9e%90%e5%a4%84%e7%90%86olap" class="header-mark">&lt;/a>在线事务处理（OLTP）VS 在线分析处理（OLAP）&lt;/h2>
+&lt;div class="table-wrapper">
+ &lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: ">属性&lt;/th>
+ &lt;th style="text-align: ">事务处理系统 OLTP （OnLine Transaction Processing）&lt;/th>
+ &lt;th style="text-align: ">分析系统 OLAP （OnLine Analytice Processing）&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: ">主要读取模式&lt;/td>
+ &lt;td style="text-align: ">查询少量记录，按键读取&lt;/td>
+ &lt;td style="text-align: ">在大批量记录上聚合&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: ">主要写入模式&lt;/td>
+ &lt;td style="text-align: ">随机访问，写入要求低延时&lt;/td>
+ &lt;td style="text-align: ">批量导入（ETL）或者事件流&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: ">主要用户&lt;/td>
+ &lt;td style="text-align: ">终端用户，通过 Web 应用&lt;/td>
+ &lt;td style="text-align: ">内部数据分析师，用于决策支持&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: ">处理的数据&lt;/td>
+ &lt;td style="text-align: ">数据的最新状态（当前时间点）&lt;/td>
+ &lt;td style="text-align: ">随时间推移的历史事件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: ">数据集尺寸&lt;/td>
+ &lt;td style="text-align: ">GB ~ TB&lt;/td>
+ &lt;td style="text-align: ">TB ~ PB&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+ &lt;/table>
+&lt;/div>
+&lt;p>起初，事务处理和分析查询使用了相同的数据库。 SQL 在这方面已证明是非常灵活的：对于 OLTP 类型的查询以及 OLAP 类型的查询来说效果都很好。尽管如此，在二十世纪八十年代末和九十年代初期，企业有停止使用 OLTP 系统进行分析的趋势，转而在单独的数据库上运行分析。这个单独的数据库被称为 &lt;strong>数据仓库（data warehouse）&lt;/strong>。&lt;/p></description></item><item><title>Git管理word文档</title><link>https://www.vdong.xyz/posts/git%E7%AE%A1%E7%90%86word%E6%96%87%E6%A1%A3/</link><pubDate>Wed, 17 May 2023 11:47:43 +0800</pubDate><guid>https://www.vdong.xyz/posts/git%E7%AE%A1%E7%90%86word%E6%96%87%E6%A1%A3/</guid><description>&lt;h2 id="word-文档管理" class="headerLink">
+ &lt;a href="#word-%e6%96%87%e6%a1%a3%e7%ae%a1%e7%90%86" class="header-mark">&lt;/a>word 文档管理&lt;/h2>&lt;p>最近写word文档有点多，并且是多人编写，然后就造成文档的标题变成了：&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">txt&lt;/p></description></item><item><title>数据的存储与检索</title><link>https://www.vdong.xyz/posts/ddia/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E4%B8%8E%E6%A3%80%E7%B4%A2/</link><pubDate>Mon, 03 Apr 2023 16:25:57 +0800</pubDate><guid>https://www.vdong.xyz/posts/ddia/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E4%B8%8E%E6%A3%80%E7%B4%A2/</guid><description>&lt;h2 id="最简单的数据库" class="headerLink">
+ &lt;a href="#%e6%9c%80%e7%ae%80%e5%8d%95%e7%9a%84%e6%95%b0%e6%8d%ae%e5%ba%93" class="header-mark">&lt;/a>最简单的数据库&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
+
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>db_set &lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">,&lt;/span>&lt;span class="nv">$2&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &amp;gt;&amp;gt; database
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">db_get &lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	grep &lt;span class="s2">&amp;#34;^&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">,&amp;#34;&lt;/span> database &lt;span class="p">|&lt;/span> sed -e &lt;span class="s2">&amp;#34;s/^&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">,//&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> tail -n &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>使用方法&lt;/p></description></item><item><title>BitMap</title><link>https://www.vdong.xyz/posts/algorithm/bitmap/</link><pubDate>Tue, 11 Oct 2022 10:17:05 +0800</pubDate><guid>https://www.vdong.xyz/posts/algorithm/bitmap/</guid><description>&lt;h2 id="bitmap原理" class="headerLink">
+ &lt;a href="#bitmap%e5%8e%9f%e7%90%86" class="header-mark">&lt;/a>BitMap原理&lt;/h2>&lt;p>使用一个 bit 位来存储某种状态（比如签到与否，是否存在等）。&lt;/p>
+&lt;p>如记录 0-7 这几个数字中哪些存在，只需要 8 个 bit 位。0 表示数字不存在，1 表示数字存在，1，2，3，5 这几个数存在， 存储如下：&lt;/p></description></item><item><title>正则相关</title><link>https://www.vdong.xyz/posts/regex/</link><pubDate>Thu, 22 Sep 2022 22:22:58 +0800</pubDate><guid>https://www.vdong.xyz/posts/regex/</guid><description>&lt;h2 id="语法一览图" class="headerLink">
+ &lt;a href="#%e8%af%ad%e6%b3%95%e4%b8%80%e8%a7%88%e5%9b%be" class="header-mark">&lt;/a>语法一览图&lt;/h2>&lt;p>&lt;a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F" target="_blank" rel="noopener noreferrer">维基百科&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://cdn.nlark.com/yuque/0/2022/jpeg/215704/1663857012372-126b1a3e-c3c0-420e-b253-ff013e13f76d.jpeg" target="_blank" rel="noopener noreferrer">截图地址&lt;/a>&lt;/p>
+&lt;h2 id="补充说明" class="headerLink">
+ &lt;a href="#%e8%a1%a5%e5%85%85%e8%af%b4%e6%98%8e" class="header-mark">&lt;/a>补充说明&lt;/h2>&lt;h3 id="分组" class="headerLink">
+ &lt;a href="#%e5%88%86%e7%bb%84" class="header-mark">&lt;/a>分组&lt;/h3>&lt;p>非捕获组&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">sh&lt;/p></description></item><item><title>Shell编程-1</title><link>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-1/</link><pubDate>Tue, 20 Sep 2022 14:37:32 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-1/</guid><description>&lt;h2 id="字符串" class="headerLink">
+ &lt;a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark">&lt;/a>字符串&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
+
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 单引号：原样， 双引号：会解析变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">a&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span> &lt;span class="c1"># = 两边不加空格&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">str_1&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;a=$a&amp;#39;&lt;/span> &lt;span class="c1"># a=$a&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">str_2&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;a=&lt;/span>&lt;span class="nv">$a&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="c1"># a=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">str_3&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="nb">pwd&lt;/span>&lt;span class="sb">`&lt;/span> &lt;span class="c1"># `(反引号)内的字符串被当作shell命令，执行完结果返回给 str_3 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 字符串长度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">s&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;abcd&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">len&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${#&lt;/span>&lt;span class="nv">s&lt;/span>&lt;span class="si">}&lt;/span> &lt;span class="c1"># 等价于 ${#s[0]}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 截取 从第1个字符开始，截取3个字符，索引从0开始&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">sub_s&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">s&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">3&lt;/span>&lt;span class="si">}&lt;/span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;h2 id="获取当前脚本的绝对路径" class="headerLink">
+ &lt;a href="#%e8%8e%b7%e5%8f%96%e5%bd%93%e5%89%8d%e8%84%9a%e6%9c%ac%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84" class="header-mark">&lt;/a>获取当前脚本的绝对路径&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title> rsyslog 发送和接收远程日志</title><link>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</link><pubDate>Thu, 15 Sep 2022 15:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</guid><description>&lt;h2 id="配置本机可以接收远端的syslog日志" class="headerLink">
+ &lt;a href="#%e9%85%8d%e7%bd%ae%e6%9c%ac%e6%9c%ba%e5%8f%af%e4%bb%a5%e6%8e%a5%e6%94%b6%e8%bf%9c%e7%ab%af%e7%9a%84syslog%e6%97%a5%e5%bf%97" class="header-mark">&lt;/a>配置本机可以接收远端的syslog日志&lt;/h2>&lt;p>根据需要启用udp或tcp模块，并设置端口，使其能够接收消息。&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
+
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># vim /etc/rsyslog.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$ModLoad&lt;/span> imudp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$UDPServerRun&lt;/span> &lt;span class="m">514&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>重启 rsyslog 服务&lt;/p></description></item><item><title>Function-Method-Interface-of-Golang</title><link>https://www.vdong.xyz/posts/golang/function-method-interface-of-golang/</link><pubDate>Fri, 09 Sep 2022 15:22:58 +0800</pubDate><guid>https://www.vdong.xyz/posts/golang/function-method-interface-of-golang/</guid><description>&lt;p>Go 语言中方法分为 具名和匿名，当匿名函数引用了外部变量时候就成了闭包函数。&lt;/p>
+&lt;p>方法是绑定到一个具体类型的特殊函数，方法依托类型。必须在编译时静态绑定。&lt;/p></description></item><item><title>Golang 中的数组字符串和切片</title><link>https://www.vdong.xyz/posts/golang/array-string-slice-of-golang/</link><pubDate>Fri, 09 Sep 2022 10:57:55 +0800</pubDate><guid>https://www.vdong.xyz/posts/golang/array-string-slice-of-golang/</guid><description>&lt;h2 id="数组" class="headerLink">
+ &lt;a href="#%e6%95%b0%e7%bb%84" class="header-mark">&lt;/a>数组&lt;/h2>&lt;h3 id="定义方式" class="headerLink">
+ &lt;a href="#%e5%ae%9a%e4%b9%89%e6%96%b9%e5%bc%8f" class="header-mark">&lt;/a>定义方式&lt;/h3>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">go&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
+
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="kt">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">b&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="o">...&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">c&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="o">...&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="c1">// 长度为3 {0,2,3}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 混合以上方式&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">d&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="o">...&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">6&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="c1">// {1, 2, 0, 0, 5, 6}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>Go 语言中数组是值语义。一个数组变量即表示整个数组，它并不是隐式的指向第一个元素的指针（比如 C 语言的数组），而是一个完整的值。当一个数组变量被赋值或者被传递的时候，实际上会复制整个数组。如果数组较大的话，数组的赋值也会有较大的开销。为了避免复制数组带来的开销，可以传递一个指向数组的指针，但是数组指针并不是数组。&lt;/p></description></item><item><title>expect-自动交互脚本</title><link>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 01 Jun 2022 09:15:46 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid><description>&lt;h2 id="scp-多个主机并填写密码" class="headerLink">
+ &lt;a href="#scp-%e5%a4%9a%e4%b8%aa%e4%b8%bb%e6%9c%ba%e5%b9%b6%e5%a1%ab%e5%86%99%e5%af%86%e7%a0%81" class="header-mark">&lt;/a>scp 多个主机并填写密码&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title>进程和作业控制</title><link>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</link><pubDate>Sat, 07 May 2022 09:15:46 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</guid><description>&lt;p>Unix中，每个对象或者由文件表示，或者由进程表示。简单来讲，文件就是一个输出源或者输出目标。进程是一个正在运行的程序。文件提供对数据的访问，而进程使事件发生。&lt;/p></description></item><item><title>Unix文件,别名等相关</title><link>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 05 May 2022 11:32:14 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</guid><description>&lt;h2 id="排序区域设置" class="headerLink">
+ &lt;a href="#%e6%8e%92%e5%ba%8f%e5%8c%ba%e5%9f%9f%e8%ae%be%e7%bd%ae" class="header-mark">&lt;/a>排序、区域设置&lt;/h2>&lt;p>unix 的默认排序方式取决于你使用的区域设置，如：现在有A、a、B、b、C、c 几个文件，执行 &lt;code>ls&lt;/code> 列举文件：&lt;/p>
+&lt;p>如果使用 C 区域设置，你会得到：&lt;code>A B C a b c&lt;/code> (基于 ASCII 码)；&lt;/p></description></item><item><title>Wsl设置代理</title><link>https://www.vdong.xyz/posts/wsl%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 11 Dec 2021 12:21:18 +0800</pubDate><guid>https://www.vdong.xyz/posts/wsl%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid><description>&lt;h2 id="目标" class="headerLink">
+ &lt;a href="#%e7%9b%ae%e6%a0%87" class="header-mark">&lt;/a>目标&lt;/h2>&lt;p>wsl 可以使用 win10 的代理。&lt;/p>
+&lt;h2 id="环境说明" class="headerLink">
+ &lt;a href="#%e7%8e%af%e5%a2%83%e8%af%b4%e6%98%8e" class="header-mark">&lt;/a>环境说明&lt;/h2>&lt;p>win10 + 小飞机 + wsl2&lt;/p>
+&lt;h2 id="步骤" class="headerLink">
+ &lt;a href="#%e6%ad%a5%e9%aa%a4" class="header-mark">&lt;/a>步骤&lt;/h2>&lt;ol>
+&lt;li>WSL 中获取宿主机 IP&lt;/li>
+&lt;/ol>
+&lt;p>WSL 每次启动的时候都会有不同的 IP 地址，所以并不能直接用静态的方式来设置代理。WSL2 会把 IP 写在 &lt;code>/etc/resolv.conf&lt;/code> 中，因此可以用 &lt;code>cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'&lt;/code> 这条指令获得宿主机 IP 。&lt;/p></description></item><item><title>科学研究的4种范式</title><link>https://www.vdong.xyz/posts/mess/%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E7%9A%844%E7%A7%8D%E8%8C%83%E5%BC%8F/</link><pubDate>Wed, 24 Nov 2021 11:01:49 +0800</pubDate><guid>https://www.vdong.xyz/posts/mess/%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E7%9A%844%E7%A7%8D%E8%8C%83%E5%BC%8F/</guid><description>&lt;ul>
+&lt;li>实验归纳&lt;/li>
+&lt;li>模型推演&lt;/li>
+&lt;li>仿真模拟&lt;/li>
+&lt;li>数据密集型科学发现&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="http://www.360doc.com/content/20/0618/08/29540381_919113499.shtml" target="_blank" rel="noopener noreferrer">拓展阅读&lt;/a>&lt;/p></description></item><item><title>nginx相关</title><link>https://www.vdong.xyz/posts/php-web/nginx%E7%9B%B8%E5%85%B3/</link><pubDate>Fri, 19 Nov 2021 22:38:35 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/nginx%E7%9B%B8%E5%85%B3/</guid><description>&lt;h3 id="开启与关闭-nginx" class="headerLink">
+ &lt;a href="#%e5%bc%80%e5%90%af%e4%b8%8e%e5%85%b3%e9%97%ad-nginx" class="header-mark">&lt;/a>开启与关闭 nginx&lt;/h3>&lt;p>关闭 nginx
+nginx -s stop&lt;/p>
+&lt;p>重新加载
+nginx -s relaod&lt;/p>
+&lt;h3 id="配置文件" class="headerLink">
+ &lt;a href="#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="header-mark">&lt;/a>配置文件&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>全局配置&lt;/p>
+&lt;p>影响 nginx 服务器整体运行的配置指令&lt;/p>
+&lt;p>eg：worker_processes 1; // 越大 并发越大&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>event 块&lt;/p>
+&lt;p>nginx 服务器与用户的网络连接&lt;/p></description></item><item><title>git 常用命令</title><link>https://www.vdong.xyz/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 04 Nov 2021 19:12:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h3 id="常用命令" class="headerLink">
+ &lt;a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="header-mark">&lt;/a>常用命令&lt;/h3>&lt;h4 id="clone-特定分支" class="headerLink">
+ &lt;a href="#clone-%e7%89%b9%e5%ae%9a%e5%88%86%e6%94%af" class="header-mark">&lt;/a>clone 特定分支&lt;/h4>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title>PHP webhook 部署码云</title><link>https://www.vdong.xyz/posts/php-web/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/</link><pubDate>Thu, 04 Nov 2021 19:12:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php-webhooks-%E9%83%A8%E7%BD%B2%E7%A0%81%E4%BA%91/</guid><description>&lt;h3 id="版本管理" class="headerLink">
+ &lt;a href="#%e7%89%88%e6%9c%ac%e7%ae%a1%e7%90%86" class="header-mark">&lt;/a>版本管理&lt;/h3>&lt;p>有一个仓库（可以自建，也可以用线上的），将开发者本地的代码每次修改管理起来，可以查看修改记录，回滚等，常用的管理工具有svn 、git等，主流 git。&lt;/p>
+&lt;p>简要流程：&lt;/p>
+&lt;ol>
+&lt;li>修改代码&lt;/li>
+&lt;li>提交修改到仓库&lt;/li>
+&lt;/ol>
+&lt;p>当然反过来也可以： 从仓库下载代码到本地  svn： 叫检出（ svn checkout path）； git 叫 拉取（git pull）&lt;/p>
+&lt;h3 id="服务器同步" class="headerLink">
+ &lt;a href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%90%8c%e6%ad%a5" class="header-mark">&lt;/a>服务器同步&lt;/h3>&lt;p>本地修改的代码要上传服务器，才能生效&lt;/p></description></item><item><title>composer</title><link>https://www.vdong.xyz/posts/php-web/composer/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/composer/</guid><description>&lt;p>composer require &amp;ldquo;mk-j/php_xlsxwriter&amp;rdquo; &amp;ndash;no-update&lt;/p>
+&lt;h2 id="版本说明" class="headerLink">
+ &lt;a href="#%e7%89%88%e6%9c%ac%e8%af%b4%e6%98%8e" class="header-mark">&lt;/a>版本说明&lt;/h2>&lt;p>&amp;ldquo;require&amp;rdquo;: {
+&amp;ldquo;vendor/package&amp;rdquo;: &amp;ldquo;1.3.2&amp;rdquo;, // exactly 1.3.2&lt;/p>
+&lt;pre>&lt;code>// &amp;gt;, &amp;lt;, &amp;gt;=, &amp;lt;= | specify upper / lower bounds
+&amp;quot;vendor/package&amp;quot;: &amp;quot;&amp;gt;=1.3.2&amp;quot;, // anything above or equal to 1.3.2
+&amp;quot;vendor/package&amp;quot;: &amp;quot;&amp;lt;1.3.2&amp;quot;, // anything below 1.3.2
+
+// * | wildcard
+&amp;quot;vendor/package&amp;quot;: &amp;quot;1.3.*&amp;quot;, // &amp;gt;=1.3.0 &amp;lt;1.4.0
+
+// ~ | allows last digit specified to go up
+&amp;quot;vendor/package&amp;quot;: &amp;quot;~1.3.2&amp;quot;, // &amp;gt;=1.3.2 &amp;lt;1.4.0
+&amp;quot;vendor/package&amp;quot;: &amp;quot;~1.3&amp;quot;, // &amp;gt;=1.3.0 &amp;lt;2.0.0
+
+// ^ | doesn't allow breaking changes (major version fixed - following semver)
+&amp;quot;vendor/package&amp;quot;: &amp;quot;^1.3.2&amp;quot;, // &amp;gt;=1.3.2 &amp;lt;2.0.0
+&amp;quot;vendor/package&amp;quot;: &amp;quot;^0.3.2&amp;quot;, // &amp;gt;=0.3.2 &amp;lt;0.4.0 // except if major version is 0
+&lt;/code>&lt;/pre>
+&lt;p>}&lt;/p></description></item><item><title>linux发udp包</title><link>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</guid><description>&lt;p>Linux 直接发送UDP包&lt;/p>
+&lt;p>如果往本地UDP端口發送數據，那麼可以使用以下命令：&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">bash&lt;/p></description></item><item><title>Mysql 范式 事务 锁</title><link>https://www.vdong.xyz/posts/php-web/mysql-%E8%8C%83%E5%BC%8F-%E4%BA%8B%E5%8A%A1-%E9%94%81/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/mysql-%E8%8C%83%E5%BC%8F-%E4%BA%8B%E5%8A%A1-%E9%94%81/</guid><description>&lt;h2 id="三大范式" class="headerLink">
+ &lt;a href="#%e4%b8%89%e5%a4%a7%e8%8c%83%e5%bc%8f" class="header-mark">&lt;/a>三大范式&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>非标准化形式： 主键不能重复；不出现重复记录&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>字段原子性，不能再分&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>反例： 联系方式  =》（电话，邮箱）&lt;/p>
+&lt;ol start="3">
+&lt;li>不能存在部分依赖。 随着主键值的变化，其它列名也必须随之而变化，如果主键是几个列名的组合，&lt;strong>其它列名（副键）必须同时被这几个列名影响，少一个的话，不行&lt;/strong>。&lt;/li>
+&lt;/ol>
+&lt;p>反例：   组件id，价格，供应商id，供应商名称，供应商地址。 同一个组件有可能由不同的供应商提供，故 组件 id 和 供应商 id 组成主键， 价格 和 主键  完全依赖； 供应商名称和地址 只依赖于 供应商 id， 部分依赖&lt;/p></description></item><item><title>PHP 和 Nginx 通信</title><link>https://www.vdong.xyz/posts/php-web/php%E5%92%8Cnginx%E9%80%9A%E4%BF%A1/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php%E5%92%8Cnginx%E9%80%9A%E4%BF%A1/</guid><description>&lt;h2 id="一个请求的生命周期" class="headerLink">
+ &lt;a href="#%e4%b8%80%e4%b8%aa%e8%af%b7%e6%b1%82%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f" class="header-mark">&lt;/a>一个请求的生命周期&lt;/h2>&lt;h3 id="0-启动服务-准备工作" class="headerLink">
+ &lt;a href="#0-%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1-%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="header-mark">&lt;/a>0. 启动服务 准备工作&lt;/h3>&lt;p>启动 php-fpm，通信模式， TCP socket， Unix scoket。&lt;/p>
+&lt;p>PHP-FPM 启动两种进程， master：监控端口、分配任务，管理 worker 进程， worker： 就是 php 的cgi 程序，解释和编译执行 php 脚本。&lt;/p></description></item><item><title>PHP 基础</title><link>https://www.vdong.xyz/posts/php-web/php%E5%9F%BA%E7%A1%80/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php%E5%9F%BA%E7%A1%80/</guid><description>&lt;h2 id="php-假值-与-empty-和-is_null" class="headerLink">
+ &lt;a href="#php-%e5%81%87%e5%80%bc-%e4%b8%8e-empty-%e5%92%8c-is_null" class="header-mark">&lt;/a>php 假值 与 empty 和 is_null&lt;/h2>&lt;ol>
+&lt;li>当 $a 是以下 值时候 &lt;code>(boolean) $a&lt;/code>  为假 false：&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>未设置的变量&lt;/li>
+&lt;li>var $a;  未初始化 $a 的值&lt;/li>
+&lt;li>$a = null;&lt;/li>
+&lt;li>false&lt;/li>
+&lt;li>0&lt;/li>
+&lt;li>''&lt;/li>
+&lt;li>&amp;lsquo;0&amp;rsquo;&lt;/li>
+&lt;li>[]&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>以上值 empty() 是均为 true 。&lt;/li>
+&lt;li>isset() 检测 一个变量设置了，且不为 null ，所以仅仅前 3 条 为 false 。&lt;/li>
+&lt;li>is_null() 正好与 isset() 相反， 仅仅 前 3 条 为 true 。&lt;/li>
+&lt;li>gettype() 前3条 ，均返回 null，即 类型 未知。&lt;/li>
+&lt;/ol>
+&lt;h2 id="php-array_map-和-array_walk-的区别" class="headerLink">
+ &lt;a href="#php-array_map-%e5%92%8c-array_walk-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark">&lt;/a>php array_map 和 array_walk 的区别&lt;/h2>&lt;p>相同点 都是利用回调函数对数组中每个元素进行操作。&lt;/p></description></item><item><title>PHP 垃圾回收机制</title><link>https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</guid><description>&lt;h2 id="变量的存储结构" class="headerLink">
+ &lt;a href="#%e5%8f%98%e9%87%8f%e7%9a%84%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84" class="header-mark">&lt;/a>变量的存储结构&lt;/h2>&lt;p>众所周知，php 是用 c 语言写的，所以其变量存储也依赖于 c 语言。php 的变量的内部是使用一种 zval 的数据结构来保存的。&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">c&lt;/p></description></item><item><title>Unix 过滤器</title><link>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</guid><description>&lt;p>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。&lt;/p>
+&lt;p>常用过滤器&lt;/p>
+&lt;h2 id="cat" class="headerLink">
+ &lt;a href="#cat" class="header-mark">&lt;/a>cat&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title>Vi 命令一览</title><link>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</guid><description>&lt;h2 id="移动光标" class="headerLink">
+ &lt;a href="#%e7%a7%bb%e5%8a%a8%e5%85%89%e6%a0%87" class="header-mark">&lt;/a>移动光标&lt;/h2>&lt;ul>
+&lt;li>&lt;code>-&lt;/code> 光标移动到上一行开头&lt;/li>
+&lt;li>&lt;code>+&lt;/code> 或 &lt;code>&amp;lt;return&amp;gt;&lt;/code> 光标移动到下一行开头&lt;/li>
+&lt;li>&lt;code>0&lt;/code> 当前行开头&lt;/li>
+&lt;li>&lt;code>$&lt;/code> 当前行末尾&lt;/li>
+&lt;li>&lt;code>^&lt;/code> 当前行第一个非空字符&lt;/li>
+&lt;li>&lt;code>w&lt;/code> 下一个单词的词首 W 忽略标点&lt;/li>
+&lt;li>&lt;code>e&lt;/code> 下一个单词的词尾 E &amp;hellip;&lt;/li>
+&lt;li>&lt;code>b&lt;/code> 上一个单词的词首 B &amp;hellip;&lt;/li>
+&lt;li>&lt;code>(&lt;/code> 移动到上一个句子&lt;/li>
+&lt;li>&lt;code>)&lt;/code> 下一个句子&lt;/li>
+&lt;li>&lt;code>{&lt;/code> 上一个段落&lt;/li>
+&lt;li>&lt;code>}&lt;/code> 下一个段落&lt;/li>
+&lt;li>&lt;code>H&lt;/code> 移动到屏幕顶部&lt;/li>
+&lt;li>&lt;code>M&lt;/code> 屏幕中间&lt;/li>
+&lt;li>&lt;code>L&lt;/code> 最后一行&lt;/li>
+&lt;/ul>
+&lt;p>数字组合&lt;/p></description></item><item><title>容器常用命令</title><link>https://www.vdong.xyz/posts/%E5%AE%B9%E5%99%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/%E5%AE%B9%E5%99%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="镜像相关" class="headerLink">
+ &lt;a href="#%e9%95%9c%e5%83%8f%e7%9b%b8%e5%85%b3" class="header-mark">&lt;/a>镜像相关&lt;/h2>&lt;h3 id="列出镜像" class="headerLink">
+ &lt;a href="#%e5%88%97%e5%87%ba%e9%95%9c%e5%83%8f" class="header-mark">&lt;/a>列出镜像&lt;/h3>&lt;p>&lt;code>docker image ls&lt;/code>&lt;/p>
+&lt;p>无仓库名的是悬空镜像，&lt;code>docker image ls -f dangling=true&lt;/code> 查看悬空镜像， &lt;code>docker image prune&lt;/code> 删除悬空镜像。&lt;/p>
+&lt;p>该命令默认，仅仅显示顶层镜像，&lt;code>docker image ls -a&lt;/code> , 可以显示中间层镜像。&lt;/p></description></item><item><title>依赖注入</title><link>https://www.vdong.xyz/posts/php-web/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/php-web/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</guid><description>&lt;h2 id="概述" class="headerLink">
+ &lt;a href="#%e6%a6%82%e8%bf%b0" class="header-mark">&lt;/a>概述&lt;/h2>&lt;p>控制反转**（Inversion of Control, IoC）**，是面向对象编程的一种设计原则，目的是降低代码耦合。常见方式有 &lt;strong>依赖注入 （Dependence Injection, DI）&lt;/strong> 和 &lt;strong>依赖查找&lt;/strong> （Dependency Lookup）  。&lt;/p></description></item><item><title>Logstash</title><link>https://www.vdong.xyz/posts/elastic/logstash/</link><pubDate>Thu, 04 Nov 2021 15:20:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/elastic/logstash/</guid><description>&lt;h2 id="条件判断语句" class="headerLink">
+ &lt;a href="#%e6%9d%a1%e4%bb%b6%e5%88%a4%e6%96%ad%e8%af%ad%e5%8f%a5" class="header-mark">&lt;/a>条件判断语句&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>相等: ==, !=, &amp;lt;, &amp;gt;, &amp;lt;=, &amp;gt;=&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>正则: =&lt;del>(匹配正则), !&lt;/del>(不匹配正则)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>包含: in(包含), not in(不包含)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>布尔操作： and(与), or(或), nand(非与), xor(非或)&lt;/p></description></item><item><title>Es 索引相关</title><link>https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 04 Nov 2021 11:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/</guid><description>&lt;h2 id="restful-接口" class="headerLink">
+ &lt;a href="#restful-%e6%8e%a5%e5%8f%a3" class="header-mark">&lt;/a>RESTful 接口&lt;/h2>&lt;blockquote>
+ &lt;ul>
+&lt;li>GET（SELECT）：从服务器取出资源（一项或多项）。&lt;/li>
+&lt;li>POST（CREATE）：在服务器新建一个资源。&lt;/li>
+&lt;li>PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。&lt;/li>
+&lt;li>PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。&lt;/li>
+&lt;li>DELETE（DELETE）：从服务器删除资源。&lt;/li>
+&lt;/ul>
+&lt;/blockquote>&lt;p>以下通过 kibanan 操作。&lt;/p></description></item><item><title>Es 基本概念</title><link>https://www.vdong.xyz/posts/elastic/es%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link><pubDate>Thu, 04 Nov 2021 10:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/elastic/es%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid><description>&lt;h2 id="集群cluster" class="headerLink">
+ &lt;a href="#%e9%9b%86%e7%be%a4cluster" class="header-mark">&lt;/a>集群（cluster）&lt;/h2>&lt;p>由一个名称标识（ elisticsearch.yml 中 cluster.name: &amp;ldquo;docker-cluster&amp;rdquo; ），由一个或多个节点（node）组成。&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">bash&lt;/p></description></item><item><title>Es 安装</title><link>https://www.vdong.xyz/posts/elastic/es%E5%AE%89%E8%A3%85/</link><pubDate>Thu, 04 Nov 2021 08:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/elastic/es%E5%AE%89%E8%A3%85/</guid><description>&lt;h2 id="elasticsearch" class="headerLink">
+ &lt;a href="#elasticsearch" class="header-mark">&lt;/a>Elasticsearch&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">text&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
+
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-13" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;pre tabindex="0">&lt;code># 安装
+docker pull elasticsearch:7.14.0&lt;/code>&lt;/pre>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title>博客搭建记录</title><link>https://www.vdong.xyz/posts/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</link><pubDate>Wed, 03 Nov 2021 15:46:20 +0800</pubDate><guid>https://www.vdong.xyz/posts/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>这是一个静态 bolg 网站。&lt;/p>
+&lt;p>记录搭建过程。&lt;/p>
+&lt;h2 id="技术栈" class="headerLink">
+ &lt;a href="#%e6%8a%80%e6%9c%af%e6%a0%88" class="header-mark">&lt;/a>技术栈：&lt;/h2>&lt;p>hugo , git , github 。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>hugo：是一个开源的 web 框架，使用 go 语言开发，可以将 markdown 文件快速的建构成静态网站。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>git: 作为版本管理工具。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>github: 作为代码仓库，使用 github 的 actions 做自动的建构和部署，分别部署在 github pages 和 阿里云上。&lt;/p></description></item></channel></rss>

@@ -1,439 +1,484 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Unix - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/unix/</link><description>Unix - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Jul 2024 18:00:06 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/unix/" rel="self" type="application/rss+xml"/><item><title>使用文件的inode号码删除无法打出名字的文件</title><link>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</link><pubDate>Fri, 05 Jul 2024 18:00:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</guid><description>&lt;p>在操作 UNIX和Linux系统时，偶尔由于误操作等会出现一些无法打出文件名（例如文件名包含非法字符）的文件，由于无法打出名字，所以不容易使用 &lt;code>rm&lt;/code> 命令将其删除。&lt;/p></description></item><item><title>Fail2Ban防护SSH爆破</title><link>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</link><pubDate>Mon, 27 Nov 2023 11:10:25 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</guid><description>&lt;p>今天发现早上登录服务器，查看日志有大量ssh登录的爆破，所以先限制root用户不允许远程登录，再使用Fail2Ban自动封锁ip限制一下。&lt;/p>
-&lt;p>记录如下：&lt;/p></description></item><item><title>离线安装包及依赖处理</title><link>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2023 10:19:58 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</guid><description>&lt;p>很多内网环境需要离线安装软件，就需要我们在可以上网的服务器上将需要安装的软件的相应&lt;strong>安装包及其依赖&lt;/strong>下载下来，传输到离线机器，再安装。其中下载和处理依赖关系可能比较麻烦，所以本文特做记录。&lt;/p></description></item><item><title>Shell编程-2</title><link>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-2/</link><pubDate>Mon, 25 Sep 2023 10:23:40 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-2/</guid><description><![CDATA[<h2 id="shell解析yml" class="headerLink">
-    <a href="#shell%e8%a7%a3%e6%9e%90yml" class="header-mark"></a>Shell解析yml</h2><p>代码实现如下：</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unix on 我的灵感记录</title><link>https://www.vdong.xyz/tags/unix/</link><description>Recent content in Unix on 我的灵感记录</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 26 May 2025 11:10:56 +0000</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/unix/index.xml" rel="self" type="application/rss+xml"/><item><title>使用文件的inode号码删除无法打出名字的文件</title><link>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</link><pubDate>Fri, 05 Jul 2024 18:00:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84inode%E5%8F%B7%E7%A0%81%E5%88%A0%E9%99%A4%E6%97%A0%E6%B3%95%E6%89%93%E5%87%BA%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%87%E4%BB%B6/</guid><description>&lt;p>在操作 UNIX和Linux系统时，偶尔由于误操作等会出现一些无法打出文件名（例如文件名包含非法字符）的文件，由于无法打出名字，所以不容易使用 &lt;code>rm&lt;/code> 命令将其删除。&lt;/p></description></item><item><title>Fail2Ban防护SSH爆破</title><link>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</link><pubDate>Mon, 27 Nov 2023 11:10:25 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/fail2ban%E9%98%B2%E6%8A%A4ssh%E7%88%86%E7%A0%B4/</guid><description>&lt;p>今天发现早上登录服务器，查看日志有大量ssh登录的爆破，所以先限制root用户不允许远程登录，再使用Fail2Ban自动封锁ip限制一下。&lt;/p>
+&lt;p>记录如下：&lt;/p></description></item><item><title>离线安装包及依赖处理</title><link>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2023 10:19:58 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%A4%84%E7%90%86/</guid><description>&lt;p>很多内网环境需要离线安装软件，就需要我们在可以上网的服务器上将需要安装的软件的相应&lt;strong>安装包及其依赖&lt;/strong>下载下来，传输到离线机器，再安装。其中下载和处理依赖关系可能比较麻烦，所以本文特做记录。&lt;/p></description></item><item><title>Shell编程-2</title><link>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-2/</link><pubDate>Mon, 25 Sep 2023 10:23:40 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-2/</guid><description>&lt;h2 id="shell解析yml" class="headerLink">
+ &lt;a href="#shell%e8%a7%a3%e6%9e%90yml" class="header-mark">&lt;/a>Shell解析yml&lt;/h2>&lt;p>代码实现如下：&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
 
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="c1"># 解析 yml , 数组自动添加序号</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># </span>
-</span></span><span class="line"><span class="cl"><span class="c1">### 例如：</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### yml 如下：</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global:</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###   input:</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###     - &#34;main.c&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###     - &#34;main.h&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###   flags: [ &#34;-O3&#34;, &#34;-fpic&#34; ]</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###   sample_input:</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###     -  { property1: value, property2: &#34;value2&#34; }</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###     -  { property1: &#34;value3&#34;, property2: &#39;value 4&#39; }</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### </span>
-</span></span><span class="line"><span class="cl"><span class="c1">### 执行： eval $(parse_yaml &#34;config.yml&#34;）</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### 解析结果如下，相当于生成了如下代码:</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_input_1=&#34;main.c&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_input_2=&#34;main.h&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_flags_1=&#34;-O3&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_flags_2=&#34;-fpic&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_sample_input_1_property1=&#34;value&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_sample_input_1_property2=&#34;value2&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_sample_input_2_property1=&#34;value3&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### global_sample_input_2_property2=&#34;value 4&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### </span>
-</span></span><span class="line"><span class="cl"><span class="c1">### 最后可以使用间接变量引用，访问变量</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###</span>
-</span></span><span class="line"><span class="cl"><span class="k">function</span> parse_yaml <span class="o">{</span>
-</span></span><span class="line"><span class="cl">   <span class="nb">local</span> <span class="nv">prefix</span><span class="o">=</span><span class="nv">$2</span>
-</span></span><span class="line"><span class="cl">   <span class="nb">local</span> <span class="nv">s</span><span class="o">=</span><span class="s1">&#39;[[:space:]]*&#39;</span> <span class="nv">w</span><span class="o">=</span><span class="s1">&#39;[a-zA-Z0-9_]*&#39;</span> <span class="nv">fs</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s1">&#39;\034&#39;</span><span class="k">)</span>
-</span></span><span class="line"><span class="cl">   sed -ne <span class="s2">&#34;s|,</span><span class="nv">$s</span><span class="s2">\]</span><span class="nv">$s</span><span class="s2">\$|]|&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;:1;s|^\(</span><span class="nv">$s</span><span class="s2">\)\(</span><span class="nv">$w</span><span class="s2">\)</span><span class="nv">$s</span><span class="s2">:</span><span class="nv">$s</span><span class="s2">\[</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">,</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">\]|\1\2: [\3]\n\1  - \4|;t1&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\)\(</span><span class="nv">$w</span><span class="s2">\)</span><span class="nv">$s</span><span class="s2">:</span><span class="nv">$s</span><span class="s2">\[</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">\]|\1\2:\n\1  - \3|;p&#34;</span> <span class="nv">$1</span> <span class="p">|</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>   sed -ne <span class="s2">&#34;s|,</span><span class="nv">$s</span><span class="s2">}</span><span class="nv">$s</span><span class="s2">\$|}|&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;:1;s|^\(</span><span class="nv">$s</span><span class="s2">\)-</span><span class="nv">$s</span><span class="s2">{</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">,</span><span class="nv">$s</span><span class="s2">\(</span><span class="nv">$w</span><span class="s2">\)</span><span class="nv">$s</span><span class="s2">:</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">}|\1- {\2}\n\1  \3: \4|;t1&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e    <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\)-</span><span class="nv">$s</span><span class="s2">{</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">}|\1-\n\1  \2|;p&#34;</span> <span class="p">|</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>   sed -ne <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\):|\1|&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\)-</span><span class="nv">$s</span><span class="s2">[\&#34;&#39;]\(.*\)[\&#34;&#39;]</span><span class="nv">$s</span><span class="s2">\$|\1</span><span class="nv">$fs$fs</span><span class="s2">\2|p&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\)-</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">\$|\1</span><span class="nv">$fs$fs</span><span class="s2">\2|p&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\)\(</span><span class="nv">$w</span><span class="s2">\)</span><span class="nv">$s</span><span class="s2">:</span><span class="nv">$s</span><span class="s2">[\&#34;&#39;]\(.*\)[\&#34;&#39;]</span><span class="nv">$s</span><span class="s2">\$|\1</span><span class="nv">$fs</span><span class="s2">\2</span><span class="nv">$fs</span><span class="s2">\3|p&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -e <span class="s2">&#34;s|^\(</span><span class="nv">$s</span><span class="s2">\)\(</span><span class="nv">$w</span><span class="s2">\)</span><span class="nv">$s</span><span class="s2">:</span><span class="nv">$s</span><span class="s2">\(.*\)</span><span class="nv">$s</span><span class="s2">\$|\1</span><span class="nv">$fs</span><span class="s2">\2</span><span class="nv">$fs</span><span class="s2">\3|p&#34;</span> <span class="p">|</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>   awk -F<span class="nv">$fs</span> <span class="s1">&#39;{
-</span></span></span><span class="line"><span class="cl"><span class="s1">      indent = length($1)/2;
-</span></span></span><span class="line"><span class="cl"><span class="s1">      vname[indent] = $2;
-</span></span></span><span class="line"><span class="cl"><span class="s1">      for (i in vname) {if (i &gt; indent) {delete vname[i]; idx[i]=0}}
-</span></span></span><span class="line"><span class="cl"><span class="s1">      if(length($2)== 0){  vname[indent]= ++idx[indent] };
-</span></span></span><span class="line"><span class="cl"><span class="s1">      if (length($3) &gt; 0) {
-</span></span></span><span class="line"><span class="cl"><span class="s1">         vn=&#34;&#34;; for (i=0; i&lt;indent; i++) { vn=(vn)(vname[i])(&#34;_&#34;)}
-</span></span></span><span class="line"><span class="cl"><span class="s1">		 gsub(/\s*#.*$/, &#34;&#34;, $3);
-</span></span></span><span class="line"><span class="cl"><span class="s1">         printf(&#34;%s%s%s=\&#34;%s\&#34;\n&#34;, &#34;&#39;</span><span class="nv">$prefix</span><span class="s1">&#39;&#34;,vn, vname[indent], $3);
-</span></span></span><span class="line"><span class="cl"><span class="s1">      }
-</span></span></span><span class="line"><span class="cl"><span class="s1">   }&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre>
-</div>
-<p>用法：</p>]]></description></item><item><title>Shell编程-1</title><link>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-1/</link><pubDate>Tue, 20 Sep 2022 14:37:32 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-1/</guid><description><![CDATA[<h2 id="字符串" class="headerLink">
-    <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark"></a>字符串</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 解析 yml , 数组自动添加序号&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 例如：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### yml 如下：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### input:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - &amp;#34;main.c&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - &amp;#34;main.h&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### flags: [ &amp;#34;-O3&amp;#34;, &amp;#34;-fpic&amp;#34; ]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### sample_input:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - { property1: value, property2: &amp;#34;value2&amp;#34; }&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### - { property1: &amp;#34;value3&amp;#34;, property2: &amp;#39;value 4&amp;#39; }&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 执行： eval $(parse_yaml &amp;#34;config.yml&amp;#34;）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">###&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 解析结果如下，相当于生成了如下代码:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_input_1=&amp;#34;main.c&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_input_2=&amp;#34;main.h&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_flags_1=&amp;#34;-O3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_flags_2=&amp;#34;-fpic&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_1_property1=&amp;#34;value&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_1_property2=&amp;#34;value2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_2_property1=&amp;#34;value3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### global_sample_input_2_property2=&amp;#34;value 4&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">### 最后可以使用间接变量引用，访问变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">###&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> parse_yaml &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">local&lt;/span> &lt;span class="nv">prefix&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">local&lt;/span> &lt;span class="nv">s&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;[[:space:]]*&amp;#39;&lt;/span> &lt;span class="nv">w&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;[a-zA-Z0-9_]*&amp;#39;&lt;/span> &lt;span class="nv">fs&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>&lt;span class="nb">echo&lt;/span> -e &lt;span class="s1">&amp;#39;\034&amp;#39;&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sed -ne &lt;span class="s2">&amp;#34;s|,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\]&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|]|&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;:1;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\[&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\]|\1\2: [\3]\n\1 - \4|;t1&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\[&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\]|\1\2:\n\1 - \3|;p&amp;#34;&lt;/span> &lt;span class="nv">$1&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> sed -ne &lt;span class="s2">&amp;#34;s|,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">}&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|}|&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;:1;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">{&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">,&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">}|\1- {\2}\n\1 \3: \4|;t1&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">{&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">}|\1-\n\1 \2|;p&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> sed -ne &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\):|\1|&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">[\&amp;#34;&amp;#39;]\(.*\)[\&amp;#34;&amp;#39;]&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs$fs&lt;/span>&lt;span class="s2">\2|p&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)-&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs$fs&lt;/span>&lt;span class="s2">\2|p&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">[\&amp;#34;&amp;#39;]\(.*\)[\&amp;#34;&amp;#39;]&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\2&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\3|p&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -e &lt;span class="s2">&amp;#34;s|^\(&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\)\(&lt;/span>&lt;span class="nv">$w&lt;/span>&lt;span class="s2">\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\(.*\)&lt;/span>&lt;span class="nv">$s&lt;/span>&lt;span class="s2">\$|\1&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\2&lt;/span>&lt;span class="nv">$fs&lt;/span>&lt;span class="s2">\3|p&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> awk -F&lt;span class="nv">$fs&lt;/span> &lt;span class="s1">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> indent = length($1)/2;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> vname[indent] = $2;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> for (i in vname) {if (i &amp;gt; indent) {delete vname[i]; idx[i]=0}}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> if(length($2)== 0){ vname[indent]= ++idx[indent] };
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> if (length($3) &amp;gt; 0) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> vn=&amp;#34;&amp;#34;; for (i=0; i&amp;lt;indent; i++) { vn=(vn)(vname[i])(&amp;#34;_&amp;#34;)}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">		 gsub(/\s*#.*$/, &amp;#34;&amp;#34;, $3);
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> printf(&amp;#34;%s%s%s=\&amp;#34;%s\&amp;#34;\n&amp;#34;, &amp;#34;&amp;#39;&lt;/span>&lt;span class="nv">$prefix&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;,vn, vname[indent], $3);
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> }&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>用法：&lt;/p></description></item><item><title>Shell编程-1</title><link>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-1/</link><pubDate>Tue, 20 Sep 2022 14:37:32 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/shell%E7%BC%96%E7%A8%8B-1/</guid><description>&lt;h2 id="字符串" class="headerLink">
+ &lt;a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark">&lt;/a>字符串&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
 
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="c1"># 单引号：原样， 双引号：会解析变量</span>
-</span></span><span class="line"><span class="cl"><span class="nv">a</span><span class="o">=</span><span class="m">1</span> <span class="c1"># = 两边不加空格</span>
-</span></span><span class="line"><span class="cl"><span class="nv">str_1</span><span class="o">=</span><span class="s1">&#39;a=$a&#39;</span> <span class="c1"># a=$a</span>
-</span></span><span class="line"><span class="cl"><span class="nv">str_2</span><span class="o">=</span><span class="s2">&#34;a=</span><span class="nv">$a</span><span class="s2">&#34;</span> <span class="c1"># a=1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">str_3</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span> <span class="c1"># `(反引号)内的字符串被当作shell命令，执行完结果返回给 str_3 </span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 字符串长度</span>
-</span></span><span class="line"><span class="cl"><span class="nv">s</span><span class="o">=</span><span class="s1">&#39;abcd&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">len</span><span class="o">=</span><span class="si">${#</span><span class="nv">s</span><span class="si">}</span> <span class="c1"># 等价于 ${#s[0]}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 截取 从第1个字符开始，截取3个字符，索引从0开始</span>
-</span></span><span class="line"><span class="cl"><span class="nv">sub_s</span><span class="o">=</span><span class="si">${</span><span class="nv">s</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">3</span><span class="si">}</span> </span></span></code></pre>
-</div>
-<h2 id="获取当前脚本的绝对路径" class="headerLink">
-    <a href="#%e8%8e%b7%e5%8f%96%e5%bd%93%e5%89%8d%e8%84%9a%e6%9c%ac%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84" class="header-mark"></a>获取当前脚本的绝对路径</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 单引号：原样， 双引号：会解析变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">a&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span> &lt;span class="c1"># = 两边不加空格&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">str_1&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;a=$a&amp;#39;&lt;/span> &lt;span class="c1"># a=$a&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">str_2&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;a=&lt;/span>&lt;span class="nv">$a&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="c1"># a=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">str_3&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="nb">pwd&lt;/span>&lt;span class="sb">`&lt;/span> &lt;span class="c1"># `(反引号)内的字符串被当作shell命令，执行完结果返回给 str_3 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 字符串长度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">s&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;abcd&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">len&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${#&lt;/span>&lt;span class="nv">s&lt;/span>&lt;span class="si">}&lt;/span> &lt;span class="c1"># 等价于 ${#s[0]}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 截取 从第1个字符开始，截取3个字符，索引从0开始&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">sub_s&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">s&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">3&lt;/span>&lt;span class="si">}&lt;/span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;h2 id="获取当前脚本的绝对路径" class="headerLink">
+ &lt;a href="#%e8%8e%b7%e5%8f%96%e5%bd%93%e5%89%8d%e8%84%9a%e6%9c%ac%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84" class="header-mark">&lt;/a>获取当前脚本的绝对路径&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item><item><title> rsyslog 发送和接收远程日志</title><link>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</link><pubDate>Thu, 15 Sep 2022 15:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</guid><description><![CDATA[<h2 id="配置本机可以接收远端的syslog日志" class="headerLink">
-    <a href="#%e9%85%8d%e7%bd%ae%e6%9c%ac%e6%9c%ba%e5%8f%af%e4%bb%a5%e6%8e%a5%e6%94%b6%e8%bf%9c%e7%ab%af%e7%9a%84syslog%e6%97%a5%e5%bf%97" class="header-mark"></a>配置本机可以接收远端的syslog日志</h2><p>根据需要启用udp或tcp模块，并设置端口，使其能够接收消息。</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title> rsyslog 发送和接收远程日志</title><link>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</link><pubDate>Thu, 15 Sep 2022 15:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/rsyslog-%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E8%BF%9C%E7%A8%8B%E6%97%A5%E5%BF%97/</guid><description>&lt;h2 id="配置本机可以接收远端的syslog日志" class="headerLink">
+ &lt;a href="#%e9%85%8d%e7%bd%ae%e6%9c%ac%e6%9c%ba%e5%8f%af%e4%bb%a5%e6%8e%a5%e6%94%b6%e8%bf%9c%e7%ab%af%e7%9a%84syslog%e6%97%a5%e5%bf%97" class="header-mark">&lt;/a>配置本机可以接收远端的syslog日志&lt;/h2>&lt;p>根据需要启用udp或tcp模块，并设置端口，使其能够接收消息。&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p>
+ &lt;/div>
+ &lt;div class="tw-flex">
+ &lt;button 
+ class="
+ line-number-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.show-line-numbers]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle line numbers">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>&lt;/svg>&lt;/button>
 
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="c1"># vim /etc/rsyslog.conf</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$ModLoad</span> imudp
-</span></span><span class="line"><span class="cl"><span class="nv">$UDPServerRun</span> <span class="m">514</span></span></span></code></pre>
-</div>
-<p>重启 rsyslog 服务</p>]]></description></item><item><title>expect-自动交互脚本</title><link>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 01 Jun 2022 09:15:46 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid><description><![CDATA[<h2 id="scp-多个主机并填写密码" class="headerLink">
-    <a href="#scp-%e5%a4%9a%e4%b8%aa%e4%b8%bb%e6%9c%ba%e5%b9%b6%e5%a1%ab%e5%86%99%e5%af%86%e7%a0%81" class="header-mark"></a>scp 多个主机并填写密码</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ &lt;button 
+ class="
+ wrap-code-button
+ tw-select-none 
+ tw-mx-2 
+ tw-hidden 
+ group-[.is-open]:tw-block 
+ group-[.is-wrap]:tw-text-fgColor-link 
+ print:!tw-hidden" 
+ title="Toggle code wrap">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>&lt;/svg>&lt;/button>
+ 
+ &lt;button 
+ class="
+ copy-code-button
+ tw-select-none
+ tw-mx-2 
+ tw-hidden
+ group-[.is-open]:tw-block
+ hover:tw-text-fgColor-link 
+ print:!tw-hidden"
+ title="Copy code">
+ &lt;span class="copy-icon tw-block">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/>&lt;/svg>&lt;/span>
+ &lt;span class="check-icon tw-hidden">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>&lt;/svg>&lt;/span>
+ &lt;/button>
+ 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block 
+ group-[.is-open]:tw-hidden 
+ print:!tw-hidden" 
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/>&lt;/svg>&lt;/button>
+ &lt;/div>
+ &lt;/div>
+ &lt;pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0">&lt;code 
+ id="codeblock-id-1" 
+ class="
+ chroma 
+ !tw-block 
+ tw-p-0
+ tw-m-0
+ tw-transition-[max-height] 
+ tw-duration-500 
+ tw-ease-in-out 
+ group-[.is-closed]:!tw-max-h-0 
+ group-[.is-wrap]:tw-text-wrap
+ tw-overflow-y-hidden
+ tw-overflow-x-auto
+ tw-scrollbar-thin
+ ">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># vim /etc/rsyslog.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$ModLoad&lt;/span> imudp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$UDPServerRun&lt;/span> &lt;span class="m">514&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>重启 rsyslog 服务&lt;/p></description></item><item><title>expect-自动交互脚本</title><link>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 01 Jun 2022 09:15:46 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/expect%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid><description>&lt;h2 id="scp-多个主机并填写密码" class="headerLink">
+ &lt;a href="#scp-%e5%a4%9a%e4%b8%aa%e4%b8%bb%e6%9c%ba%e5%b9%b6%e5%a1%ab%e5%86%99%e5%af%86%e7%a0%81" class="header-mark">&lt;/a>scp 多个主机并填写密码&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item><item><title>进程和作业控制</title><link>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</link><pubDate>Sat, 07 May 2022 09:15:46 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</guid><description>&lt;p>Unix中，每个对象或者由文件表示，或者由进程表示。简单来讲，文件就是一个输出源或者输出目标。进程是一个正在运行的程序。文件提供对数据的访问，而进程使事件发生。&lt;/p></description></item><item><title>Unix文件,别名等相关</title><link>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 05 May 2022 11:32:14 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</guid><description><![CDATA[<h2 id="排序区域设置" class="headerLink">
-    <a href="#%e6%8e%92%e5%ba%8f%e5%8c%ba%e5%9f%9f%e8%ae%be%e7%bd%ae" class="header-mark"></a>排序、区域设置</h2><p>unix 的默认排序方式取决于你使用的区域设置，如：现在有A、a、B、b、C、c 几个文件，执行 <code>ls</code> 列举文件：</p>
-<p>如果使用 C 区域设置，你会得到：<code>A B C a b c</code> (基于 ASCII 码)；</p>]]></description></item><item><title>linux发udp包</title><link>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</guid><description><![CDATA[<p>Linux 直接发送UDP包</p>
-<p>如果往本地UDP端口發送數據，那麼可以使用以下命令：</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title>进程和作业控制</title><link>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</link><pubDate>Sat, 07 May 2022 09:15:46 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6/</guid><description>&lt;p>Unix中，每个对象或者由文件表示，或者由进程表示。简单来讲，文件就是一个输出源或者输出目标。进程是一个正在运行的程序。文件提供对数据的访问，而进程使事件发生。&lt;/p></description></item><item><title>Unix文件,别名等相关</title><link>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 05 May 2022 11:32:14 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/unix%E6%96%87%E4%BB%B6%E5%88%AB%E5%90%8D%E7%9B%B8%E5%85%B3/</guid><description>&lt;h2 id="排序区域设置" class="headerLink">
+ &lt;a href="#%e6%8e%92%e5%ba%8f%e5%8c%ba%e5%9f%9f%e8%ae%be%e7%bd%ae" class="header-mark">&lt;/a>排序、区域设置&lt;/h2>&lt;p>unix 的默认排序方式取决于你使用的区域设置，如：现在有A、a、B、b、C、c 几个文件，执行 &lt;code>ls&lt;/code> 列举文件：&lt;/p>
+&lt;p>如果使用 C 区域设置，你会得到：&lt;code>A B C a b c&lt;/code> (基于 ASCII 码)；&lt;/p></description></item><item><title>linux发udp包</title><link>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/linux%E5%8F%91udp%E5%8C%85/</guid><description>&lt;p>Linux 直接发送UDP包&lt;/p>
+&lt;p>如果往本地UDP端口發送數據，那麼可以使用以下命令：&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">bash</p>]]></description></item></channel></rss>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">bash&lt;/p></description></item><item><title>Unix 过滤器</title><link>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/unix-%E8%BF%87%E6%BB%A4%E5%99%A8/</guid><description>&lt;p>过滤器可以用于管道，通过组合，解决实际问题，优雅而强大。&lt;/p>
+&lt;p>常用过滤器&lt;/p>
+&lt;h2 id="cat" class="headerLink">
+ &lt;a href="#cat" class="header-mark">&lt;/a>cat&lt;/h2>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
+
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item><item><title>Vi 命令一览</title><link>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</link><pubDate>Thu, 04 Nov 2021 19:11:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/unixs/vi-%E5%91%BD%E4%BB%A4%E4%B8%80%E8%A7%88/</guid><description>&lt;h2 id="移动光标" class="headerLink">
+ &lt;a href="#%e7%a7%bb%e5%8a%a8%e5%85%89%e6%a0%87" class="header-mark">&lt;/a>移动光标&lt;/h2>&lt;ul>
+&lt;li>&lt;code>-&lt;/code> 光标移动到上一行开头&lt;/li>
+&lt;li>&lt;code>+&lt;/code> 或 &lt;code>&amp;lt;return&amp;gt;&lt;/code> 光标移动到下一行开头&lt;/li>
+&lt;li>&lt;code>0&lt;/code> 当前行开头&lt;/li>
+&lt;li>&lt;code>$&lt;/code> 当前行末尾&lt;/li>
+&lt;li>&lt;code>^&lt;/code> 当前行第一个非空字符&lt;/li>
+&lt;li>&lt;code>w&lt;/code> 下一个单词的词首 W 忽略标点&lt;/li>
+&lt;li>&lt;code>e&lt;/code> 下一个单词的词尾 E &amp;hellip;&lt;/li>
+&lt;li>&lt;code>b&lt;/code> 上一个单词的词首 B &amp;hellip;&lt;/li>
+&lt;li>&lt;code>(&lt;/code> 移动到上一个句子&lt;/li>
+&lt;li>&lt;code>)&lt;/code> 下一个句子&lt;/li>
+&lt;li>&lt;code>{&lt;/code> 上一个段落&lt;/li>
+&lt;li>&lt;code>}&lt;/code> 下一个段落&lt;/li>
+&lt;li>&lt;code>H&lt;/code> 移动到屏幕顶部&lt;/li>
+&lt;li>&lt;code>M&lt;/code> 屏幕中间&lt;/li>
+&lt;li>&lt;code>L&lt;/code> 最后一行&lt;/li>
+&lt;/ul>
+&lt;p>数字组合&lt;/p></description></item></channel></rss>

@@ -1,54 +1,54 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Git - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/git/</link><description>Git - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 16 Jul 2024 14:33:25 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/git/" rel="self" type="application/rss+xml"/><item><title>保留提交记录和tag的git仓库迁移</title><link>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Tue, 16 Jul 2024 14:33:25 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description><![CDATA[<h2 id="问题场景1" class="headerLink">
-    <a href="#%e9%97%ae%e9%a2%98%e5%9c%ba%e6%99%af1" class="header-mark"></a>问题场景1</h2><p>将 Git 仓库从一个服务器迁移到另一个服务器，并保留所有的分支和提交记录。例如：我有一个git仓库（1.1.1.5:8888/a.git），有多个分支且做了多次提交了，现在需要通过u盘迁移至另一个仓库(2.2.2..5:8888/b.git)，我应该怎么操作呢。</p>]]></description></item><item><title>Git管理word文档</title><link>https://www.vdong.xyz/posts/git%E7%AE%A1%E7%90%86word%E6%96%87%E6%A1%A3/</link><pubDate>Wed, 17 May 2023 11:47:43 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/git%E7%AE%A1%E7%90%86word%E6%96%87%E6%A1%A3/</guid><description><![CDATA[<h2 id="word-文档管理" class="headerLink">
-    <a href="#word-%e6%96%87%e6%a1%a3%e7%ae%a1%e7%90%86" class="header-mark"></a>word 文档管理</h2><p>最近写word文档有点多，并且是多人编写，然后就造成文档的标题变成了：</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 我的灵感记录</title><link>https://www.vdong.xyz/tags/git/</link><description>Recent content in Git on 我的灵感记录</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 26 May 2025 11:10:56 +0000</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>保留提交记录和tag的git仓库迁移</title><link>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Tue, 16 Jul 2024 14:33:25 +0800</pubDate><guid>https://www.vdong.xyz/posts/%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%92%8Ctag%E7%9A%84git%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="问题场景1" class="headerLink">
+ &lt;a href="#%e9%97%ae%e9%a2%98%e5%9c%ba%e6%99%af1" class="header-mark">&lt;/a>问题场景1&lt;/h2>&lt;p>将 Git 仓库从一个服务器迁移到另一个服务器，并保留所有的分支和提交记录。例如：我有一个git仓库（1.1.1.5:8888/a.git），有多个分支且做了多次提交了，现在需要通过u盘迁移至另一个仓库(2.2.2..5:8888/b.git)，我应该怎么操作呢。&lt;/p></description></item><item><title>Git管理word文档</title><link>https://www.vdong.xyz/posts/git%E7%AE%A1%E7%90%86word%E6%96%87%E6%A1%A3/</link><pubDate>Wed, 17 May 2023 11:47:43 +0800</pubDate><guid>https://www.vdong.xyz/posts/git%E7%AE%A1%E7%90%86word%E6%96%87%E6%A1%A3/</guid><description>&lt;h2 id="word-文档管理" class="headerLink">
+ &lt;a href="#word-%e6%96%87%e6%a1%a3%e7%ae%a1%e7%90%86" class="header-mark">&lt;/a>word 文档管理&lt;/h2>&lt;p>最近写word文档有点多，并且是多人编写，然后就造成文档的标题变成了：&lt;/p>
+&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">txt</p>]]></description></item><item><title>git 常用命令</title><link>https://www.vdong.xyz/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 04 Nov 2021 19:12:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description><![CDATA[<h3 id="常用命令" class="headerLink">
-    <a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="header-mark"></a>常用命令</h3><h4 id="clone-特定分支" class="headerLink">
-    <a href="#clone-%e7%89%b9%e5%ae%9a%e5%88%86%e6%94%af" class="header-mark"></a>clone 特定分支</h4><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">txt&lt;/p></description></item><item><title>git 常用命令</title><link>https://www.vdong.xyz/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 04 Nov 2021 19:12:06 +0800</pubDate><guid>https://www.vdong.xyz/posts/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h3 id="常用命令" class="headerLink">
+ &lt;a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="header-mark">&lt;/a>常用命令&lt;/h3>&lt;h4 id="clone-特定分支" class="headerLink">
+ &lt;a href="#clone-%e7%89%b9%e5%ae%9a%e5%88%86%e6%94%af" class="header-mark">&lt;/a>clone 特定分支&lt;/h4>&lt;div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2">
+ &lt;div class="
+ code-block-title 
+ 
+ tw-flex 
+ tw-flex-row 
+ tw-justify-between 
+ tw-w-full tw-bg-bgColor-secondary
+ "> 
+ &lt;button 
+ class="
+ tw-select-none 
+ tw-mx-2 
+ tw-block
+ group-[.is-open]:tw-rotate-90
+ tw-transition-[transform] 
+ tw-duration-500 
+ tw-ease-in-out
+ print:!tw-hidden"
+ disabled
+ aria-hidden="true">&lt;svg class="icon"
+ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">&lt;!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->&lt;path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>&lt;/svg>&lt;/button>
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item></channel></rss>
+ &lt;div class="code-block-title-bar tw-w-full">
+ &lt;p class="tw-select-none !tw-my-1">shell&lt;/p></description></item></channel></rss>
