@@ -114,6 +114,7 @@ theme = "DoIt"
     keepStatic = false
     # 是否使侧边目录自动折叠展开
     auto = true
+  
   [params.footer]
     enable = true
     hugo = true
@@ -121,6 +122,11 @@ theme = "DoIt"
     copyright = true
     icp = '<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备18016268号-2</a>'
     license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  [params.analytics]
+    enable = true
+    [params.analytics.google]
+      id = "G-PSTPB5Y974"
 
 [menu]
   [[menu.main]]
@@ -171,10 +177,6 @@ theme = "DoIt"
 
 [frontmatter]
   lastmod = [':git', 'lastmod', ':fileModTime', ':default']
-
-[services]
-  [services.googleAnalytics]
-    id = 'G-PSTPB5Y974'
 
 [taxonomies]
   tag = "tags"
