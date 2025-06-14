@@ -8,7 +8,7 @@ categories:
   - 技术
 tags:
   - nginx
-typora-root-url: '..\..\..\static'
+typora-root-url: ./..\..\static
 ---
 
 nginx 与大多数应用程序一样，记录了大量与客户端交互、系统事件和潜在错误相关的数据。然而，只有通过正确的配置、管理和分析才能充分发挥这些数据的潜力。

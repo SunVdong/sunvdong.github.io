@@ -164,6 +164,22 @@ theme = "DoIt"
     url = "/links"
     title = ""
     weight = 4
+  [[menu.main]]
+    identifier = "mm"
+    pre = ""
+    post = ""
+    name = "树洞"
+    url = "https://mm.vdong.xyz/"
+    title = ""
+    weight = 5
+  [[menu.main]]
+    identifier = "pad"
+    pre = ""
+    post = ""
+    name = "pad"
+    url = "https://pad.vdong.xyz/"
+    title = ""
+    weight = 6
 
 # Hugo 解析文档的配置
 [markup]

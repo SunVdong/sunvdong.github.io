@@ -10,5 +10,5 @@ categories:
 tags:
   - 日常
   - 折腾
-typora-root-url: '..\..\..\static'
+typora-root-url: ..\..\..\static
 ---
