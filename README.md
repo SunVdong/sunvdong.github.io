@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-### This is hugo website.
+### This is a hugo website.
 
 <!--
 **SunVdong/sunvdong** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
