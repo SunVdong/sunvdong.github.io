@@ -11,45 +11,42 @@
 <li><strong>读时模式</strong>（schema-on-read，或 <strong>无模式</strong>，即 schemaless）数据库不会强制一个模式，因此数据库可以包含在不同时间写入的新老数据格式的混合。</li>
 </ul>
 <p>当数据 <strong>格式（format）</strong> 或 <strong>模式（schema）</strong> 发生变化时，通常需要对应用程序代码进行相应的更改（例如，为记录添加新字段，然后修改程序开始读写该字段）。但在大型应用程序中，代码变更通常不会立即完成：</p>]]></description></item><item><title>OLTP-or-OLAP</title><link>https://www.vdong.xyz/posts/ddia/oltp-or-olap/</link><pubDate>Sat, 20 May 2023 16:38:42 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/ddia/oltp-or-olap/</guid><description><![CDATA[<h2 id="在线事务处理oltpvs-在线分析处理olap" class="headerLink">
-    <a href="#%e5%9c%a8%e7%ba%bf%e4%ba%8b%e5%8a%a1%e5%a4%84%e7%90%86oltpvs-%e5%9c%a8%e7%ba%bf%e5%88%86%e6%9e%90%e5%a4%84%e7%90%86olap" class="header-mark"></a>在线事务处理（OLTP）VS 在线分析处理（OLAP）</h2>
-<div class="table-wrapper">
-  <table>
-    <thead>
-        <tr>
-            <th style="text-align: ">属性</th>
-            <th style="text-align: ">事务处理系统 OLTP （OnLine Transaction Processing）</th>
-            <th style="text-align: ">分析系统 OLAP （OnLine Analytice Processing）</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: ">主要读取模式</td>
-            <td style="text-align: ">查询少量记录，按键读取</td>
-            <td style="text-align: ">在大批量记录上聚合</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">主要写入模式</td>
-            <td style="text-align: ">随机访问，写入要求低延时</td>
-            <td style="text-align: ">批量导入（ETL）或者事件流</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">主要用户</td>
-            <td style="text-align: ">终端用户，通过 Web 应用</td>
-            <td style="text-align: ">内部数据分析师，用于决策支持</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">处理的数据</td>
-            <td style="text-align: ">数据的最新状态（当前时间点）</td>
-            <td style="text-align: ">随时间推移的历史事件</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">数据集尺寸</td>
-            <td style="text-align: ">GB ~ TB</td>
-            <td style="text-align: ">TB ~ PB</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
+    <a href="#%e5%9c%a8%e7%ba%bf%e4%ba%8b%e5%8a%a1%e5%a4%84%e7%90%86oltpvs-%e5%9c%a8%e7%ba%bf%e5%88%86%e6%9e%90%e5%a4%84%e7%90%86olap" class="header-mark"></a>在线事务处理（OLTP）VS 在线分析处理（OLAP）</h2><table>
+  <thead>
+      <tr>
+          <th>属性</th>
+          <th>事务处理系统 OLTP （OnLine Transaction Processing）</th>
+          <th>分析系统 OLAP （OnLine Analytice Processing）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>主要读取模式</td>
+          <td>查询少量记录，按键读取</td>
+          <td>在大批量记录上聚合</td>
+      </tr>
+      <tr>
+          <td>主要写入模式</td>
+          <td>随机访问，写入要求低延时</td>
+          <td>批量导入（ETL）或者事件流</td>
+      </tr>
+      <tr>
+          <td>主要用户</td>
+          <td>终端用户，通过 Web 应用</td>
+          <td>内部数据分析师，用于决策支持</td>
+      </tr>
+      <tr>
+          <td>处理的数据</td>
+          <td>数据的最新状态（当前时间点）</td>
+          <td>随时间推移的历史事件</td>
+      </tr>
+      <tr>
+          <td>数据集尺寸</td>
+          <td>GB ~ TB</td>
+          <td>TB ~ PB</td>
+      </tr>
+  </tbody>
+</table>
 <p>起初，事务处理和分析查询使用了相同的数据库。 SQL 在这方面已证明是非常灵活的：对于 OLTP 类型的查询以及 OLAP 类型的查询来说效果都很好。尽管如此，在二十世纪八十年代末和九十年代初期，企业有停止使用 OLTP 系统进行分析的趋势，转而在单独的数据库上运行分析。这个单独的数据库被称为 <strong>数据仓库（data warehouse）</strong>。</p>]]></description></item><item><title>数据的存储与检索</title><link>https://www.vdong.xyz/posts/ddia/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E4%B8%8E%E6%A3%80%E7%B4%A2/</link><pubDate>Mon, 03 Apr 2023 16:25:57 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/ddia/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E4%B8%8E%E6%A3%80%E7%B4%A2/</guid><description><![CDATA[<h2 id="最简单的数据库" class="headerLink">
     <a href="#%e6%9c%80%e7%ae%80%e5%8d%95%e7%9a%84%e6%95%b0%e6%8d%ae%e5%ba%93" class="header-mark"></a>最简单的数据库</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
