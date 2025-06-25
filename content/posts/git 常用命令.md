@@ -57,7 +57,18 @@ git config --global alias.br "branch"
 git log --since="6am"
 ```
 
+#### 暂存
+
+```shell
+# 暂存包含新增的文件（即未跟踪）并注释 msg
+git stash save -u "msg"
+
+# 应用指定暂存
+git stash apply stash@{1}
+```
+
 ### 错误记录
+
 #### pull 或 merge 时错误
 fatal: refusing to merge unrelated histories
 
