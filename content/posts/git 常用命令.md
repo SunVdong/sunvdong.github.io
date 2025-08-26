@@ -9,6 +9,11 @@ tags = ['git']
 
 ## 常用命令
 
+### 统计今天写了多少代码
+```shell
+git log --since=midnight --author="$(git config user.name)" --pretty=tformat: --numstat  | awk '{add += $1; del += $2; loc += $1 - $2} END {print "新增:", add, "删除:", del, "净增:", loc}'
+```
+
 ### clone 特定分支
 ```shell
 git clone -b v5.12 git@gitee.com:xxx/xxx.git
