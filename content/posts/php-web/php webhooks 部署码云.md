@@ -185,7 +185,7 @@ $output=shell_exec("cd {$local} && git pull 2>&1");
 fwrite($fs, 'Info:'. $output.PHP_EOL);
 fwrite($fs,PHP_EOL. '================ Update End ==============='.PHP_EOL.PHP_EOL);
 #关闭日志文件
-echo $output
+echo $output;
 die("done " . date('Y-m-d H:i:s', time()));
 $fs and fclose($fs);
 ```
