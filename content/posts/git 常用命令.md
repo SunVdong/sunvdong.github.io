@@ -188,6 +188,27 @@ git revert HEAD // 是反做了目标版本，产生一个新的commits
 git reset --hard HEAD^ // 会删除目标版本后的版本
 ```
 
+### 场景7： 撤销一次合并
+```shell
+# 先查看此次合并的详情
+git show --no-patch f4d6542f44 
+
+# out 如下，合并的 commit 会有两个 parent : 52xxx 和 81xx 
+commit f4d6542f44efabfa7d38995e17216859d534f57a 
+Merge: 520d7c2503 81c5344dc8
+	... 
+
+# git需要你明确告知 以哪一条 parent 作为主线（正确历史）？
+# 可以通过 show 命令来查看提交内容， -m 1， 代表以 52xxx 为主线
+git revert -m 1 f4d6542f44
+
+git push
+
+# 如果冲突了，也别慌，解决完
+git add .
+git revert --continue
+```
+
 ## 学习网站
 [learngitbranching](https://learngitbranching.js.org/)
 
