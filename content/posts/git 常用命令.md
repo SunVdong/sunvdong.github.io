@@ -209,6 +209,27 @@ git add .
 git revert --continue
 ```
 
+### 场景8： 开发前忘记切分支，希望把a分支的某几个提交转移到b分支
+```shell
+
+git checkout b
+
+# 查看a分支提交
+git log a --oneline
+
+c3c3c3c 提交3
+b2b2b2b 提交2
+a1a1a1a 提交1
+
+# 按照顺序
+git cherry-pick a1a1a1a b2b2b2b c3c3c3c
+
+# 如果 提交是连续的：
+	# a1a1a1a^ 表示提交 1 的前一个提交
+	# .. 表示一个提交区间
+git cherry-pick a1a1a1a^..c3c3c3c
+```
+
 ## 学习网站
 [learngitbranching](https://learngitbranching.js.org/)
 
