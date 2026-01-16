@@ -65,7 +65,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          
+
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -75,6 +75,6 @@ jobs:
 
       - name: Deploy via rsync
         run: |
-          rsync -az --delete \
+          rsync -azv --delete \
             public/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/wwwroot/vdong.xyz
