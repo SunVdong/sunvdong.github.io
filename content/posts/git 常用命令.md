@@ -167,7 +167,7 @@ git reset HEAD <fileName>
 ### 场景3：commit 了，想修改，且不想产生新的提交
 ```shell
 git add fileName 
-git commit -amend -m '说明'
+git commit --amend -m '说明'
 ```
 ###  场景4：commit 了，想撤销到某次 commit
 ```shell
