@@ -4,8 +4,7 @@ date = 2023-11-09T11:15:56+08:00
 draft = false
 author = 'vdong'
 categories = ['技术']
-tags = ['SSH隧道']
-
+tags = ['SSH隧道','内网穿透']
 +++
 
 ## 场景
