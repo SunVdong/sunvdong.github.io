@@ -1,0 +1,5 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>端口转发 - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link><description>端口转发 - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 30 Apr 2026 17:52:05 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" rel="self" type="application/rss+xml"/><item><title>Expose Nat Vm to Lan</title><link>https://www.vdong.xyz/posts/expose-nat-vm-to-lan/</link><pubDate>Thu, 30 Apr 2026 17:52:05 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/expose-nat-vm-to-lan/</guid><description><![CDATA[<h2 id="场景" class="headerLink">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>局域网（10.2.15.x）</p>
+<p>​        ├── 电脑A（你）10.2.15.239</p>
+<p>​        │      └── 虚拟机 192.168.48.128（NAT 私网）</p>
+<p>​        └── 电脑B（同事）10.2.15.200</p>]]></description></item></channel></rss>
