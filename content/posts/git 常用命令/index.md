@@ -16,18 +16,18 @@ git log --since=midnight --author="$(git config user.name)" --pretty=tformat: --
 
 ```shell
 git log --since="1 week ago" --author="$(git config user.name)" --pretty=format:"%ad" --date=short --numstat | awk '
-> /^[0-9]{4}-[0-9]{2}-[0-9]{2}/ {
->     date = $0; next
-> }
-> NF == 3 {
->     add[date] += $1
->     del[date] += $2
->     loc[date] += $1 - $2
-> }
-> END {
->     for (d in add)
->         print d, "新增:", add[d], "删除:", del[d], "净增:", loc[d]
-> }' | sort
+/^[0-9]{4}-[0-9]{2}-[0-9]{2}/ {
+    date = $0; next
+}
+NF == 3 {
+    add[date] += $1
+    del[date] += $2
+    loc[date] += $1 - $2
+}
+END {
+    for (d in add)
+        print d, "新增:", add[d], "删除:", del[d], "净增:", loc[d]
+}' | sort
 ```
 
 ### clone 特定分支
