@@ -3,7 +3,7 @@ baseURL = "https://www.vdong.xyz/"
 # [en, zh-cn, fr, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
 # 网站语言, 仅在这里 CN 大写
-languageCode = "zh-CN"
+locale = "zh-CN"
 # 是否包括中日韩文字
 hasCJKLanguage = true
 # 是否使用 emoji 代码
@@ -18,7 +18,7 @@ theme = "DoIt"
 
 [params]
   # DoIt 主题版本
-  version = "0.4.X"
+  version = "1.0.2"
   enablePWA = false
     # 主页配置
   [params.home]
