@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>ES - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/es/</link><description>ES - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Jun 2025 12:19:58 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/es/" rel="self" type="application/rss+xml"/><item><title>ES写入和查询过程</title><link>https://www.vdong.xyz/posts/elastic/es%E5%86%99%E5%85%A5%E5%92%8C%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B/</link><pubDate>Sat, 14 Jun 2025 12:19:58 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/elastic/es%E5%86%99%E5%85%A5%E5%92%8C%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B/</guid><description><![CDATA[<h2 id="es-的写入过程" class="headerLink">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Es - 标签 - 我的灵感记录</title><link>https://www.vdong.xyz/tags/es/</link><description>Es - 标签 - 我的灵感记录</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Jun 2025 12:19:58 +0800</lastBuildDate><atom:link href="https://www.vdong.xyz/tags/es/" rel="self" type="application/rss+xml"/><item><title>ES写入和查询过程</title><link>https://www.vdong.xyz/posts/elastic/es%E5%86%99%E5%85%A5%E5%92%8C%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B/</link><pubDate>Sat, 14 Jun 2025 12:19:58 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/elastic/es%E5%86%99%E5%85%A5%E5%92%8C%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B/</guid><description><![CDATA[<h2 id="es-的写入过程" class="headerLink">
     <a href="#es-%e7%9a%84%e5%86%99%e5%85%a5%e8%bf%87%e7%a8%8b" class="header-mark"></a>ES 的写入过程</h2><div class="code-block highlight is-closed show-line-numbers  tw:group tw:my-2">
   <div class="
     
@@ -134,7 +134,15 @@
 <p>包含: in(包含), not in(不包含)</p>
 </li>
 <li>
-<p>布尔操作： and(与), or(或), nand(非与), xor(非或)</p>]]></description></item><item><title>Es 索引相关</title><link>https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 04 Nov 2021 11:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/</guid><description><![CDATA[<h2 id="restful-接口" class="headerLink">
+<p>布尔操作： and(与), or(或), nand(非与), xor(非或)</p>
+</li>
+<li>
+<p>一元运算符： !(取反)</p>
+</li>
+<li>
+<p>复合表达式： ()(复合表达式), !()(对复合表达式结果取反)</p>
+</li>
+</ul>]]></description></item><item><title>Es 索引相关</title><link>https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/</link><pubDate>Thu, 04 Nov 2021 11:11:06 +0800</pubDate><author><name>vdong</name></author><guid>https://www.vdong.xyz/posts/elastic/es%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3/</guid><description><![CDATA[<h2 id="restful-接口" class="headerLink">
     <a href="#restful-%e6%8e%a5%e5%8f%a3" class="header-mark"></a>RESTful 接口</h2><blockquote>
   <ul>
 <li>GET（SELECT）：从服务器取出资源（一项或多项）。</li>

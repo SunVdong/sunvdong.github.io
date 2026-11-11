@@ -10,4 +10,6 @@
 <p>git: 作为版本管理工具。</p>
 </li>
 <li>
-<p>github: 作为代码仓库，使用 github 的 actions 做自动的建构和部署，分别部署在 github pages 和 阿里云上。</p>]]></description></item></channel></rss>
+<p>github: 作为代码仓库，使用 github 的 actions 做自动的建构和部署，分别部署在 github pages 和 阿里云上。</p>
+</li>
+</ul>]]></description></item></channel></rss>

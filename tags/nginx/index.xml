@@ -12,4 +12,14 @@ nginx -s relaod</p>
 </li>
 <li>
 <p>event 块</p>
-<p>nginx 服务器与用户的网络连接</p>]]></description></item></channel></rss>
+<p>nginx 服务器与用户的网络连接</p>
+<p>eg: worker_connections 1024;  // 支持的最大连接数</p>
+</li>
+<li>
+<p>http 块</p>
+<ol>
+<li>http 全局块</li>
+<li>server 块</li>
+</ol>
+</li>
+</ol>]]></description></item></channel></rss>
